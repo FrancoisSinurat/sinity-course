@@ -70,3 +70,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+/* Tailwind or Global CSS */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+main {
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
+
+.flex-1 {
+  flex-grow: 1;
+}

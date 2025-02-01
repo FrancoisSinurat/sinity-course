@@ -16,7 +16,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <div className={`w-full ${isSticky ? "fixed top-0 left-0 bg-white shadow-md z-50" : "relative"} py-4 px-6 flex items-center justify-between transition-all duration-50`}>
+    <div className={`w-full h-16 ${isSticky ? "fixed top-0 left-0 bg-white shadow-md z-50" : "relative"} py-4 px-6 flex items-center justify-between transition-all duration-150`}>
       {/* Brand */}
       <div className="brand">
         <Link href="/">
@@ -48,3 +48,4 @@ export function Navbar() {
     </div>
   );
 }
+

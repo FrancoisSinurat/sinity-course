@@ -1,9 +1,22 @@
+"use client"
 import Link from 'next/link';
+import { useState, useEffect } from "react";
 import { Button } from '@/components/ui/button';
 
 export function Sidebar() {
+   const [isSticky, setIsSticky] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsSticky(window.scrollY > 3);
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
   return (
-    <aside className="w-48 bg-white shadow-lg p-4 h-full flex flex-col justify-between">
+    
+    <aside className="w-48 bg-white shadow-lg p-4 h-screen flex flex-col justify-between">
       <div className="">
         <h2 className="text-lg font-semibold mb-4">
           <Link href="/">SinityCourse</Link>
