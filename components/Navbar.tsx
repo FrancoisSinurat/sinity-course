@@ -5,18 +5,28 @@ import { Button } from '@/components/ui/button';
 
 export function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    // Mengaktifkan scroll behavior smooth secara global
+    document.documentElement.style.scrollBehavior = "smooth";
+
     const handleScroll = () => {
       setIsSticky(window.scrollY > 5);
+      setShowScrollTop(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 10, behavior: "smooth" });
+  };
+
   return (
-    <div className={`w-full h-16 ${isSticky ? "fixed top-0 left-0 bg-white shadow-md z-50" : "relative"} py-4 px-6 flex items-center justify-between transition-all duration-150`}>
+    <>
+    <div className={`w-full h-14 ${isSticky ? "fixed top-0 left-0 bg-white shadow-md z-40" : "relative"} py-4 px-6 flex items-center justify-between transition-all duration-50`}>
       {/* Brand */}
       <div className="brand">
         <Link href="/">
@@ -46,6 +56,7 @@ export function Navbar() {
         </Link>
       </div>
     </div>
+    </>
   );
 }
 

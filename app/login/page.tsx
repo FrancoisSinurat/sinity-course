@@ -9,7 +9,7 @@ export function Basic() {
   const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
 
   return (
-    <section className="grid text-center min-h-screen items-center p-8">
+    <section className="grid text-center h-screen items-center ">
       <div>
         <Typography variant="h3" color="blue-gray" className="mb-2">
           Sign In
@@ -33,7 +33,7 @@ export function Basic() {
               size="lg"
               type="email"
               name="email"
-              placeholder="name@mail.com"
+              placeholder="name@gmail.com"
               className="w-full p-2 placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
               labelProps={{
                 className: "hidden",
