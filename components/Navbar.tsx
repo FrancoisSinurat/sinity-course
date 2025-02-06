@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <>
-    <div className={`w-full h-14 ${isSticky ? "fixed top-0 left-0 bg-white shadow-md z-40" : "relative"} py-4 px-6 flex items-center justify-between transition-all duration-50`}>
+    <div className={`w-full h-16 ${isSticky ? "fixed top-0 left-0 bg-red-200 shadow-md z-50" : "fixed"} py-4 px-6 flex items-center justify-between transition-all duration-100`}>
       {/* Brand */}
       <div className="brand">
         <Link href="/">
@@ -47,11 +47,11 @@ export function Navbar() {
       {/* Authentication */}
       <div className="flex space-x-3">
         <Link href="/login">
-          <Button variant="outline">Masuk</Button>
+          <Button variant="outline">Login</Button>
         </Link>
         <Link href="/register">
           <Button variant="outline" className="bg-blue-500 hover:bg-blue-400">
-            Daftar
+            Register
           </Button>
         </Link>
       </div>
