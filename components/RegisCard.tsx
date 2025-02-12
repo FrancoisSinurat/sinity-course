@@ -24,15 +24,15 @@ export function SimpleRegistrationForm() {
   };
 
   return (
-    <Card color="transparent" shadow={false} className="items-center justify-center h-full">
+    <Card color="transparent" shadow={false} className="items-center justify-center shadow-lg w-full h-full">
       <Typography variant="h4" color="blue-gray">
         Sign Up
       </Typography>
 
       <form className="mt-8 mb-2 w-full sm:w-96" onSubmit={handleSubmit}>
-        <div className="mb-1 flex flex-col gap-6">
+        <div className="mb-1 flex flex-col gap-4">
           {/* Name Input */}
-          <Typography variant="h6" color="blue-gray" className="mb-3 flex items-center">
+          <Typography variant="h6" color="blue-gray" className="-mb-3 flex items-center">
             Your Name <span className="text-red-500 ml-1">*</span>
           </Typography>
           <Input
@@ -50,7 +50,7 @@ export function SimpleRegistrationForm() {
           </Typography>
           <Input
             size="lg"
-            placeholder="name@mail.com"
+            placeholder="name@gmail.com"
             className="p-2 !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{ className: "before:content-none after:content-none" }}
             value={email}
@@ -96,7 +96,7 @@ export function SimpleRegistrationForm() {
         {error && <Typography color="red" className="mt-2 text-sm">{error}</Typography>}
 
         {/* Submit Button */}
-        <Button className="mt-6 background-500" type="submit">
+        <Button className="mt-6 bg-sky-500 p-2 " type="submit">
           Daftar
         </Button>
 

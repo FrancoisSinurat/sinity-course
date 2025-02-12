@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { Navbar } from '@/components/Navbar';
+import  Navbar  from '@/components/Navbar';
 import { Sidebar } from '@/components/Sidebar';
 import { FooterWithSitemap } from '@/components/Footer';
 
@@ -26,19 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body className="flex h-scren flex-col  ">
-        <div className="flex flex-col flex-1">
-          <Navbar />
-          <main className="p-6">
-        {/* <Sidebar /> */}
-            {children}
-            </main>
-        </div>
-        <div className="flex flex-col m-5 ">
-          <FooterWithSitemap />
-        </div>
-        
+    <html lang="en">
+      <body className="bg-gray-50 text-gray-900">
+      <Navbar/>
+        {children}
+      {/* <FooterWithSitemap/> */}
       </body>
     </html>
   );

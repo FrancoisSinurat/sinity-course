@@ -7,7 +7,7 @@ export default function DashboardPage() {
   ];
 
   return (
-      <div className="recommend">
+      <div className="px-8 pt-20 flex flex-col  w-full min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Rekomendasi Kursus</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {courses.map((course) => (
@@ -16,5 +16,6 @@ export default function DashboardPage() {
       </div>
       </div>
     // </section>
-  );
+      
+   );
 }

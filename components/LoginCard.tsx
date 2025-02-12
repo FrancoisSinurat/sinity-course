@@ -10,11 +10,11 @@ export function Login() {
   const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
 
   return (
-      <div className="w-full text-center">
+      <div className="w-full flex flex-col justify-center text-center">
         <Typography variant="h3" color="blue-gray" className="mb-2 text-2xl">
           Login
         </Typography>
-        <form action="#" className="mx-auto max-w-[24rem] text-left">
+        <form action="#" className="mx-auto max-w-[24rem] text-left w-full">
           <div className="mb-6">
             <label htmlFor="email">
               <Typography variant="small" className="mb-2 block font-medium text-gray-900">
@@ -64,9 +64,11 @@ export function Login() {
               </button>
             </div>
           </div>
-          <Button color="gray" size="lg" className="mt-6" fullWidth>
+          {/* <div> */}
+          <button className="bg-sky-400 p-2 rounded-lg w-full items-center ">
             Sign In
-          </Button>
+          </button>
+          {/* </div> */}
           <div className="!mt-4 flex justify-end">
             <Typography as="a" href="#" color="blue-gray" variant="small" className="font-medium text-blue-500 hover:text-blue-300">
               Forgot password?
