@@ -1,21 +1,122 @@
-import { CourseCard } from '@/components/CourseCard';
+"use client";
+
+import { useEffect, useState, useMemo } from "react";
+import { CourseCard } from "@/components/CourseCard";
+import clsx from "clsx"; // Pastikan sudah diinstall: npm install clsx
+import Link from "next/link";
+import { FooterWithSitemap } from "@/components/Footer";
+
+interface Course {
+  id: number;
+  title: string;
+  rating: number;
+  num_enrolled_students: number;
+  difficulty_level: string;
+}
+
+// Urutan level kesulitan dari dasar hingga professional
+const difficultyOrder = [
+  "Dasar",
+  "Pemula",
+  "Dasar-Pemula",
+  "Pemula-Menengah",
+  "Menengah",
+  "Mahir",
+  "Mahir-Profesional",
+  "Profesional",
+];
+
+// Komponen Button untuk Filter
+function FilterButton({ level, active, onClick }: { level: string; active: boolean; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className={clsx(
+        "px-4 py-2 text-sm rounded-full transition-all",
+        active ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+      )}
+    >
+      {level}
+    </button>
+  );
+}
 
 export default function DashboardPage() {
-  const courses = [
-    { id: 1, title: 'Next.js untuk Pemula', category: 'Web Development' },
-    { id: 2, title: 'Machine Learning Dasar', category: 'AI' },
-  ];
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedLevel, setSelectedLevel] = useState<string>("All");
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch("/api/courses");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Tambahkan ID otomatis dan urutkan berdasarkan level kesulitan
+        const coursesWithId = data
+          .map((course: Omit<Course, "id">, index: number) => ({
+            ...course,
+            id: index + 1,
+          }))
+          .sort((a: Course, b: Course) => 
+            difficultyOrder.indexOf(a.difficulty_level) - difficultyOrder.indexOf(b.difficulty_level)
+          );
+
+        setCourses(coursesWithId);
+      } catch (err) {
+        setError("Gagal memuat kursus. Silakan coba lagi.");
+        console.error("Error fetching courses:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  // Menggunakan useMemo agar filtering lebih efisien
+  const filteredCourses = useMemo(() => {
+    return selectedLevel === "All"
+      ? courses
+      : courses.filter((course) => course.difficulty_level === selectedLevel);
+  }, [selectedLevel, courses]);
 
   return (
-      <div className="px-8 pt-20 flex flex-col  w-full min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Rekomendasi Kursus</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {courses.map((course) => (
-          <CourseCard key={course.id} course={course} />
+    <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
+      <h1 className="text-2xl font-bold mb-2">Find Your Way!</h1>
+      <button className="px-4 py-2 mb-4 bg-red-200 rounded-lg w-20">
+        <Link href="/profile">Button</Link>
+      </button>
+      <div className="mb-4 flex flex-wrap gap-2">
+        <FilterButton level="All" active={selectedLevel === "All"} onClick={() => setSelectedLevel("All")} />
+        {difficultyOrder.map((level) => (
+          <FilterButton key={level} level={level} active={selectedLevel === level} onClick={() => setSelectedLevel(level)} />
         ))}
       </div>
-      </div>
-    // </section>
-      
-   );
+
+      {/* Status & Error Handling */}
+      {loading && <p className="text-gray-500">Loading kursus...</p>}
+      {error && <p className="text-red-500">{error}</p>}
+
+      {/* Daftar Kursus */}
+      {!loading && !error && (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {filteredCourses.length > 0 ? (
+            filteredCourses.map((course) => <CourseCard key={course.id} course={course} />)
+          ) : (
+            <p className="text-gray-500">Tidak ada kursus yang tersedia untuk level ini.</p>
+          )}
+        </div>
+      )}
+    </div>
+
+  );
 }

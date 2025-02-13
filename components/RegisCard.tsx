@@ -80,13 +80,13 @@ export function SimpleRegistrationForm() {
           labelProps={{
             className: "flex items-center font-normal",
             children: (
-              <>
+              <div>
                 I agree to the
                 <a href="#" className="font-medium transition-colors text-blue-500 hover:text-blue-900">
                   &nbsp;Terms and Conditions
                 </a>
                 <span className="text-red-500 ml-1">*</span>
-              </>
+              </div>
             ),
           }}
           containerProps={{ className: "-ml-2.5" }}

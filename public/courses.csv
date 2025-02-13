@@ -1,0 +1,605 @@
+course_id,avg_rating,review_count,name
+aboriginal-education,4.604060913705584,197,Aboriginal Worldviews and Education
+access-control-sscp,4.572519083969466,131,Access Controls
+accounting-analytics,4.426991150442478,1356,Accounting Analytics
+accounting-data-analytics-python,3.5,24,Accounting Data Analytics with Python
+actualizacion-manejo-diabetes-tipo-2,4.867052023121388,519,Actualización en el manejo del paciente con diabetes mellitus tipo 2
+addiction-and-the-brain,4.546341463414634,1230,The Addicted Brain
+addiction-treatment,4.924812030075188,399,Addiction Treatment: Clinical Skills for Healthcare Providers
+advanced-valuation-and-strategy,4.629072681704261,399,"Advanced Valuation and Strategy - M&A, Private Equity, and Venture Capital"
+agile-atlassian-jira,4.668542199488491,1955,Agile with Atlassian Jira
+ai-for-everyone,4.843550624133148,21630,AI For Everyone
+ai-for-medical-diagnosis,4.602346805736636,767,AI for Medical Diagnosis
+ai-for-medical-prognosis,4.698630136986301,219,AI for Medical Prognosis
+algorithmic-toolbox,4.529933481152994,5412,Algorithmic Toolbox
+american-law,4.8749356664951105,1943,An Introduction to American Law
+analytics-business-metrics,4.601558809636278,4234,Business Metrics for Data-Driven Companies
+analytics-excel,3.8379446640316206,2277,Mastering Data Analysis in Excel
+anatomy403-1x,4.853949329359166,671,Anatomy: Musculoskeletal and Integumentary Systems
+animal-welfare,4.808333333333334,2160,Animal Behaviour and Welfare
+antibiotic-stewardship,4.196261682242991,107,Antibiotic Stewardship
+anticorrupcion-introduccion,4.876712328767123,1095,Anticorrupción: Introducción a conceptos y perspectiva práctica
+applied-data-science-capstone,4.533333333333333,1665,Applied Data Science Capstone
+aprendiendo-a-aprender,4.932333577176299,8202,Aprendiendo a aprender: Poderosas herramientas mentales con las que podrás dominar temas difíciles (Learning How to Learn)
+aprendiendo-programar-python,4.225369458128079,2436,Introducción a la programación en Python I: Aprendiendo a programar con Python
+arbitration-international-disputes,4.852941176470588,306,International Law in Action: the Arbitration of International Disputes
+arts-heritage,4.793478260869565,552,Arts and Heritage Management
+astro,4.881918819188192,2168,Astronomy: Exploring Time and Space
+attention-models-in-nlp,3.326530612244898,49,Natural Language Processing with Attention Models
+aulaconstructivista,4.9118236472945895,1497,Hacia una práctica constructivista en el aula
+autism-spectrum-disorder,4.678461538461539,1300,Autism Spectrum Disorder
+autodesk-autocad-design-drafting,4.707070707070707,891,Autodesk Certified Professional: AutoCAD for Design and Drafting Exam Prep
+autodesk-revit-architectural-design,4.7735191637630665,287,Autodesk Certified Professional: Revit for Architectural Design Exam Prep
+aws-fundamentals-addressing-security-risk,4.162698412698413,756,AWS Fundamentals: Addressing Security Risk
+aws-fundamentals-going-cloud-native,4.686307519640853,5346,AWS Fundamentals: Going Cloud-Native
+aws-machine-learning,4.405187835420394,3354,Getting Started with AWS Machine Learning
+basic-statistics,4.624323198667222,2401,Basic Statistics
+batch-data-pipelines-gcp,4.36,375,Building Batch Data Pipelines on GCP
+bayesian-statistics,4.4457236842105265,1824,Bayesian Statistics: From Concept to Data Analysis
+bcg-uva-darden-digital-transformation,4.804093567251462,3078,Digital Transformation
+becoming-a-veterinarian,4.6858108108108105,888,EDIVET: Do you have what it takes to be a veterinarian?
+beyond-the-sustainable-development-goals-addressing-sustainability-and-development,4.75,156,Beyond the Sustainable Development Goals (SDGs): Addressing Sustainability and Development
+big-data-essentials,3.424137931034483,290,"Big Data Essentials: HDFS, MapReduce and Spark RDD"
+big-data-introduction,4.58640081799591,5868,Introduction to Big Data
+big-history,4.795246800731261,1094,Big History: Connecting Knowledge
+biohacking-your-brains-health,4.70042194092827,711,Biohacking Your Brain's Health
+bioinformatics,4.239766081871345,855,Biology Meets Programming: Bioinformatics for Beginners
+blockchain-basics,4.503150315031503,3333,Blockchain Basics
+bootstrap-4,4.818409517845962,4791,Front-End Web UI Frameworks and Tools: Bootstrap 4
+brand,4.897669706180345,2961,"Brand Management: Aligning Business, Brand and Behaviour"
+bugs-101,4.955823293172691,747,Bugs 101: Insect-Human Interactions
+build-a-computer,4.924654268001907,2097,Build a Modern Computer from First Principles: From Nand to Tetris (Project-Centered Course)
+building-modern-python-applications-on-aws,5.0,3,Building Modern Python Applications on AWS
+business,4.8758465011286685,2658,English for Business and Entrepreneurship
+business-english-intro,4.8789144050104385,1437,Business English: Networking
+business-model,4.698630136986301,219,Business Model Innovation
+business-transformation-google-cloud,4.832989690721649,485,Business Transformation with Google Cloud
+c-for-everyone,4.573684210526316,2280,C for Everyone: Programming Fundamentals
+c-plus-plus-white,4.756024096385542,996,Основы разработки на C++: белый пояс
+camino-excelencia-gestion-proyectos,4.552770448548813,4548,Camino a la Excelencia en Gestión de Proyectos
+cancer,4.8132142857142854,2800,Introduction to the Biology of Cancer
+careerdevelopment,4.853892215568862,7515,English for Career Development
+cats-and-dogs,4.751269035532995,1182,The Truth About Cats and Dogs
+challenging-forensic-science,4.787234042553192,141,Challenging Forensic Science: How Science Should Speak to Court
+change-management,4.3090909090909095,165,Leading transformations: Manage change
+chemicals-health,4.857933579335794,542,Chemicals and Health
+child-development,4.636363636363637,132,Understanding child development: from synapse to society
+childnutrition,4.740534521158129,5388,Child Nutrition and Cooking
+childrens-rights,4.623333333333333,900,Children's Human Rights - An Interdisciplinary Introduction
+ciencia-computacao-python-conceitos,4.843028624192059,3249,Introdução à Ciência da Computação com Python Parte 1
+classical-sociological-theory,4.866666666666666,1395,Classical Sociological Theory
+classification-vector-spaces-in-nlp,4.352112676056338,852,Natural Language Processing with Classification and Vector Spaces
+clinical-data-management,4.76885043263288,809,Data Management for Clinical Research
+clinical-research,4.812720848056537,1698,Understanding Clinical Research: Behind the Statistics
+clinical-terminology,4.796708615682478,1033,Clinical Terminology for International and U.S. Students
+clinical-trials,4.7274725274725276,1365,Design and Interpretation of Clinical Trials
+clinicalsimulations,4.833333333333333,450,Essentials in Clinical Simulations Across the Health Professions
+cloud-azure-intro,4.175182481751825,137,Getting Started with Azure
+cloud-infrastructure-design-process,4.699436443331246,1597,Reliable Google Cloud Infrastructure: Design and Process
+communication-strategies-virtual-age,4.877777777777778,2430,Communication Strategies for a Virtual Age
+community-organizing,4.166666666666667,54,Community Organizing for Social Justice
+company-future-management,4.836814621409921,2298,Managing the Company of the Future
+competencias-digitales-ofimatica,4.772351615326822,2662,"Competencias digitales. Herramientas de ofimática (Microsoft Word, Excel, Power Point)"
+competencias-lab,4.516908212560386,207,"Competencias Laborales: Perfiles, Evaluación y Capacitación."
+computational-neuroscience,4.604081632653061,490,Computational Neuroscience
+computational-thinking-problem-solving,4.687224669603524,681,Computational Thinking for Problem Solving
+computer-networking,4.6452454853273135,14176,The Bits and Bytes of Computer Networking
+construction-project-management,4.79750903977501,2489,Construction Project Management
+contabilidad,4.767213617543321,6521,Contabilidad para no contadores
+contact-tracing-for-covid-19,4.796610169491525,354,Population Health During A Pandemic: Contact Tracing and Beyond
+containerized-apps-on-aws,4.410714285714286,112,Building Containerized Applications on AWS
+contemporary-art,4.7725,800,What Is Contemporary Art?
+content-marketing,4.466124661246613,2214,The Strategy of Content Marketing
+contracts-1,4.833333333333333,270,American Contract Law I
+contrats,4.843971631205674,423,Rédaction de contrats
+conversational-experiences-dialogflow,4.239024390243903,615,Building Conversational Experiences with Dialogflow
+convolutional-neural-networks,3.8819277108433736,3735,Convolutional Neural Networks
+convolutional-neural-networks-tensorflow,4.468628299437473,2311,Convolutional Neural Networks in TensorFlow
+corp-sustainability,4.565789473684211,228,Corporate Sustainability. Understanding and Seizing the Strategic Opportunity
+corporate-commercial-law-part1,4.842592592592593,324,Corporate & Commercial Law I: Contracts & Employment Law
+corporate-finance-essentials,4.873889875666075,1689,Corporate Finance Essentials
+corporatestrategy,4.948275862068965,348,Corporate Strategy
+correccion-estilo-variaciones,4.736413043478261,1104,"Corrección, estilo y  variaciones de la lengua española"
+countering-terror-violent-extremism,4.84,75,New Approaches to Countering Terror: Countering Violent Extremism
+covid-19-contact-tracing-for-nursing-professionals,3.909090909090909,11,COVID-19 Contact Tracing For Nursing Professionals
+covid-19-what-you-need-to-know,4.8482215585120825,3683,COVID-19: What You Need to Know (CME Eligible)
+craft-of-plot,4.650602409638554,2988,Creative Writing: The Craft of Plot
+crash-course-in-causality,4.655555555555556,270,A Crash Course in Causality:  Inferring Causal Effects from Observational Data
+creative-problem-solving,4.5251846877098725,1489,Creative Problem Solving
+creative-thinking-techniques-and-tools-for-success,4.728285077951003,1796,Creative Thinking: Techniques and Tools for Success
+crypto,4.774143302180685,1926,Cryptography I
+cs-fundamentals-1,4.636898920510304,1019,Object-Oriented Data Structures in C++
+cs-fundamentals-2,4.717314487632509,283,Ordered Data Structures
+cultural-competence-aboriginal-sydney,4.484375,64,Cultural Competence - Aboriginal Sydney
+curanderismo-plants,1.0,6,Curanderismo: Traditional Healing Using Plants
+customer-segmentation-prospecting,4.771676300578035,346,Customer Segmentation and Prospecting
+cybersecurity-compliance-framework-system-administration,4.4896265560165975,482,Cybersecurity Compliance Framework & System Administration
+cybersecurity-roles-processes-operating-system-security,4.508196721311475,976,"Cybersecurity Roles, Processes & Operating System Security"
+data-analysis-with-python,4.457589285714286,4928,Data Analysis with Python
+data-analytics-for-lean-six-sigma,4.880248833592535,1929,Data Analytics for Lean Six Sigma
+data-lakes-data-warehouses-gcp,4.644549763033176,633,Modernizing Data Lakes and Data Warehouses with GCP
+data-management,4.725806451612903,372,Research Data Management and Sharing
+data-science-k-means-clustering-python,4.684210526315789,228,Foundations of Data Science: K-Means Clustering in Python
+data-science-methodology,4.330518697225573,4974,Data Science Methodology
+data-scientists-tools,4.490623934538016,17598,The Data Scientist’s Toolbox
+data-visualization-tableau,4.355434782608696,2760,Fundamentals of Visualization with Tableau
+database-management,4.494865211810013,1558,Database Management Essentials
+datasciencemathskills,4.481234866828087,4956,Data Science Math Skills
+decision-making,4.517316017316017,2772,Data-driven Decision Making
+deep-neural-network,4.818517896151907,17853,"Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization"
+democracia,4.863636363636363,1254,Democracia y decisiones públicas. Introducción al análisis de políticas públicas
+dental-medicine-penn,4.909426987060998,541,Introduction to Dental Medicine
+dentistry101,4.84375,96,Dentistry 101
+dermatology,4.030769230769231,195,Dermatology: Trip to skin
+design-strategy,4.662460567823344,317,Design-Led Strategy: Design thinking for business strategy and entrepreneurship
+develop-your-musicianship,4.878688524590164,915,Developing Your Musicianship
+devops-culture-and-mindset,4.824175824175824,182,DevOps Culture and Mindset
+digital-advertising-landscape,4.465116279069767,129,Introduction to the Digital Advertising Landscape
+digital-business-models,4.587859424920127,313,Digital Business Models
+dino101,4.902847571189279,1791,Dino 101: Dinosaur Paleobiology
+discrete-optimization,4.833333333333333,360,Discrete Optimization
+diversity-inclusion-workplace,4.707746478873239,284,Diversity and inclusion in the workplace
+django-database-web-apps,4.787790697674419,344,Web Application Technologies and Django
+dog-emotion-and-cognition,4.6312785388127855,2628,Dog Emotion and Cognition
+droits-de-lhomme,4.887755102040816,1078,Introduction aux Droits de l’Homme
+drug-commercialization,4.598639455782313,441,Drug Commercialization
+drug-development,4.554535017221585,871,Drug Development
+drug-discovery,4.628113879003559,1124,Drug Discovery
+ds,4.012618296529968,951,Fundamentals of Scalable Data Science
+duke-behavioral-finance,4.093023255813954,1677,Behavioral Finance
+duke-programming-web,4.5482014388489205,6255,"Programming Foundations with JavaScript, HTML and CSS"
+dyslexia-difficulties,4.76369168356998,986,Supporting children with difficulties in reading and writing
+ecology-conservation,4.831838565022421,1338,Ecology: Ecosystem Dynamics and Conservation
+effective-compliance-programs,4.90566037735849,159,Effective Compliance Programs
+einstein-relativity,4.891640866873065,1938,Understanding Einstein: The Special Theory of Relativity
+elearning,4.5064935064935066,231,e-Learning Ecologies: Innovative Approaches to Teaching and Learning for the Digital Age
+electricity,4.7792792792792795,444,Electric Industry Operations and Markets
+electronics,4.722599418040737,1031,Introduction to Electronics
+embedded-software-hardware,4.310344827586207,145,Embedded Software and Hardware Architecture
+emt-foundations,4.846938775510204,294,EMT Foundations
+enfant-developpement,4.964705882352941,255,Développement psychologique de l'enfant
+engineering-health-yoga-physiology,4.581818181818182,165,Engineering Health: Introduction to Yoga and Physiology
+engineering-mechanics-statics,4.75792507204611,2082,Introduction to Engineering Mechanics
+english-composition,4.52760736196319,489,English Composition I
+english-principles,4.920736384556379,7822,Teach English Now! Foundational Principles
+enlinea,4.951219512195122,164,Cursos en línea: modelo para armar
+enterprise-architecture,4.545454545454546,99,Enterprise Architecture
+entrepreneur-changement,4.7561436672967865,529,Devenir entrepreneur du changement
+entrepreneurship-strategy,1.0,6,Entrepreneurship Strategy: From Ideation to Exit
+entreprise-changement-climatique,5.0,6,Entreprise et changement climatique
+environmental-law,4.863543788187373,1473,Introduction to Environmental Law and Policy
+epidemic-pandemic-outbreak,4.744766505636071,1242,"Epidemics, Pandemics and Outbreaks"
+epidemiology,4.653307580878803,2071,Epidemiology: The Basic Science of Public Health
+epidemiology-tools,4.691780821917808,1314,Essential Epidemiologic Tools for Public Health Practice
+epigenetics,1.0,6,Epigenetic Control of Gene Expression
+equine,4.949367088607595,158,Equine Welfare and Management
+erasmus-econometrics,4.532442748091603,524,Econometrics: Methods and Applications
+essentials-global-health,4.862420382165605,785,Essentials of Global Health
+estrategia-marketing-digital,4.798927613941019,1119,Marketing Digital
+etudier-en-france,4.844322344322344,1638,Étudier en France: French Intermediate course B1-B2
+european-law-fundamentals,4.748201438848921,417,European Business Law: Understanding the Fundamentals
+everyday-chinese-medicine,4.702586206896552,464,Everyday Chinese Medicine
+everyday-excel-part-1,4.829021372328459,889,"Everyday Excel, Part 1"
+everyday-excel-part-2,4.95,120,"Everyday Excel, Part 2"
+everyday-parenting,4.928571428571429,1344,Everyday Parenting: The ABCs of Child Rearing
+excel-advanced,4.684210526315789,2394,Excel Skills for Business: Advanced
+excel-aplicado-negocios-avanzado,4.723905723905724,1782,Excel aplicado a los negocios (Nivel Avanzado)
+excel-data-analysis,4.709333333333333,4500,Introduction to Data Analysis Using Excel
+excel-data-analysis-fundamentals,4.587628865979381,291,Excel Fundamentals for Data Analysis
+excel-essentials,4.895534327796339,21251,Excel Skills for Business: Essentials
+excel-intermediate-1,4.913308341143392,6402,Excel Skills for Business: Intermediate I
+excel-intermediate-2,4.721479958890031,2919,Excel Skills for Business: Intermediate II
+excel-para-negocios,4.820714718352513,3302,Fundamentos de Excel para Negocios
+excel-vba-for-creative-problem-solving-part-1,4.859037328094303,2036,"Excel/VBA for Creative Problem Solving, Part 1"
+excellence-operationnelle,4.682926829268292,246,L'excellence opérationnelle en pratique
+exploring-renewable-energy,4.783333333333333,180,Exploring Renewable Energy Schemes
+exposure-photography,4.743556280587276,3065,"Cameras, Exposure, and Photography"
+family-planning,4.583333333333333,1080,Personal & Family Financial Planning
+fashion-design,4.841673502871206,1219,Fashion as Design
+fe-exam,4.430051813471502,386,Fundamentals of Engineering Exam Review
+feminism-social-justice,4.814814814814815,2025,Feminism and Social Justice
+finance-for-non-finance,4.814516129032258,1116,Finance for Non-Finance Professionals
+finance-for-non-financial-managers,4.130434782608695,207,Finance for Non-Financial Managers
+finance-fundamentals,3.888888888888889,27,Fundamentals of Finance
+finance-healthcare-managers,4.072463768115942,207,Financial Acumen for Non-Financial Managers
+financial-engineering-1,4.4119127516778525,1192,Financial Engineering and Risk Management Part I
+financial-markets-global,4.819466248037677,8918,Financial Markets
+financial-planning,4.333333333333333,180,Financial Planning for Young Adults
+finanzas-empresariales,4.906390414378432,4006,Fundamentos de Finanzas Empresariales
+finanzas-personales,4.809142318567389,6366,Finanzas personales
+finding-purpose-and-meaning-in-life,4.799274486094316,827,Finding Purpose and Meaning In Life: Living for What Matters Most
+fintechlawandpolicy,4.808080808080808,297,FinTech Law and Policy
+fondamentaux-negociation,4.863013698630137,219,Les Fondamentaux de la Négociation
+food-and-health,4.70971259443882,12839,Stanford Introduction to Food and Health
+food-beverage-management,4.799682034976152,1887,Food & Beverage Management
+forensic-accounting,4.725230645808264,2493,Forensic Accounting and Fraud Examination
+forensic-science,4.849240780911063,922,Introduction to Forensic Science
+foundations-big-data-analysis-sql,4.80794701986755,453,Foundations for Big Data Analysis with SQL
+foundations-of-mindfulness,4.82051282051282,117,Foundations of Mindfulness
+front-end-react,4.6199756394640685,1642,Front-End Web Development with React
+fundamental-machine-learning-healthcare,4.833333333333333,18,Fundamentals of Machine Learning for Healthcare
+fundamentals-of-graphic-design,4.793112085159675,7985,Fundamentals of Graphic Design
+fundamentals-of-reinforcement-learning,4.739800543970988,1103,Fundamentals of Reinforcement Learning
+game-development,4.764308855291577,3704,Introduction to Game Development
+gamification,4.782874617737003,1962,Gamification
+gcp-big-data-ml-fundamentals,4.569328760411563,6123,Google Cloud Platform Big Data and Machine Learning Fundamentals
+gcp-exploring-preparing-data-bigquery,4.4573170731707314,984,Exploring ​and ​Preparing ​your ​Data with BigQuery
+gcp-fundamentals,4.716958393113343,17425,Google Cloud Platform Fundamentals: Core Infrastructure
+gcp-infrastructure-core-services,4.665283540802213,2169,Essential Google Cloud Infrastructure: Core Services
+gcp-infrastructure-foundation,4.727941176470588,4352,Essential Google Cloud Infrastructure: Foundation
+gcp-infrastructure-scaling-automation,4.5952,1875,Elastic Google Cloud Infrastructure: Scaling and Automation
+gender-sexuality,4.709677419354839,279,Gender and Sexuality: Diversity and Inclusion in the Workplace
+genetics-evolution,4.825726141078838,723,Introduction to Genetics and Evolution
+geopolitics-europe,3.8382978723404255,235,Geopolitics of Europe
+gestion-organizaciones-efectivas,4.78356940509915,1765,Gestión de organizaciones efectivas
+gestionar-personas,4.878623188405797,1656,Claves para Gestionar Personas
+gestionempresarialpyme,4.8545101842871,4124,Gestión Empresarial Exitosa para Pymes
+getinmooc,4.7631578947368425,494,Get Interactive: Practical Teaching with Technology
+getting-started-with-essay-writing,4.723888314374354,1934,Getting Started with Essay Writing
+getting-started-with-google-sheets,4.669245647969052,517,Getting Started with Google Sheets
+getting-started-with-tensor-flow2,4.944055944055944,143,Getting started with TensorFlow 2
+gis,4.8638165345413364,3532,Fundamentals of GIS
+global-diplomacy,4.640992167101827,2298,Global Diplomacy – Diplomacy in the Modern World
+global-diplomacy-un,4.724619289340102,788,Global Diplomacy: the United Nations in the World
+global-energy,4.721111111111111,900,Politics and Economics of International Energy
+global-environmental-management,4.677290836653387,753,Global Environmental Management
+global-financial-crisis,4.828985507246377,1035,The Global Financial Crisis
+global-financial-markets-instruments,4.282868525896414,753,Global Financial Markets and Instruments
+global-sustainable-development,4.791318864774625,1797,"The Sustainable Development Goals – A global, transdisciplinary vision for the future"
+globalenergyandclimatepolicy,4.669767441860465,215,Global Energy and Climate Policy
+golang-getting-started,4.3957871396895785,902,Getting Started with Go
+golang-webservices-1,4.715827338129497,278,Разработка веб-сервисов на Go - основы языка
+google-cbrs-cpi-training,4.931034482758621,87,Become a CBRS Certified Professional Installer by Google
+google-cloud-java-spring,4.019027484143764,473,Building Scalable Java Microservices with Spring Boot and Spring Cloud
+google-cloud-product-fundamentals,4.7,270,Google Cloud Product Fundamentals
+google-kubernetes-engine,4.245696400625978,1917,Getting Started with Google Kubernetes Engine
+google-machine-learning,4.478352692713833,2841,How Google does Machine Learning
+grammar-punctuation,4.767543859649122,12996,Grammar and Punctuation
+gte-sustainable-cities,4.64726631393298,1701,Greening the Economy: Sustainable Cities
+guitar,4.758800521512386,1534,Guitar for Beginners
+healing-with-the-arts,4.741100323624596,618,Healing with the Arts
+health-behavior-change,4.925925925925926,81,Health Behavior Change: From Evidence to Action
+healthcarejobs,4.2727272727272725,33,Career 911: Your Future Job in Medicine and Healthcare
+high-stakes-leadership,4.777777777777778,81,High Stakes Leadership: Leading in Times of Crisis
+horse-care,4.957364341085271,774,The Horse Course: Introduction to Basic Care and Management
+how-things-work,4.8538461538461535,1690,How Things Work: An Introduction to Physics
+html,3.9951495553759093,3711,Introduction to HTML5
+html-css-javascript-for-web-developers,4.760450160771704,9330,"HTML, CSS, and Javascript for Web Developers"
+human-language,4.66512702078522,1299,Miracles of Human Language: An Introduction to Linguistics
+human-needs,4.3717774762550885,737,The Arts and Science of Relationships: Understanding Human Needs
+humanrights,4.811594202898551,207,Human Rights for Open Societies
+ibm-customer-engagement-specialist,4.860377358490566,530,IBM Customer Engagement Specialist Professional Certificate
+ibm-penetration-testing-incident-response-forensics,4.493877551020408,245,"Penetration Testing, Incident Response and Forensics"
+iiot-google-cloud-platform,4.537340619307832,1647,Industrial IoT on Google Cloud Platform
+immunologyfundamentalsimmunitybcells,4.821917808219178,511,Fundamentals of Immunology: Innate Immunity and B-Cell Function
+indigenous-canada,4.813614262560778,3702,Indigenous Canada
+industrial-biotech,4.568513119533527,1029,Industrial Biotechnology
+information-security-data,4.669642857142857,1008,Information Security: Context and Introduction
+information-systems-audit,4.6947535771065185,629,"Information Systems Auditing, Controls and Assurance"
+infrastructure-investing,4.8359375,1024,Financing and Investing in Infrastructure
+initiating-planning,4.795234549516009,1343,Engineering Project Management: Initiating and Planning
+innovation-management,4.721014492753623,828,Innovation Management
+innovation-through-design,4.708860759493671,237,"Innovation Through Design: Think, Make, Break, Repeat"
+instructional-design-foundations-applications,3.6666666666666665,189,Instructional Design Foundations and Applications
+intercultural,4.313725490196078,153,Intercultural Management
+international-criminal-law,4.810344827586207,1566,Introduction to International Criminal Law
+international-humanitarian-law,4.828920570264766,491,International Humanitarian Law in Theory and Practice
+international-law-in-action,4.751412429378531,531,International Law in Action: A Guide to the International Courts and Tribunals in The Hague
+international-migrations,4.295454545454546,132,International migrations: a global issue
+international-organizations-management,4.837037037037037,810,International Organizations Management
+international-relations-theory,4.663461538461538,312,Understanding International Relations Theory
+international-security-management,4.610169491525424,177,International Security Management
+international-taxation,4.818713450292398,513,Rethinking International Tax Law
+intro-accounting-data-analytics-visual,4.883720930232558,129,Introduction to Accounting Data Analytics and Visualization
+intro-business-analytics,4.646464646464646,297,Introduction to Business Analytics: Communicating with Data
+intro-chemistry,4.833333333333333,414,Introduction to Chemistry:  Reactions and Ratios
+intro-common-law,4.816143497757848,669,Introduction to English Common Law
+intro-data-science-programacion-estadistica-r,4.716403634624582,6273,Introducción a Data Science: Programación Estadística con R
+intro-economic-theories,4.147540983606557,122,Introduction to Economic Theories
+intro-programming,4.810082063305979,1706,Code Yourself! An Introduction to Programming
+intro-self-driving-cars,4.664870689655173,928,Introduction to Self-Driving Cars
+intro-sql,4.773264052905055,2117,Introduction to Structured Query Language (SQL)
+intro-to-healthcare,4.0,6,Introduction to Healthcare
+introancientegypt,4.642570281124498,1494,Introduction to Ancient Egypt and Its Civilization
+introclassicalmusic,4.921775898520084,1892,Introduction to Classical Music
+introcss,4.80557398805574,4521,Introduction to CSS3
+introduction-blockchain-technologies,4.711920529801325,906,Introduction to Blockchain Technologies
+introduction-cybersecurity-cyber-attacks,4.265541740674956,3378,Introduction to Cybersecurity Tools & Cyber Attacks
+introduction-embedded-systems,4.317757009345795,321,Introduction to Embedded Systems Software and Development Environments
+introduction-g-suite,4.631746031746032,945,Introduction to G Suite
+introduction-genomics,4.459694989106754,1377,Introduction to Genomic Technologies
+introduction-git-github,4.821520951888257,1933,Introduction to Git and GitHub
+introduction-intellectual-property,4.828054298642534,221,Introduction to Intellectual Property
+introduction-portfolio-construction-python,4.748603351955308,537,Introduction to Portfolio Construction and Analysis with Python
+introduction-programming-unity,4.665809768637532,1167,Introduction to C# Programming and Unity
+introduction-psych,4.888958203368683,3206,Introduction to Psychology
+introduction-psychology,4.840493709945407,8426,Introduction to Psychology
+introduction-statistics-data-analysis-public-health,4.67515923566879,471,Introduction to Statistics & Data Analysis in Public Health
+introduction-tensorflow,4.659183673469387,7350,"Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning"
+introduction-to-ai,4.765455531453362,3688,Introduction to Artificial Intelligence (AI)
+introduction-to-calculus,4.868745467730239,1379,Introduction to Calculus
+introduction-to-cloud,4.906666666666666,225,Introduction to Cloud Computing
+introduction-to-computer-programming,3.920289855072464,414,Introduction to Computer Programming
+introduction-to-computers-and-office-productivity-software,4.6,105,Introduction to Computers and Office Productivity Software
+introduction-to-data-analytics,4.777777777777778,54,Introduction to Data Analytics
+introduction-to-software-product-management,4.585151416476718,3071,Introduction to Software Product Management
+introduction-trading-machine-learning-gcp,3.402173913043478,368,"Introduction to Trading, Machine Learning & GCP"
+introtoux-principles-and-processes,4.785063752276867,549,Introduction to User Experience Principles and Processes
+investment-management,4.604651162790698,301,Investment Management in an Evolving and Volatile World by HEC Paris and AXA Investment Managers
+it-security,4.7608391608391605,4290,IT Security: Defense against the digital dark arts
+japanese-1,3.358974358974359,78,Japanese for beginners 1
+java-programming,4.495421245421245,3276,Java Programming: Solving Problems with Software
+journalism,4.831713244228433,1646,English for Journalism
+kotlin-for-java-developers,4.5473251028806585,729,Kotlin for Java Developers
+law-student,4.697318007662835,783,A Law Student's Toolkit
+leadership-21st-century,4.774285714285714,700,Leadership in 21st Century Organizations
+leading-for-equity-diversity-inclusion,4.78125,96,"Leading for Equity, Diversity and Inclusion in Higher Education"
+learn-chinese,4.794927453444533,8753,Chinese for Beginners
+learn-korean,4.872926321445362,14889,First Step Korean
+learn-speak-korean1,4.889457523029683,2931,Learn to Speak Korean 1
+learn-to-program,4.749367088607595,3555,Learn to Program: The Fundamentals
+learning-how-to-learn,4.802138540213854,32265,Learning How to Learn: Powerful mental tools to help you master tough subjects
+legal-tech-startups,4.012195121951219,82,Legal Tech & Startups
+legaltech,4.968,375,El Abogado del Futuro: Legaltech y la Transformación Digital del Derecho
+linear-algebra-machine-learning,4.605603905752494,4711,Mathematics for Machine Learning: Linear Algebra
+love-social-justice,4.582781456953643,151,Love as a Force for Social Justice
+machine-learning,4.7505223568742165,35895,Machine Learning
+machine-learning-business-professionals,4.576555023923445,2508,Machine Learning for Business Professionals
+machine-learning-duke,4.681889763779528,635,Introduction to Machine Learning
+machine-learning-projects,4.711857292759706,14295,Structuring Machine Learning Projects
+machine-learning-with-python,4.515873015873016,4536,Machine Learning with Python
+mafash,4.7145038167938935,2620,Management of Fashion and Luxury Companies
+magic-middle-ages,4.5647517039922105,1027,Magic in the Middle Ages
+making-architecture,4.825,520,Making Architecture
+manage-health-covid-19,4.838876570583888,4059,Mind Control: Managing Your Mental Health During COVID-19
+managing-as-a-coach,4.783088235294118,816,Managing as a Coach
+managing-human-resources,4.855762594893029,4347,Preparing to Manage Human Resources
+marketing-digital,4.7335814942834356,11283,Marketing in a Digital World
+marketing-gerencial,4.723486951693504,1801,Marketing Gerencial
+mastering-final-cut-pro,4.504587155963303,109,Mastering Final Cut Pro
+mathematical-thinking,4.8089123867069485,1324,Introduction to Mathematical Thinking
+mathematics-and-python,4.635852090032154,2488,Математика и Python для анализа данных
+matlab,4.825731398295324,8682,Introduction to Programming with MATLAB
+mcmc-bayesian-statistics,4.804416403785489,317,Bayesian Statistics: Techniques and Models
+medical-neuroscience,4.9104803493449785,1374,Medical Neuroscience
+medical-research,4.920318725099602,753,Understanding Medical Research: Your Facebook Friend is Wrong
+memoir-reader-relationship,4.386363636363637,132,Memoir and Personal Essay: Managing Your Relationship with the Reader
+mental-health,4.561643835616438,219,The Social Context of Mental Health and Illness
+microbiome,4.7947932618683,653,Gut Check: Exploring Your Microbiome
+microeconomics,4.820487804878049,1025,Microeconomics Principles
+mindshift,4.85178785059152,7523,Mindshift: Break Through Obstacles to Learning and Discover Your Hidden Potential
+ml-foundations,4.499247554552295,7974,Machine Learning Foundations: A Case Study Approach
+model-thinking,4.771946564885496,1048,Model Thinking
+modern-art-ideas,4.767911200807266,2973,Modern Art & Ideas
+modern-world,4.847183098591549,1420,"The Modern World, Part One: Global History from 1760 to 1910"
+modern-world-2,4.883116883116883,770,"The Modern World, Part Two: Global History since 1910"
+money-banking,4.955719557195572,813,Economics of Money and Banking
+moral-politics,4.854368932038835,1854,Moral Foundations of Politics
+moralities,4.8241525423728815,1416,Moralities of Everyday Life
+motivate-people-teams,4.849023090586146,2252,Inspiring and Motivating Individuals
+multivariate-calculus-machine-learning,4.716243654822335,1970,Mathematics for Machine Learning: Multivariate Calculus
+music-business-foundations,4.869731800766283,1305,Music Business Foundations
+music-theory,4.123711340206185,388,Getting Started With Music Theory
+mythology,4.793041926851026,1121,Greek and Roman Mythology
+nand2tetris2,4.956989247311828,279,Build a Modern Computer from First Principles: Nand to Tetris Part II (project-centered course)
+nanotechnology,4.8341013824884795,1302,Nanotechnology: A Maker’s Course
+natural-language-processing-tensorflow,4.236006051437216,1983,Natural Language Processing in TensorFlow
+negociacion,4.800307219662058,1953,Negociación exitosa: Estrategias y habilidades esenciales (en español)
+negotiation,4.918815331010453,2870,Introduction to Negotiation: A Strategic Playbook for Becoming a Principled and Persuasive Negotiator
+negotiation-skills,4.8064022446116565,7841,Successful Negotiation: Essential Strategies and Skills
+neural-networks-deep-learning,4.775888111888112,35750,Neural Networks and Deep Learning
+neurobiology,4.921771217712177,1355,Understanding the Brain: The Neurobiology of Everyday Life
+neuroeconomics,4.629987908101572,827,Introduction to Neuroeconomics: How the Brain Makes Decisions
+neuromarketing,4.744525547445256,1370,An Introduction to Consumer Neuroscience & Neuromarketing
+neuroscience-neuroimaging,4.610909090909091,825,Fundamental Neuroscience for Neuroimaging
+nlp-sequence-models,4.6385498923187365,8358,Sequence Models
+norms,4.604498594189316,1067,"Social Norms, Social Change I"
+nutricion-obesidad-sobrepeso,4.770848985725019,3993,Nutrición y obesidad: control de sobrepeso
+nutrition-pregnancy,4.809290953545232,1227,Nutrition and Lifestyle in Pregnancy
+object-oriented-design,4.580684596577017,818,Object-Oriented Design
+object-oriented-java,4.696917808219178,3504,Object Oriented Programming in Java
+oilandgas,4.822699386503068,3260,Oil & Gas Industry Operations and Markets
+open-source-tools-for-data-science,4.044048052420822,8241,Tools for Data Science
+oralcavity,4.897058823529412,204,The Oral Cavity: Portal to Health and Disease
+organizational-behavior,4.844660194174757,1236,International Leadership and Organizational Behavior
+os-power-user,4.51353919239905,6315,Operating Systems and You: Becoming a Power User
+painting,4.940766550522648,1148,In the Studio: Postwar Abstract Painting
+pap,4.867940085199945,7277,Primeros Auxilios Psicológicos (PAP)
+pca-machine-learning,3.491108071135431,1462,Mathematics for Machine Learning: PCA
+people-management,4.68107302533532,1342,The Manager's Toolkit: A Practical Guide to Managing People at Work
+perfect-tenses-modals,4.805797101449276,2070,Perfect Tenses and Modals
+personal-branding,4.489906832298137,5152,Introduction to Personal Branding
+philosophy,4.709997636492555,4231,Introduction to Philosophy
+philosophy-cognitive-sciences,4.682051282051282,585,Philosophy and the Sciences: Introduction to the Philosophy of Cognitive Sciences
+photography,4.7849223946784925,2255,Seeing Through Photographs
+physiology,4.784028126569563,1991,Introductory Human Physiology
+plantknows,4.810289389067524,933,Understanding Plants - Part I: What a Plant Knows
+plato,4.135135135135135,222,Ancient Philosophy: Plato & His Predecessors
+positive-psychiatry,4.88593421973408,1429,Positive Psychiatry and Mental Health
+positive-psychology,4.659316427783903,2721,Positive Psychology
+positive-psychology-applications,4.860655737704918,1098,Positive Psychology: Applications and Interventions
+positive-psychology-resilience,4.905154639175258,1455,Positive Psychology: Resilience Skills
+positive-psychology-visionary-science,4.898365679264556,3916,Positive Psychology: Martin E. P. Seligman’s Visionary Science
+powerpoint-presentations,4.6381578947368425,456,Effective Business Presentations with Powerpoint
+practical-time-series-analysis,4.493523316062176,772,Practical Time Series Analysis
+preparing-cloud-associate-cloud-engineer-exam,4.636363636363637,715,Preparing for the Google Cloud Associate Cloud Engineer Exam
+preparing-cloud-professional-cloud-architect-exam,4.46829268292683,410,Preparing for the Google Cloud Professional Cloud Architect Exam
+principles-of-macroeconomics,4.639502762430939,1448,The Power of Macroeconomics: Economic Principles in the Real World
+principles-of-microeconomics,4.663934426229508,732,The Power of Microeconomics: Economic Principles in the Real World
+privacy-law-data-protection,4.837209302325581,172,Privacy Law and Data Protection
+private-equity,4.763448784082535,2714,Private Equity and Venture Capital
+probabilistic-models-in-nlp,4.555555555555555,297,Natural Language Processing with Probabilistic Models
+probability-intro,4.62962962962963,2916,Introduction to Probability and Data with R
+probability-statistics,4.682142857142857,840,Probability and Statistics: To p or not to p?
+process-mining,4.785992217898833,514,Process Mining: Data science in Action
+producing-music,4.837083010085338,1289,The Art of Music Production
+professional-emails-english,4.817436831322558,8786,Write Professional Emails in English
+progfun1,4.728097397947004,4189,Functional Programming Principles in Scala
+programming-fundamentals,4.6516381965835905,3571,Programming Fundamentals
+programming-languages,4.941765241128299,1099,"Programming Languages, Part A"
+project-execution,3.9285714285714284,42,Project Execution
+project-management,4.386792452830188,106,Project Launch
+project-planning,4.71588132635253,8595,Initiating and Planning Projects
+project-planning-1,4.35,60,Project Planning
+project-risk-management,4.78017789072427,2361,Managing Project Risks and Changes
+psychological-first-aid,4.865379598225933,7666,Psychological First Aid
+public-policy,4.5661764705882355,816,Public Policy Challenges of the 21st Century
+public-speaking,4.831578947368421,1140,Introduction to Public Speaking
+python,4.581781591401654,45218,Programming for Everybody (Getting Started with Python)
+python-basics,4.811849244757296,6819,Python Basics
+python-crash-course,4.734439834024896,9399,Crash Course on Python
+python-data,4.846628510105527,33546,Python Data Structures
+python-data-analysis,4.247900923593619,14292,Introduction to Data Science in Python
+python-data-visualization,4.501954652071931,3837,"Capstone: Retrieving, Processing, and Visualizing Data with Python"
+python-databases,4.705329949238578,7880,Using Databases with Python
+python-for-applied-data-science-ai,4.313180623357116,7989,Python for Data Science and AI
+python-for-data-visualization,4.057674702471773,3277,Data Visualization with Python
+python-functions-files-dictionaries,4.814420062695925,1595,"Python Functions, Files, and Dictionaries"
+python-machine-learning,4.509554140127388,3297,Applied Machine Learning in Python
+python-network-data,4.717531955183841,19011,Using Python to Access Web Data
+python-operating-system,4.614047791455467,1381,Using Python to Interact with the Operating System
+python-osnovy-programmirovaniya,4.191964285714286,1344,Основы программирования на Python
+python-plotting,4.361575178997613,2514,"Applied Plotting, Charting & Data Representation in Python"
+python-programming-introduction,4.623376623376624,3003,Python Programming: A Concise Introduction
+python-statistics-financial-analysis,4.363636363636363,1177,Python and Statistics for Financial Analysis
+quality-healthcare,4.844961240310077,516,Leading Healthcare Quality and Safety
+quantitative-methods,4.754978877489439,1657,Quantitative Methods
+quantum-computing-algorithms,3.3095238095238093,126,The Introduction to Quantum Computing
+r-programming,4.238336713995944,11832,R Programming
+race-cultural-diversity-american-life,4.414634146341464,246,Race and Cultural Diversity in American Life and History
+recruiting-hiring-onboarding-employees,3.84375,576,"Recruiting, Hiring, and Onboarding Employees"
+refugees-21st-century,4.757352941176471,136,Refugees in the 21st Century
+remote-team-management,5.0,15,How to Manage a Remote Team
+removing-barriers-to-change,5.0,24,Removing Barriers to Change
+renewable-energy-entrepreneurship,4.752203721841332,1021,Renewable Energy and Green Building Entrepreneurship
+reporting-extra-financier-strategie-rse,4.5777777777777775,135,Reporting extra-financier et stratégie RSE
+research-methods,4.582453290008123,3693,Understanding Research Methods
+reussir-le-changement,4.41421568627451,1224,Réussir le Changement
+revisao-sistematica,4.903674280039722,1007,Revisão Sistemática e Meta-análise
+role-of-advertising,4.805369127516778,447,Advertising and Society
+roman-architecture,4.837606837606837,351,Roman Architecture
+sample-based-learning-methods,4.480812641083522,443,Sample-based Learning Methods
+sas-programming-basics,4.874587458745874,909,Getting Started with SAS Programming
+schedule-projects,4.753946861763573,2597,Budgeting and Scheduling Projects
+schizophrenia,4.683836589698046,563,Schizophrenia
+science-exercise,4.854120267260579,2694,Science of Exercise
+sciwrite,4.927483241925655,3282,Writing in the Sciences
+sdgbusiness,4.873239436619718,213,Driving business towards the Sustainable Development Goals
+search-engine-optimization,4.60122182431009,4747,Introduction to Search Engine Optimization
+self-determination-theory,4.908163265306122,196,"Introduction to Self-Determination Theory: An approach to motivation, development and wellness"
+seo-fundamentals,4.716129032258064,1395,Search Engine Optimization Fundamentals
+sequence-models-in-nlp,3.967741935483871,186,Natural Language Processing with Sequence Models
+site-reliability-engineering-slos,4.254278728606357,409,Site Reliability Engineering: Measuring and Managing Reliability
+six-sigma-organization-advanced,4.7,1170,Six Sigma and the Organization (Advanced)
+six-sigma-principles,4.557584269662922,2848,Six Sigma Principles
+sleep,4.77,200,"Sleep: Neurobiology, Medicine, and Society"
+smart-cities,4.627272727272727,660,Smart Cities – Management of Smart Urban Infrastructures
+social-economic-networks,1.0,6,Social and Economic Networks:  Models and Analysis
+social-impact,4.850515463917525,582,Social Impact Strategy: Tools for Entrepreneurs and Innovators
+social-innovation,4.301204819277109,166,Becoming a changemaker: Introduction to Social Innovation
+social-media-marketing-introduction,4.886363636363637,132,Introduction to Social Media Marketing
+social-psychology,4.894624962040693,3293,Social Psychology
+social-work-practice-advocating-social-justice-and-change,4.8,15,Social Work Practice: Advocating Social Justice and Change
+software-processes-and-agile-practices,4.686161879895561,1915,Software Processes and Agile Practices
+solar-energy-basics,4.819234194122886,1123,Solar Energy Basics
+songwriting-lyrics,4.725,480,Songwriting: Writing the Lyrics
+spanish-in-healthcare-settings,4.0,8,Spanish for Successful Communication in Healthcare Settings
+spanish-vocabulary-meeting-people,4.535384615384616,1300,Spanish Vocabulary: Meeting People
+speak-english-professionally,4.765037593984962,6384,"Speak English Professionally: In Person, Online & On the Phone"
+spectroscopy,4.646840148698884,1076,Introduction to Molecular Spectroscopy
+sports-marketing,4.659722222222222,432,Sports Marketing
+sports-society,4.861702127659575,564,Sports and Society
+sql-data-science,4.386113463166808,3543,Databases and SQL for Data Science
+sql-for-data-science,4.506682161533992,5163,SQL for Data Science
+statistical-inferences,4.8860103626943,579,Improving your statistical inferences
+stem-cells,4.744827586206896,870,The Science of Stem Cells
+stochasticprocesses,4.204081632653061,245,Stochastic processes
+strategic-business-management-microeconomics,4.7875,80,Strategic Business Management - Microeconomics
+strategic-management,4.7806539509536785,2202,Strategic Management
+success,4.847494553376906,1377,The Science of Success: What Researchers Know that You Should Know
+summary-statistics,4.793427230046948,639,Summary Statistics in Public Health
+supply-chain-logistics,4.721752498078401,3903,Supply Chain Logistics
+supply-chain-principles,4.555910543130991,939,Supply Chain Principles
+sustainability,4.7656529516994635,1677,Introduction to Sustainability
+sustainable-fashion,4.841269841269841,378,Sustainable Fashion
+sustainable-finance,4.909090909090909,132,Principles of Sustainable Finance
+sustainable-tourism,4.577586206896552,696,Sustainable Tourism – promoting environmental public health
+system-administration-it-infrastructure-services,4.656901408450704,5325,System Administration and IT Infrastructure Services
+systematic-review,4.847051198963059,1543,Introduction to Systematic Review and Meta-Analysis
+systems-engineering,4.775,240,Introduction to Systems Engineering
+systems-thinking,4.39622641509434,318,Systems Thinking In Public Health
+teach-online,4.8010835913312695,2584,Learning to Teach Online
+teachlanguageonline,4.609756097560975,205,Teach English Now! Teaching Language Online
+teamwork-skills-effective-communication,4.781685870224378,1649,Teamwork Skills: Communicating Effectively in Groups
+technical-support-fundamentals,4.776182791132252,35319,Technical Support Fundamentals
+technology-of-music-production,4.898222940226171,619,The Technology of Music Production
+tensorflow-sequences-time-series-and-prediction,4.507890961262554,1394,"Sequences, Time Series and Prediction"
+terrorism,4.741813602015113,1588,Terrorism and Counterterrorism: Comparing Theory and Practice
+the-business-of-product-management-one,4.333333333333333,9,The Business of Product Management I
+the-cycle,4.861111111111111,324,The Cycle: Management of Successful Arts and Cultural Organizations
+the-science-of-well-being,4.92840428180234,20085,The Science of Well-Being
+theropods-birds,4.897260273972603,876,Paleontology: Theropod Dinosaurs and the Origin of Birds
+transformation-global-food-system,4.830985915492958,213,Transformation of the Global Food System
+transmedia-storytelling,4.7434869739478955,499,"Transmedia Storytelling: Narrative worlds, emerging technologies, and global audiences"
+tricky-american-english-pronunciation,4.718637992831542,1674,Tricky American English Pronunciation
+troubles-spectre-autisme-diagnostic,4.846153846153846,234,Troubles du spectre de l'autisme : diagnostic
+troubleshooting-debugging-techniques,4.336842105263158,475,Troubleshooting and Debugging Techniques
+trunk-anatomy,4.780612244897959,588,"Anatomy of the Chest, Abdomen, and Pelvis"
+truthinourbones-osteoarchaeology-archaeology,4.713414634146342,328,Osteoarchaeology: The Truth in Our Bones
+typography,4.783829787234042,2350,Introduction to Typography
+understanding-arguments,4.5813449023861175,1383,Think Again I: How to Understand Arguments
+understanding-financial-markets,4.731527093596059,2436,Understanding Financial Markets
+understanding-visualization-data,4.635391923990499,842,Understanding and Visualizing Data with Python
+uol-machine-learning-for-all,4.69271758436945,1689,Machine Learning for All
+upravleniya-proektami-agile-scrum,4.7272727272727275,132,Agile и Scrum в работе над проектами и продуктами
+user-experience-design,4.472292831723436,1967,Introduction to User Experience Design
+uva-darden-agile-team-management,4.700704225352113,568,Managing an Agile Team
+uva-darden-agile-testing,4.579470198675497,302,Hypothesis-Driven Development
+uva-darden-bcg-pricing-strategy-cost-economics,4.823943661971831,284,Cost and Economics in Pricing Strategy
+uva-darden-continous-delivery-devops,4.548523206751055,711,Continuous Delivery & DevOps
+uva-darden-design-thinking-innovation,4.677365799667958,5421,Design Thinking for Innovation
+uva-darden-design-thinking-social-sector,4.583333333333333,252,Design Thinking for the Greater Good: Innovation in the Social Sector
+uva-darden-digital-product-management,4.7115659209900045,2101,Digital Product Management: Modern Fundamentals
+uva-darden-financial-accounting,4.841791044776119,1005,Financial Accounting Fundamentals
+uva-darden-foundations-business-strategy,4.816616766467066,1336,Foundations of Business Strategy
+uva-darden-getting-started-agile,4.789983844911147,1857,Agile Meets Design Thinking
+uva-darden-managerial-accounting,4.87012987012987,231,Managerial Accounting Fundamentals
+uva-darden-market-analytics,4.650664697193501,4062,Marketing Analytics
+uva-darden-project-management,4.771139705882353,3264,Fundamentals of Project Planning and Management
+ux-design-fundamentals,4.791376912378303,719,UX Design Fundamentals
+ux-ui-design-de-interface,4.341269841269841,378,UX / UI: Fundamentos para o design de interface
+verb-passives,4.734756097560975,984,Verb Tenses and Passives
+version-control-with-git,4.741648106904232,1347,Version Control with Git
+visual-elements-user-interface-design,4.594099694811801,1966,Visual Elements of User Interface Design
+vital-signs,4.825754164790635,2221,Vital Signs: Understanding What the Body Is Telling Us
+vlsi-cad-logic,4.720338983050848,118,VLSI CAD Part I: Logic
+web-development,4.6602634467618005,1822,Introduction to Web Development
+weight-management-beyond-balancing-calories,4.7784810126582276,474,Weight Management: Beyond Balancing Calories
+wharton-accounting,4.776857490864799,4105,Introduction to Financial Accounting
+wharton-communication-skills,4.686046511627907,1032,Improving Communication Skills
+wharton-contagious-viral-marketing,4.75952582557155,3543,Viral Marketing and How to Craft Contagious Content
+wharton-cryptocurrency-blockchain-introduction-digital-currency,4.5,354,Cryptocurrency and Blockchain: An Introduction to Digital Currencies
+wharton-customer-analytics,4.447023208879919,5946,Customer Analytics
+wharton-entrepreneurship-opportunity,4.801242236024844,1932,Entrepreneurship 1: Developing the Opportunity
+wharton-finance,4.443579766536965,2313,Introduction to Corporate Finance
+wharton-financial-accounting,4.932584269662922,267,More Introduction to Financial Accounting
+wharton-fintech-overview-payments-regulations,4.583126550868486,806,"FinTech: Foundations, Payments, and Regulations"
+wharton-introduction-spreadsheets-models,3.6344086021505375,1674,Introduction to Spreadsheets and Models
+wharton-launching-startup,4.752475247524752,606,Entrepreneurship 2: Launching your Start-Up
+wharton-marketing,4.731428571428571,5250,Introduction to Marketing
+wharton-operations,4.275462962962963,1296,Introduction to Operations Management
+wharton-operations-analytics,4.6824324324324325,2368,Operations Analytics
+wharton-people-analytics,4.523022432113341,2541,People Analytics
+wharton-quantitative-modeling,4.565217391304348,3588,Fundamentals of Quantitative Modeling
+wharton-success,4.929203539823009,678,Success
+what-is-a-proof,4.2722063037249285,1047,Mathematical Thinking in Computer Science
+what-is-compliance,4.798319327731092,357,What is Compliance?
+what-is-datascience,4.632664674918196,21087,What is Data Science?
+what-is-social,4.596221959858323,2541,What is Social?
+wind-energy,4.719063545150502,3588,Wind Energy
+wine,4.277777777777778,198,Wine Tasting: Sensory Techniques for Wine Analysis
+womens-health-human-rights,4.894230769230769,624,International Women's Health and Human Rights
+write-a-feature-length-screenplay-for-film-or-television,4.666666666666667,90,Write A Feature Length Screenplay For Film Or Television
+write-your-first-novel,3.9423076923076925,52,Write Your First Novel
+writing-editing-words,4.776699029126213,309,Writing and Editing: Word Choice and Word Order
+writing-for-business,4.8117797695262485,2343,Business Writing
