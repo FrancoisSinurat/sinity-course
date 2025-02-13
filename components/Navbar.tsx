@@ -1,20 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-800 shadow-md z-50">
+    <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+      isScrolled ? "bg-red-200 shadow-lg text-slate-600" : "bg-gray-50  text-black "
+    }`}>
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl font-bold text-white hover:text-indigo-400 transition-colors"
+          className="text-2xl font-bold shadow-sm transition-colors"
         >
           SinityCourse
         </Link>
@@ -25,7 +37,7 @@ export default function Navbar() {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="text-gray-300 hover:text-indigo-400 transition-colors"
+              className=" hover:text-indigo-700 transition-colors"
             >
               {item}
             </Link>
@@ -35,13 +47,13 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-4">
           <Link
             href="/login"
-            className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
+            className="px-4 py-2 rounded-lg hover:bg-gray-400 transition"
           >
             Login
           </Link>
           <Link
             href="/register"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500"
           >
             Register
           </Link>

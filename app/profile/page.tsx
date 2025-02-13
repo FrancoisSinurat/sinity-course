@@ -1,13 +1,9 @@
-import UserProfilePreference from "@/components/UserPref";
-import { ProfileCard } from "@/components/UserProfile";
+import UserProfile from "@/components/users/UserProfile";
 
-export default function Profile(){
-  return(
-    <section  className="container mx-auto p-6 flex flex-col items-center justify-center w-full min-h-screen">
-    <div className="w-full flex items-center justify-center py-20">
-      {/* <ProfileCard/> */}
-      <UserProfilePreference/>
+export default function ProfilePage() {
+  return (
+    <div className="container mx-auto max-w-4xl py-10">
+      <UserProfile />
     </div>
-    </section>
   );
 }

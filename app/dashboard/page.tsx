@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CourseCard } from "@/components/CourseCard";
+import { Button } from "@/components/ui/button";
 import clsx from "clsx"; // Pastikan sudah diinstall: npm install clsx
 import Link from "next/link";
-import { FooterWithSitemap } from "@/components/Footer";
+import { Briefcase } from "lucide-react"; 
 
 interface Course {
   id: number;
@@ -33,7 +35,7 @@ function FilterButton({ level, active, onClick }: { level: string; active: boole
       onClick={onClick}
       className={clsx(
         "px-4 py-2 text-sm rounded-full transition-all",
-        active ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+        active ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800 hover:bg-slate-600"
       )}
     >
       {level}
@@ -91,10 +93,24 @@ export default function DashboardPage() {
 
   return (
     <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
-      <h1 className="text-2xl font-bold mb-2">Find Your Way!</h1>
-      <button className="px-4 py-2 mb-4 bg-red-200 rounded-lg w-20">
-        <Link href="/profile">Button</Link>
-      </button>
+      <div className="mb-4">
+      <Card className="w-full max-w-sm p-4 shadow-md">
+      <CardHeader className="flex flex-row items-center gap-3">
+        <Briefcase className="w-8 h-8 text-red-600" />
+        <CardTitle>Skill Assessment</CardTitle>
+      </CardHeader>
+      <CardContent>
+      <p className="text-gray-600">
+          Complete your profile based on your expertise to receive more relevant course recommendations.
+        </p>
+        <div className="mt-4">
+          <Button asChild className="w-full bg-red-600 text-white hover:bg-red-700">
+            <Link href="/user-pref">Update Your Profile</Link>
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+      </div>
       <div className="mb-4 flex flex-wrap gap-2">
         <FilterButton level="All" active={selectedLevel === "All"} onClick={() => setSelectedLevel("All")} />
         {difficultyOrder.map((level) => (

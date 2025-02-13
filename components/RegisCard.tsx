@@ -1,21 +1,21 @@
 "use client"; // Pastikan ini berada di baris pertama
 
 import { useState, FormEvent } from "react";
-import { Card, Input, Checkbox, Button, Typography } from "@material-tailwind/react";
+import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
 export function SimpleRegistrationForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [agree, setAgree] = useState(false);
+
   const [error, setError] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!name || !email || !password || !agree) {
-      setError("Semua kolom harus diisi dan menyetujui syarat & ketentuan.");
+    if (!name || !email || !password ) {
+      setError("Semua kolom harus diisi");
       return;
     }
 
@@ -33,7 +33,7 @@ export function SimpleRegistrationForm() {
         <div className="mb-1 flex flex-col gap-4">
           {/* Name Input */}
           <Typography variant="h6" color="blue-gray" className="-mb-3 flex items-center">
-            Your Name <span className="text-red-500 ml-1">*</span>
+            Name <span className="text-red-500 ml-1">*</span>
           </Typography>
           <Input
             size="lg"
@@ -46,7 +46,7 @@ export function SimpleRegistrationForm() {
 
           {/* Email Input */}
           <Typography variant="h6" color="blue-gray" className="-mb-3 flex items-center">
-            Your Email <span className="text-red-500 ml-1">*</span>
+            Email <span className="text-red-500 ml-1">*</span>
           </Typography>
           <Input
             size="lg"
@@ -73,7 +73,7 @@ export function SimpleRegistrationForm() {
         </div>
 
         {/* Checkbox for Terms & Conditions */}
-        <Checkbox
+        {/* <Checkbox
           className="m-2 p-2"
           checked={agree}
           onChange={(e) => setAgree(e.target.checked)}
@@ -90,14 +90,14 @@ export function SimpleRegistrationForm() {
             ),
           }}
           containerProps={{ className: "-ml-2.5" }}
-        />
+        /> */}
 
         {/* Error Message */}
         {error && <Typography color="red" className="mt-2 text-sm">{error}</Typography>}
 
         {/* Submit Button */}
-        <Button className="mt-6 bg-sky-500 p-2 " type="submit">
-          Daftar
+        <Button className="mt-6 w-full bg-sky-500 py-2 " type="submit">
+          Sign Up
         </Button>
 
         {/* Redirect to Sign In */}
