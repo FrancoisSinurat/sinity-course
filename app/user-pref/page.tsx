@@ -1,4 +1,4 @@
-import UserProfilePreference from "@/components/UserPref";
+import UserProfilePreference from "@/components/users/UserPreference/UserPref";
 import { ProfileCard } from "@/components/UserProfile";
 
 export default function Profile(){

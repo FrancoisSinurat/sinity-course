@@ -1,96 +1,89 @@
 "use client";
 
 import { useState } from "react";
-import { Typography, Input, Button } from "@material-tailwind/react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
-export function Login() {
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
-  const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
+  const [isTypingPassword, setIsTypingPassword] = useState(false);
+
+  const togglePasswordVisibility = () => setPasswordShown((prev) => !prev);
 
   return (
-      <div className="w-full flex flex-col justify-center text-center">
-        <Typography variant="h3" color="blue-gray" className="mb-2 text-2xl">
-          Login
-        </Typography>
-        <form action="#" className="mx-auto max-w-[24rem] text-left w-full">
-          <div className="mb-6">
-            <label htmlFor="email">
-              <Typography variant="small" className="mb-2 block font-medium text-gray-900">
-                Your Email
-              </Typography>
-            </label>
-            <Input
-              id="email"
-              color="gray"
-              size="lg"
-              type="email"
-              name="email"
-              placeholder="name@gmail.com"
-              className="w-full p-2 placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-          </div>
-          <div className="mb-6">
-            <label htmlFor="password">
-              <Typography variant="small" className="mb-2 block font-medium text-gray-900">
-                Password
-              </Typography>
-            </label>
-            <div className="relative">
+    <div className="flex justify-center w-full items-center h-screen">
+      <Card className="w-full max-w-sm shadow-md p-6">
+        <CardHeader>
+          <CardTitle className="text-xl font-semibold">Login</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm mb-2 font-medium text-gray-700">
+                Email
+              </label>
               <Input
-                id="password"
-                size="lg"
-                placeholder="********"
-                labelProps={{
-                  className: "hidden",
-                }}
-                className="w-full p-2 placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
-                type={passwordShown ? "text" : "password"}
+                id="email"
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button
-                type="button"
-                className="absolute right-4 top-1/2 transform -translate-y-1/2"
-                onClick={togglePasswordVisiblity}
-              >
-                {passwordShown ? (
-                  <EyeIcon className="h-5 w-5 text-gray-600" />
-                ) : (
-                  <EyeSlashIcon className="h-5 w-5 text-gray-600" />
-                )}
-              </button>
             </div>
-          </div>
-          {/* <div> */}
-          <button className="bg-sky-400 p-2 rounded-lg w-full items-center ">
-            Sign In
-          </button>
-          {/* </div> */}
-          <div className="!mt-4 flex justify-end">
-            <Typography as="a" href="#" color="blue-gray" variant="small" className="font-medium text-blue-500 hover:text-blue-300">
+
+            <div className="mb-4">
+              <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={passwordShown ? "text" : "password"}
+                  placeholder="********"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setIsTypingPassword(e.target.value.length > 0);
+                  }}
+                />
+                {isTypingPassword && (
+                  <button
+                    type="button"
+                    className="absolute right-3 top-2/3 transform -translate-y-1/2 text-gray-600"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {passwordShown ? (
+                      <EyeIcon className="h-5 w-5" />
+                    ) : (
+                      <EyeSlashIcon className="h-5 w-5" />
+                    )}
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <Button className="w-full bg-blue-500 hover:bg-blue-600">Sign In</Button>
+          </form>
+
+          <div className="mt-4 text-right">
+            <Link href="#" className="text-blue-500 hover:text-blue-400 text-sm">
               Forgot password?
-            </Typography>
+            </Link>
           </div>
-          <Button variant="outlined" size="lg" className="mt-6 flex h-12 items-center justify-center gap-2" fullWidth>
-            <img
-              src="https://www.material-tailwind.com/logos/logo-google.png"
-              alt="google"
-              className="h-6 w-6"
-            />
-            Sign in with Google
-          </Button>
-          <Typography variant="small" color="gray" className="!mt-4 text-center font-normal">
+
+          <p className="mt-4 text-center text-sm text-gray-600">
             Not registered?{" "}
-            <Link href="/register" className="font-medium text-blue-500 hover:text-blue-300">
+            <Link href="/register" className="text-blue-500 hover:text-blue-400 font-medium">
               Create account
             </Link>
-          </Typography>
-        </form>
-      </div>
+          </p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
-
-export default Login;

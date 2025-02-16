@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-      isScrolled ? "bg-red-200 shadow-lg text-slate-600" : "bg-gray-50  text-black "
+      isScrolled ? "bg-gray-50 shadow-lg text-slate-600" : "bg-gray-50  text-black "
     }`}>
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}

@@ -1,10 +1,9 @@
-import { SimpleRegistrationForm } from "@/components/RegisCard";
-
+import RegisCard from "@/components/RegisCard";
 export default function regisPage() {
   return (
   
-      <main className=" flex flex-col items-center justify-center w-full h-screen">
-      <SimpleRegistrationForm />
+      <main className=" flex flex-col items-center justify-center w-full min-h-screen">
+      <RegisCard />
       </main>
   );
 }

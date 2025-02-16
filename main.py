@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load CSV reviews dan courses
-df_reviews = pd.read_csv("Coursera_reviews.csv")  # File review
+# df_reviews = pd.read_csv("Coursera_reviews.csv")  # File review
 df_courses = pd.read_csv("Coursera_courses.csv")  # File course
 
 

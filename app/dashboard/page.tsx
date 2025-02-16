@@ -6,7 +6,7 @@ import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx"; // Pastikan sudah diinstall: npm install clsx
 import Link from "next/link";
-import { Briefcase } from "lucide-react"; 
+import { Briefcase } from "lucide-react";
 
 interface Course {
   id: number;
@@ -14,21 +14,11 @@ interface Course {
   rating: number;
   num_enrolled_students: number;
   difficulty_level: string;
+  progress?: number;
 }
 
-// Urutan level kesulitan dari dasar hingga professional
-const difficultyOrder = [
-  "Dasar",
-  "Pemula",
-  "Dasar-Pemula",
-  "Pemula-Menengah",
-  "Menengah",
-  "Mahir",
-  "Mahir-Profesional",
-  "Profesional",
-];
+const difficultyOrder = ["Beginner", "Intermediate", "Mixed", "Advanced"];
 
-// Komponen Button untuk Filter
 function FilterButton({ level, active, onClick }: { level: string; active: boolean; onClick: () => void }) {
   return (
     <button
@@ -60,17 +50,22 @@ export default function DashboardPage() {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const data = await response.json();
+        const data: Omit<Course, "id">[] = await response.json();
 
-        // Tambahkan ID otomatis dan urutkan berdasarkan level kesulitan
-        const coursesWithId = data
-          .map((course: Omit<Course, "id">, index: number) => ({
-            ...course,
-            id: index + 1,
-          }))
-          .sort((a: Course, b: Course) => 
-            difficultyOrder.indexOf(a.difficulty_level) - difficultyOrder.indexOf(b.difficulty_level)
-          );
+        // Perbaikan: Pastikan ID ada
+        const coursesWithId: Course[] = data.map((course, index) => ({
+          id: (course as any).id ?? index + 1, // Jika API tidak mengembalikan `id`, gunakan `index + 1`
+          title: course.title,
+          rating: course.rating,
+          num_enrolled_students: course.num_enrolled_students,
+          difficulty_level: course.difficulty_level,
+          progress: course.progress,
+        }));
+
+        // Urutkan berdasarkan tingkat kesulitan
+        coursesWithId.sort(
+          (a, b) => difficultyOrder.indexOf(a.difficulty_level) - difficultyOrder.indexOf(b.difficulty_level)
+        );
 
         setCourses(coursesWithId);
       } catch (err) {
@@ -84,7 +79,6 @@ export default function DashboardPage() {
     fetchCourses();
   }, []);
 
-  // Menggunakan useMemo agar filtering lebih efisien
   const filteredCourses = useMemo(() => {
     return selectedLevel === "All"
       ? courses
@@ -94,23 +88,24 @@ export default function DashboardPage() {
   return (
     <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
       <div className="mb-4">
-      <Card className="w-full max-w-sm p-4 shadow-md">
-      <CardHeader className="flex flex-row items-center gap-3">
-        <Briefcase className="w-8 h-8 text-red-600" />
-        <CardTitle>Skill Assessment</CardTitle>
-      </CardHeader>
-      <CardContent>
-      <p className="text-gray-600">
-          Complete your profile based on your expertise to receive more relevant course recommendations.
-        </p>
-        <div className="mt-4">
-          <Button asChild className="w-full bg-red-600 text-white hover:bg-red-700">
-            <Link href="/user-pref">Update Your Profile</Link>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+        <Card className="w-full max-w-sm p-4 shadow-md">
+          <CardHeader className="flex flex-row items-center gap-3">
+            <Briefcase className="w-8 h-8 text-red-600" />
+            <CardTitle>Skill Assessment</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">
+              Complete your profile based on your expertise to receive more relevant course recommendations.
+            </p>
+            <div className="mt-4">
+              <Button asChild className="w-full bg-red-600 text-white hover:bg-red-700">
+                <Link href="/user-pref">Update Your Profile</Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
+
       <div className="mb-4 flex flex-wrap gap-2">
         <FilterButton level="All" active={selectedLevel === "All"} onClick={() => setSelectedLevel("All")} />
         {difficultyOrder.map((level) => (
@@ -118,21 +113,23 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Status & Error Handling */}
       {loading && <p className="text-gray-500">Loading kursus...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Daftar Kursus */}
       {!loading && !error && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {filteredCourses.length > 0 ? (
-            filteredCourses.map((course) => <CourseCard key={course.id} course={course} />)
+            filteredCourses.map((course) => (
+              <Link key={course.id} href={`/course/${course.id}`} passHref>
+                {/* Perbaikan: Tambahkan `isTaken` agar tidak error */}
+                <CourseCard course={course} isTaken={false} />
+              </Link>
+            ))
           ) : (
             <p className="text-gray-500">Tidak ada kursus yang tersedia untuk level ini.</p>
           )}
         </div>
       )}
     </div>
-
   );
 }

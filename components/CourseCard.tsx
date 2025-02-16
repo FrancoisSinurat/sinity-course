@@ -13,8 +13,7 @@ export function CourseList({
 }) {
   const [selectedLevel, setSelectedLevel] = useState("All");
 
-  const difficultyLevels = ["All", "Dasar", "Pemula", "Dasar-Pemula", "Pemula-Menengah", "Menengah", "Mahir", "Mahir-Profesional", "Profesional"];
-
+  const difficultyLevels = ["All", "Beginner", "Intermediate","Mixed", "Advanced"]
   const filteredCourses =
     selectedLevel === "All" ? courses : courses.filter(course => course.difficulty_level === selectedLevel);
 
@@ -62,14 +61,10 @@ export function CourseCard({
   };
 
   const difficultyColors: { [key: string]: string } = {
-    "Dasar": "bg-green-300",
-    "Dasar-Pemula": "bg-green-500",
-    "Pemula": "bg-green-800",
-    "Pemula-Menengah": "bg-blue-400",
-    "Menengah": "bg-blue-800",
-    "Mahir": "bg-red-500",
-    "Mahir-Profesional": "bg-red-700",
-    "Profesional": "bg-red-800",
+    "Beginner": "bg-green-300",
+    "Intermediate": "bg-green-800",
+    "Mixed": "bg-blue-800",
+    "Advanced": "bg-red-500",
   };
 
   return (
@@ -79,7 +74,7 @@ export function CourseCard({
       </CardHeader>
       <CardContent>
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm text-gray-600">{formatStudents(course.num_enrolled_students)} Students</span>
+          <span className="text-sm text-gray-600">{formatStudents(course.num_enrolled_students)}k Students</span>
           <Badge className={`${difficultyColors[course.difficulty_level] || "bg-gray-500"} text-white`}>
             {course.difficulty_level}
           </Badge>
