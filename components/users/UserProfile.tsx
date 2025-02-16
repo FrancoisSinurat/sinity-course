@@ -7,7 +7,7 @@ export default function UserProfile() {
     id: "USR123456",
     name: "John Doe",
     email: "john.doe@example.com",
-    avatar: "/avatar.png",
+    avatar: "/copy-profile.png",
     learningPath: "Full-Stack Developer",
     courseHistory: [
       { id: 1, progress: 100 },
