@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
+import { Separator } from "@radix-ui/react-separator";
+
 import Link from "next/link";
 
 export default function Login() {
@@ -16,16 +18,16 @@ export default function Login() {
   const togglePasswordVisibility = () => setPasswordShown((prev) => !prev);
 
   return (
-    <div className="flex justify-center w-full items-center h-screen">
-      <Card className="w-full max-w-sm shadow-md p-6">
+    <div className="font-graphik flex justify-center w-full items-center">
+      <Card className="w-full max-w-sm shadow-md p-2">
         <CardHeader>
           <CardTitle className="text-xl font-semibold">Login</CardTitle>
         </CardHeader>
         <CardContent>
           <form>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm mb-2 font-medium text-gray-700">
-                Email
+              <label htmlFor="email" className="block text-sm mb-2 font-bold text-gray-700">
+                Email <span className="text-red-500">*</span>
               </label>
               <Input
                 id="email"
@@ -37,8 +39,8 @@ export default function Login() {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-700">
-                Password
+              <label htmlFor="password" className="block mb-2 text-sm font-bold text-gray-700">
+                Password <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <Input
@@ -70,16 +72,18 @@ export default function Login() {
             <Button className="w-full bg-blue-500 hover:bg-blue-600">Sign In</Button>
           </form>
 
+          <Separator className="my-6" />
+
           <div className="mt-4 text-right">
-            <Link href="#" className="text-blue-500 hover:text-blue-400 text-sm">
+            <Link href="/forgot-pass" className="text-blue-500 hover:text-blue-400 text-sm">
               Forgot password?
             </Link>
           </div>
 
-          <p className="mt-4 text-center text-sm text-gray-600">
+          <p className="mt-4 text-center text-sm text-gray-600 border-t pt-2">
             Not registered?{" "}
             <Link href="/register" className="text-blue-500 hover:text-blue-400 font-medium">
-              Create account
+              Sign Up
             </Link>
           </p>
         </CardContent>

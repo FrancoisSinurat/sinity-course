@@ -1,5 +1,6 @@
 "use client";
 
+import { GraduationCap } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -19,17 +20,23 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-      isScrolled ? "bg-gray-50 shadow-lg text-slate-600" : "bg-gray-50  text-black "
+    <nav className={`font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${
+      isScrolled ? "bg-neutral-200 shadow-lg text-zinc-700" : "bg-[#E2CEB1]  text-black "
     }`}>
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link
+
+      <Link href="/" className="flex items-center space-x-2">
+        <GraduationCap size={45} className="text-black" />
+        <span className="text-xl font-bold font-graphik">SinityCourse</span>
+      </Link>
+        
+        {/* <Link
           href="/"
-          className="text-2xl font-bold shadow-sm transition-colors"
+          className="text-2xl font-bold  transition-colors"
         >
           SinityCourse
-        </Link>
+        </Link> */}
 
         {/* Menu Navigasi untuk Desktop */}
         <div className="hidden md:flex flex-1 justify-center space-x-6">
@@ -37,7 +44,7 @@ export default function Navbar() {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className=" hover:text-indigo-700 transition-colors"
+              className=" hover:text-stone-500 transition-colors"
             >
               {item}
             </Link>
@@ -47,20 +54,20 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-4">
           <Link
             href="/login"
-            className="px-4 py-2 rounded-lg hover:bg-gray-400 transition"
+            className="px-4 py-2 rounded-lg hover:bg-stone-400 transition"
           >
             Login
           </Link>
           <Link
             href="/register"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500"
+            className="px-4 py-2  bg-stone-700 text-white rounded-lg hover:bg-stone-600"
           >
             Register
           </Link>
         </div>
 
         {/* Tombol Menu Hamburger */}
-        <button className="text-white md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className=" md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
       </div>
@@ -73,7 +80,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="md:hidden bg-gray-800"
+            className="md:hidden"
           >
             <ul className="flex flex-col space-y-4 px-6 py-4">
               {['Dashboard', 'Profile'].map((item) => (
@@ -81,18 +88,18 @@ export default function Navbar() {
                   <Link
                     href={`/${item.toLowerCase()}`}
                     onClick={() => setIsOpen(false)}
-                    className="block text-gray-300 hover:text-indigo-400 transition-colors"
+                    className="block hover:text-stone-600 px-4 py-2 transition-colors"
                   >
                     {item}
                   </Link>
                 </li>
               ))}
-              <div className="border-t border-gray-700 mt-2 pt-2"></div>
+              <div className=" border-gray-700 mt-2 pt-2"></div>
               <li>
                 <Link
                   href="/login"
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2  text-white bg-gray-800 text-center rounded-lg hover:bg-gray-700 transition"
+                  className="block px-4 py-2  text-center rounded-lg hover:bg-gray-50 transition"
                 >
                   Login
                 </Link>
@@ -101,7 +108,7 @@ export default function Navbar() {
                 <Link
                   href="/register"
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 bg-green-600 text-white text-center rounded-lg hover:bg-green-700 transition"
+                  className="block px-4 py-2 bg-stone-700 text-white text-center rounded-lg hover:bg-stone-600 transition"
                 >
                   Register
                 </Link>

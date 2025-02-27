@@ -77,8 +77,8 @@ export default function RegisCard() {
   };
 
   return (
-    <div className="flex justify-center items-center w-full mt-16 h-screen">
-      <Card className="w-full max-w-md shadow-md p-6">
+    <div className="font-graphik flex justify-center items-center w-full mt-16 h-full">
+      <Card className="w-full max-w-sm shadow-md p-2">
         <CardHeader>
           <CardTitle className="text-xl font-semibold">Sign Up</CardTitle>
         </CardHeader>

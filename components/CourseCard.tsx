@@ -73,12 +73,14 @@ export function CourseCard({
         <CardTitle>{course.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="flex justify-between items-center mb-2">
+        {/* Num enrolled students (Banyaknya user yg mengikuti course)*/}
+        <div className="flex justify-between items-center">
           <span className="text-sm text-gray-600">{formatStudents(course.num_enrolled_students)}k Students</span>
           <Badge className={`${difficultyColors[course.difficulty_level] || "bg-gray-500"} text-white`}>
             {course.difficulty_level}
           </Badge>
         </div>
+        {/* Rating course */}
         <div className="flex items-center gap-2">
           <span className="text-yellow-500 text-lg">⭐ {course.rating}</span>
         </div>

@@ -69,7 +69,7 @@ export default function DashboardPage() {
 
         setCourses(coursesWithId);
       } catch (err) {
-        setError("Gagal memuat kursus. Silakan coba lagi.");
+        setError("Failed to load course. Please try again.");
         console.error("Error fetching courses:", err);
       } finally {
         setLoading(false);
@@ -88,10 +88,10 @@ export default function DashboardPage() {
   return (
     <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
       <div className="mb-4">
-        <Card className="w-full max-w-sm p-4 shadow-md">
-          <CardHeader className="flex flex-row items-center gap-3">
-            <Briefcase className="w-8 h-8 text-red-600" />
-            <CardTitle>Skill Assessment</CardTitle>
+        <Card className="w-full max-w-sm p-2 shadow-lg ">
+          <CardHeader className="flex flex-row items-stretch gap-3 ">
+            <Briefcase className="w-6 h-8 text-red-600" />
+            <CardTitle className="text-center">User Preference</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-600">
@@ -99,7 +99,7 @@ export default function DashboardPage() {
             </p>
             <div className="mt-4">
               <Button asChild className="w-full bg-red-600 text-white hover:bg-red-700">
-                <Link href="/user-pref">Update Your Profile</Link>
+                <Link href="/user-pref">Take Your Journey</Link>
               </Button>
             </div>
           </CardContent>
