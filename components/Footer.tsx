@@ -2,7 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 
-const currentYear = new Date().getFullYear();
+// const currentYear = new Date().getFullYear();
 
 export function Footer() {
   return (
@@ -53,7 +53,9 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            &copy; {currentYear} SinityCourse. All rights reserved.
+            &copy; 
+            {/* {currentYear} */}
+             2025 Created by Francois Novalentino Sinurat. All rights reserved.
           </p>
          
         </div>

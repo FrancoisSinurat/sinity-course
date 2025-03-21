@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,13 +11,54 @@ import { Separator } from "@radix-ui/react-separator";
 import Link from "next/link";
 
 export default function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [isTypingPassword, setIsTypingPassword] = useState(false);
 
   const togglePasswordVisibility = () => setPasswordShown((prev) => !prev);
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
+  const validateForm = () => {
+    let valid = true;
+    let newErrors = {  email: "", password: "" };
 
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required.";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Invalid email format.";
+      valid = false;
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required.";
+      valid = false;
+    } else if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters.";
+      valid = false;
+    }
+
+
+    setErrors(newErrors);
+    return valid;
+  };
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (!validateForm()) return;
+  
+      setSuccessMessage("Login successful! Redirecting to Dashboard...");
+      
+      // Redirect to login page after 2 seconds
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 2000);
+    };
   return (
     <div className="font-graphik flex justify-center w-full items-center">
       <Card className="w-full max-w-sm shadow-md p-2">
@@ -24,7 +66,7 @@ export default function Login() {
           <CardTitle className="text-xl font-semibold">Login</CardTitle>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm mb-2 font-bold text-gray-700">
                 Email <span className="text-red-500">*</span>
@@ -71,7 +113,7 @@ export default function Login() {
 
             <Button className="w-full bg-blue-500 hover:bg-blue-600">Sign In</Button>
           </form>
-
+          {successMessage && <p className="text-green-500 text-sm mb-4">{successMessage}</p>}
           <Separator className="my-6" />
 
           <div className="mt-4 text-right">
@@ -81,9 +123,9 @@ export default function Login() {
           </div>
 
           <p className="mt-4 text-center text-sm text-gray-600 border-t pt-2">
-            Not registered?{" "}
+            Akun belum terdaftar?{" "}
             <Link href="/register" className="text-blue-500 hover:text-blue-400 font-medium">
-              Sign Up
+              Register
             </Link>
           </p>
         </CardContent>

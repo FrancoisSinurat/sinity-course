@@ -15,7 +15,7 @@ const steps = [
     "Beginner", "Intermediate", "Advanced"
   ]},
   { key: "goal", question: "What is your main goal?", options: [
-    "Career switch", "Skill improvement", "Hobby learning"
+    "Career switch", "Skill improvement", "Hobby"
   ]}
 ];
 

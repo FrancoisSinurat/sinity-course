@@ -1,5 +1,5 @@
 import UserProfilePreference from "@/components/users/UserPreference/UserPref";
-import { ProfileCard } from "@/components/UserProfile";
+// import { ProfileCard } from "@/components/users/UserProfile";
 
 export default function Profile(){
   return(

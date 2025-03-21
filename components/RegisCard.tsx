@@ -80,7 +80,7 @@ export default function RegisCard() {
     <div className="font-graphik flex justify-center items-center w-full mt-16 h-full">
       <Card className="w-full max-w-sm shadow-md p-2">
         <CardHeader>
-          <CardTitle className="text-xl font-semibold">Sign Up</CardTitle>
+          <CardTitle className="text-xl font-semibold">Register</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
@@ -167,13 +167,13 @@ export default function RegisCard() {
 
             {/* Submit Button */}
             <Button className="w-full bg-blue-500 hover:bg-blue-600" type="submit">
-              Sign Up
+              Submit
             </Button>
           </form>
 
           {/* Redirect to Sign In */}
           <p className="mt-4 text-center text-sm text-gray-600">
-            Already have an account?{" "}
+            Sudah mempunyai akun? {" "}
             <Link href="/login" className="text-blue-500 hover:text-blue-400 font-medium">
               Login
             </Link>

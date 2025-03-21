@@ -1,4 +1,4 @@
-import { CourseCard } from "@/components/CourseCard";
+import { CourseCard } from "@/components/RecommendedCoursesList";
 
 export default function CourseHistory({ history }: { history: any[] }) {
   return (

@@ -1,135 +1,131 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CourseCard } from "@/components/CourseCard";
+import CourseList from "@/components/CourseList"; 
+import RecommendedCoursesList from "@/components/RecommendedCoursesList"; 
 import { Button } from "@/components/ui/button";
-import clsx from "clsx"; // Pastikan sudah diinstall: npm install clsx
+import clsx from "clsx";
 import Link from "next/link";
-import { Briefcase } from "lucide-react";
-
-interface Course {
-  id: number;
-  title: string;
-  rating: number;
-  num_enrolled_students: number;
-  difficulty_level: string;
-  progress?: number;
-}
-
-const difficultyOrder = ["Beginner", "Intermediate", "Mixed", "Advanced"];
-
-function FilterButton({ level, active, onClick }: { level: string; active: boolean; onClick: () => void }) {
-  return (
-    <button
-      onClick={onClick}
-      className={clsx(
-        "px-4 py-2 text-sm rounded-full transition-all",
-        active ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800 hover:bg-slate-600"
-      )}
-    >
-      {level}
-    </button>
-  );
-}
+import { Briefcase, Search } from "lucide-react";
 
 export default function DashboardPage() {
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [selectedLevel, setSelectedLevel] = useState<string>("All");
+    const [query, setQuery] = useState("");
+    const [recommendations, setRecommendations] = useState<{ course_id: string; name: string; similarity: number }[]>([]);
+    const [courses, setCourses] = useState<{ course_id: string; name: string }[]>([]);
+    const [loadingCourses, setLoadingCourses] = useState(true);
+    const [loadingRecommendations, setLoadingRecommendations] = useState(false);
+    const [error, setError] = useState("");
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+    // Fetch semua kursus saat pertama kali dimuat
+    useEffect(() => {
+        const fetchCourses = async () => {
+            setLoadingCourses(true);
+            try {
+                const res = await fetch("http://localhost:8000/courses");
+                if (!res.ok) throw new Error(`Gagal mengambil data kursus: ${res.statusText}`);
+                const data = await res.json();
+                setCourses(data.courses || []);
+            } catch (err) {
+                console.error("Error fetching courses:", err);
+                setError("Gagal mengambil daftar kursus.");
+            } finally {
+                setLoadingCourses(false);
+            }
+        };
 
-        const response = await fetch("/api/courses");
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+        fetchCourses();
+    }, []);
+
+    // Fetch rekomendasi berdasarkan input pengguna
+    const fetchRecommendations = useCallback(async () => {
+        if (!query.trim()) {
+            setError("Masukkan nama kursus terlebih dahulu.");
+            return;
         }
 
-        const data: Omit<Course, "id">[] = await response.json();
+        setLoadingRecommendations(true);
+        setError("");
+        setRecommendations([]); // Hapus rekomendasi lama sebelum fetch baru
 
-        // Perbaikan: Pastikan ID ada
-        const coursesWithId: Course[] = data.map((course, index) => ({
-          id: (course as any).id ?? index + 1, // Jika API tidak mengembalikan `id`, gunakan `index + 1`
-          title: course.title,
-          rating: course.rating,
-          num_enrolled_students: course.num_enrolled_students,
-          difficulty_level: course.difficulty_level,
-          progress: course.progress,
-        }));
+        try {
+            const res = await fetch(`http://localhost:8000/dashboard?course_name=${encodeURIComponent(query)}`);
+            if (!res.ok) throw new Error(`Gagal mengambil rekomendasi: ${res.statusText}`);
+            const data = await res.json();
+            setRecommendations(data.recommendations || []);
+        } catch (err) {
+            console.error("Error fetching recommendations:", err);
+            setError("Terjadi kesalahan saat mengambil data rekomendasi.");
+        } finally {
+            setLoadingRecommendations(false);
+        }
+    }, [query]);
 
-        // Urutkan berdasarkan tingkat kesulitan
-        coursesWithId.sort(
-          (a, b) => difficultyOrder.indexOf(a.difficulty_level) - difficultyOrder.indexOf(b.difficulty_level)
-        );
-
-        setCourses(coursesWithId);
-      } catch (err) {
-        setError("Failed to load course. Please try again.");
-        console.error("Error fetching courses:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCourses();
-  }, []);
-
-  const filteredCourses = useMemo(() => {
-    return selectedLevel === "All"
-      ? courses
-      : courses.filter((course) => course.difficulty_level === selectedLevel);
-  }, [selectedLevel, courses]);
-
-  return (
-    <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
-      <div className="mb-4">
-        <Card className="w-full max-w-sm p-2 shadow-lg ">
-          <CardHeader className="flex flex-row items-stretch gap-3 ">
-            <Briefcase className="w-6 h-8 text-red-600" />
-            <CardTitle className="text-center">User Preference</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600">
-              Complete your profile based on your expertise to receive more relevant course recommendations.
-            </p>
-            <div className="mt-4">
-              <Button asChild className="w-full bg-red-600 text-white hover:bg-red-700">
-                <Link href="/user-pref">Take Your Journey</Link>
-              </Button>
+    return (
+        <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
+            {/* User Preference Card */}
+            <div className="mb-4">
+                <Card className="w-full max-w-sm p-2 shadow-lg">
+                    <CardHeader className="flex flex-row items-stretch gap-3">
+                        <Briefcase className="w-6 h-8 text-red-600" />
+                        <CardTitle className="text-center">User Preference</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-gray-600">
+                            Lengkapi profil berdasarkan keahlian Anda untuk mendapatkan rekomendasi kursus yang lebih relevan.
+                        </p>
+                        <div className="mt-4">
+                            <Button asChild className="w-full bg-red-600 text-white hover:bg-red-700">
+                                <Link href="/user-pref">Ambil Perjalanan Anda</Link>
+                            </Button>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
-          </CardContent>
-        </Card>
-      </div>
 
-      <div className="mb-4 flex flex-wrap gap-2">
-        <FilterButton level="All" active={selectedLevel === "All"} onClick={() => setSelectedLevel("All")} />
-        {difficultyOrder.map((level) => (
-          <FilterButton key={level} level={level} active={selectedLevel === level} onClick={() => setSelectedLevel(level)} />
-        ))}
-      </div>
+            {/* Pencarian Rekomendasi */}
+            <div className="p-6 border rounded-lg shadow-md bg-white">
+                <h2 className="text-lg font-semibold mb-3"></h2>
+                <div className="flex gap-2">
+                    <input
+                        type="text"
+                        placeholder="Masukkan nama kursus..."
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        className="flex-1 p-2 border rounded-md"
+                    />
+                    <Button
+                        onClick={fetchRecommendations}
+                        className={clsx("px-4 py-2", {
+                            "bg-blue-600 text-white": !loadingRecommendations,
+                            "bg-gray-400": loadingRecommendations,
+                        })}
+                        disabled={loadingRecommendations}
+                    >
+                        {loadingRecommendations ? "Mencari..." : "Cari"}
+                    </Button>
+                </div>
 
-      {loading && <p className="text-gray-500">Loading kursus...</p>}
-      {error && <p className="text-red-500">{error}</p>}
+                {error && <p className="text-red-500 mt-2">{error}</p>}
 
-      {!loading && !error && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {filteredCourses.length > 0 ? (
-            filteredCourses.map((course) => (
-              <Link key={course.id} href={`/course/${course.id}`} passHref>
-                {/* Perbaikan: Tambahkan `isTaken` agar tidak error */}
-                <CourseCard course={course} isTaken={false} />
-              </Link>
-            ))
-          ) : (
-            <p className="text-gray-500">Tidak ada kursus yang tersedia untuk level ini.</p>
-          )}
+                {/* Rekomendasi Kursus */}
+                {recommendations.length > 0 && (
+                    <div className="mt-6">
+                            <RecommendedCoursesList recommendations={recommendations} />
+                    </div>
+                )}
+            </div>
+
+            {/* Daftar Semua Kursus */}
+            <div className="mt-6">
+                <h3 className="text-md font-medium mb-2">📚 Semua Kursus:</h3>
+                {loadingCourses ? (
+                    <p className="text-gray-500">Memuat kursus...</p>
+                ) : (
+                    <CourseList courses={courses} />
+                )}
+            </div>
+
         </div>
-      )}
-    </div>
-  );
+    );
 }
