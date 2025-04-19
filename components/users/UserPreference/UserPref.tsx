@@ -49,7 +49,7 @@ export default function UserPreferenceForm() {
   {!submitted && (
     <div id="Preftittle" className="text-center font-bold text-2xl pt-2">
       <h1>User Preference</h1>
-    </div>
+    </div>  
   )}
 
   {!submitted ? (

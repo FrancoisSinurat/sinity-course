@@ -7,31 +7,28 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import { Separator } from "@radix-ui/react-separator";
-
 import Link from "next/link";
 
 export default function Login() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState('');
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [isTypingPassword, setIsTypingPassword] = useState(false);
-
-  const togglePasswordVisibility = () => setPasswordShown((prev) => !prev);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState({
-    email: "",
+    name: "",
     password: "",
   });
+  const ModelUrl = process.env.NEXT_PUBLIC_API_URL;
+  const togglePasswordVisibility = () => setPasswordShown((prev) => !prev);
+
   const validateForm = () => {
     let valid = true;
-    let newErrors = {  email: "", password: "" };
+    let newErrors = { name: "", password: "" };
 
-
-    if (!email.trim()) {
-      newErrors.email = "Email is required.";
-      valid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Invalid email format.";
+    if (!name.trim()) {
+      newErrors.name = "Username is required.";
       valid = false;
     }
 
@@ -43,22 +40,49 @@ export default function Login() {
       valid = false;
     }
 
-
     setErrors(newErrors);
     return valid;
   };
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (!validateForm()) return;
-  
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    try {
+      const body = new URLSearchParams();
+      body.append("username", name); // form_data.username
+      body.append("password", password); // form_data.password
+
+      const res = await fetch(`${ModelUrl}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name,         // HARUS "name"
+    password,     // HARUS "password"
+  }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.detail || "Login failed");
+      }
+
+      localStorage.setItem("token", data.token);
       setSuccessMessage("Login successful! Redirecting to Dashboard...");
-      
-      // Redirect to login page after 2 seconds
+
       setTimeout(() => {
-        router.push("/dashboard");
+        router.push("dashboard");
       }, 2000);
-    };
+    } catch (err: any) {
+      setSuccessMessage(null);
+      setErrors((prev) => ({
+        ...prev,
+        password: err.message || "Something went wrong",
+      }));
+    }
+  };
+
   return (
     <div className="font-graphik flex justify-center w-full items-center">
       <Card className="w-full max-w-sm shadow-md p-2">
@@ -68,16 +92,17 @@ export default function Login() {
         <CardContent>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm mb-2 font-bold text-gray-700">
-                Email <span className="text-red-500">*</span>
+              <label htmlFor="name" className="block text-sm mb-2 font-bold text-gray-700">
+                Username <span className="text-red-500">*</span>
               </label>
               <Input
-                id="email"
-                type="email"
-                placeholder="Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="name"
+                type="text"
+                placeholder="Your username"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
 
             <div className="mb-4">
@@ -102,18 +127,20 @@ export default function Login() {
                     onClick={togglePasswordVisibility}
                   >
                     {passwordShown ? (
-                      <EyeIcon className="h-5 w-5" />
+                      <EyeIcon className="mb-3 h-5 w-5" />
                     ) : (
-                      <EyeSlashIcon className="h-5 w-5" />
+                      <EyeSlashIcon className="mb-3 h-5 w-5" />
                     )}
                   </button>
                 )}
               </div>
+              {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
             </div>
 
             <Button className="w-full bg-blue-500 hover:bg-blue-600">Sign In</Button>
           </form>
-          {successMessage && <p className="text-green-500 text-sm mb-4">{successMessage}</p>}
+
+          {successMessage && <p className="text-green-500 text-sm mt-4">{successMessage}</p>}
           <Separator className="my-6" />
 
           <div className="mt-4 text-right">

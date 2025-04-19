@@ -3,3 +3,13 @@ node_modules
 out
 public
 dist
+.vscode
+lib
+next*
+postcss*
+tsconfig*
+*.config.js
+*.config.ts
+*.config.mjs
+*.config.cjs
+.gitignore

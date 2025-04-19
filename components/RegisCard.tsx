@@ -26,6 +26,8 @@ export default function RegisCard() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const ModelURL = process.env.NEXT_PUBLIC_API_URL;
 
   const validateForm = () => {
     let valid = true;
@@ -64,17 +66,42 @@ export default function RegisCard() {
     return valid;
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateForm()) return;
-
-    setSuccessMessage("Registration successful! Redirecting to login page...");
-    
-    // Redirect to login page after 2 seconds
-    setTimeout(() => {
-      router.push("/login");
-    }, 2000);
+  
+    setIsLoading(true);
+    try {
+      const res = await fetch(`${ModelURL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+  
+      const data = await res.json();
+  
+      if (!res.ok) {
+        throw new Error(data.detail || "Registration failed");
+      }
+  
+      setSuccessMessage("Registration successful! Redirecting to login page...");
+  
+      setTimeout(() => {
+        router.push("/login");
+      }, 2000);
+    } catch (err: any) {
+      setSuccessMessage(null);
+      setErrors((prev) => ({
+        ...prev,
+        email: err.message || "Something went wrong",
+      }));
+    } finally {
+      setIsLoading(false);
+    }
   };
+  
+  
+  
 
   return (
     <div className="font-graphik flex justify-center items-center w-full mt-16 h-full">
@@ -127,13 +154,15 @@ export default function RegisCard() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <button
-                  type="button"
-                  className="absolute right-3 top-2/3 transform -translate-y-1/2 text-gray-600"
-                  onClick={() => setShowPassword((prev) => !prev)}
-                >
-                  {showPassword ? <EyeIcon className="h-5 w-5" /> : <EyeSlashIcon className="h-5 w-5" />}
-                </button>
+                {password.length > 0 && (
+                  <button
+                    type="button"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                  >
+                    {showPassword ? <EyeIcon className="h-5 w-5" /> : <EyeSlashIcon className="h-5 w-5" />}
+                  </button>
+                )}
               </div>
               {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
             </div>
@@ -151,13 +180,15 @@ export default function RegisCard() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <button
-                  type="button"
-                  className="absolute right-3 top-2/3 transform -translate-y-1/2 text-gray-600"
-                  onClick={() => setShowConfirmPassword((prev) => !prev)}
-                >
-                  {showConfirmPassword ? <EyeIcon className="h-5 w-5" /> : <EyeSlashIcon className="h-5 w-5" />}
-                </button>
+                {confirmPassword.length > 0 && (
+                  <button
+                    type="button"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600"
+                    onClick={() => setShowConfirmPassword((prev) => !prev)}
+                  >
+                    {showConfirmPassword ? <EyeIcon className="h-5 w-5" /> : <EyeSlashIcon className="h-5 w-5" />}
+                  </button>
+                )}
               </div>
               {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>}
             </div>
@@ -166,9 +197,10 @@ export default function RegisCard() {
             {successMessage && <p className="text-green-500 text-sm mb-4">{successMessage}</p>}
 
             {/* Submit Button */}
-            <Button className="w-full bg-blue-500 hover:bg-blue-600" type="submit">
-              Submit
+            <Button className="w-full bg-blue-500 hover:bg-blue-600" type="submit" disabled={isLoading}>
+            {isLoading ? "Registering..." : "Submit"}
             </Button>
+
           </form>
 
           {/* Redirect to Sign In */}

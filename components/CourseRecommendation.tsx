@@ -7,6 +7,8 @@ export default function CourseRecommendation({
 }: {
   course: { name: string; similarity: number };
 }) {
+
+  if (course.similarity === 0) return null; 
   return (
     <Card className="shadow-lg rounded-lg border hover:scale-105 transition-transform">
       <CardHeader>

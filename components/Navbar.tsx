@@ -31,12 +31,6 @@ export default function Navbar() {
         <span className="text-xl font-bold font-graphik">SinityCourse</span>
       </Link>
         
-        {/* <Link
-          href="/"
-          className="text-2xl font-bold  transition-colors"
-        >
-          SinityCourse
-        </Link> */}
 
         {/* Menu Navigasi untuk Desktop */}
         <div className="hidden md:flex flex-1 justify-center space-x-6">
@@ -51,7 +45,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex space-x-4">
+        {/* LOGIN AND REGISTER DIRECT */}
+        {/* <div className="hidden md:flex space-x-4">
           <Link
             href="/login"
             className="px-4 py-2 rounded-lg hover:bg-stone-400 transition"
@@ -64,7 +59,7 @@ export default function Navbar() {
           >
             Register
           </Link>
-        </div>
+        </div> */}
 
         {/* Tombol Menu Hamburger */}
         <button className=" md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -95,7 +90,8 @@ export default function Navbar() {
                 </li>
               ))}
               <div className=" border-gray-700 mt-2 pt-2"></div>
-              <li>
+              {/* Login Page Direct */}
+              {/* <li>
                 <Link
                   href="/login"
                   onClick={() => setIsOpen(false)}
@@ -103,7 +99,8 @@ export default function Navbar() {
                 >
                   Login
                 </Link>
-              </li>
+              </li> */}
+              {/* Register Page Direct
               <li>
                 <Link
                   href="/register"
@@ -112,7 +109,7 @@ export default function Navbar() {
                 >
                   Register
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </motion.div>
         )}

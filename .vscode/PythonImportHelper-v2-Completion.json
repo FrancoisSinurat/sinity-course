@@ -1,434 +1,5 @@
 [
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "CORS",
-        "importPath": "flask_cors",
-        "description": "flask_cors",
-        "isExtraImport": true,
-        "detail": "flask_cors",
-        "documentation": {}
-    },
-    {
-        "label": "CORS",
-        "importPath": "flask_cors",
-        "description": "flask_cors",
-        "isExtraImport": true,
-        "detail": "flask_cors",
-        "documentation": {}
-    },
-    {
-        "label": "CORS",
-        "importPath": "flask_cors",
-        "description": "flask_cors",
-        "isExtraImport": true,
-        "detail": "flask_cors",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
-        "label": "pandas",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "string",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "string",
-        "description": "string",
-        "detail": "string",
-        "documentation": {}
-    },
-    {
-        "label": "detect",
-        "importPath": "langdetect",
-        "description": "langdetect",
-        "isExtraImport": true,
-        "detail": "langdetect",
-        "documentation": {}
-    },
-    {
-        "label": "detect",
-        "importPath": "langdetect",
-        "description": "langdetect",
-        "isExtraImport": true,
-        "detail": "langdetect",
-        "documentation": {}
-    },
-    {
-        "label": "detect",
-        "importPath": "langdetect",
-        "description": "langdetect",
-        "isExtraImport": true,
-        "detail": "langdetect",
-        "documentation": {}
-    },
-    {
-        "label": "nltk",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "nltk",
-        "description": "nltk",
-        "detail": "nltk",
-        "documentation": {}
-    },
-    {
-        "label": "stopwords",
-        "importPath": "nltk.corpus",
-        "description": "nltk.corpus",
-        "isExtraImport": true,
-        "detail": "nltk.corpus",
-        "documentation": {}
-    },
-    {
-        "label": "stopwords",
-        "importPath": "nltk.corpus",
-        "description": "nltk.corpus",
-        "isExtraImport": true,
-        "detail": "nltk.corpus",
-        "documentation": {}
-    },
-    {
-        "label": "stopwords",
-        "importPath": "nltk.corpus",
-        "description": "nltk.corpus",
-        "isExtraImport": true,
-        "detail": "nltk.corpus",
-        "documentation": {}
-    },
-    {
-        "label": "word_tokenize",
-        "importPath": "nltk.tokenize",
-        "description": "nltk.tokenize",
-        "isExtraImport": true,
-        "detail": "nltk.tokenize",
-        "documentation": {}
-    },
-    {
-        "label": "word_tokenize",
-        "importPath": "nltk.tokenize",
-        "description": "nltk.tokenize",
-        "isExtraImport": true,
-        "detail": "nltk.tokenize",
-        "documentation": {}
-    },
-    {
-        "label": "word_tokenize",
-        "importPath": "nltk.tokenize",
-        "description": "nltk.tokenize",
-        "isExtraImport": true,
-        "detail": "nltk.tokenize",
-        "documentation": {}
-    },
-    {
-        "label": "LabelEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "MinMaxScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "LabelEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "MinMaxScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "LabelEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "MinMaxScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "cosine_similarity",
-        "importPath": "sklearn.metrics.pairwise",
-        "description": "sklearn.metrics.pairwise",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics.pairwise",
-        "documentation": {}
-    },
-    {
-        "label": "cosine_similarity",
-        "importPath": "sklearn.metrics.pairwise",
-        "description": "sklearn.metrics.pairwise",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics.pairwise",
-        "documentation": {}
-    },
-    {
-        "label": "cosine_similarity",
-        "importPath": "sklearn.metrics.pairwise",
-        "description": "sklearn.metrics.pairwise",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics.pairwise",
-        "documentation": {}
-    },
-    {
-        "label": "cosine_similarity",
-        "importPath": "sklearn.metrics.pairwise",
-        "description": "sklearn.metrics.pairwise",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics.pairwise",
-        "documentation": {}
-    },
-    {
-        "label": "cosine_similarity",
-        "importPath": "sklearn.metrics.pairwise",
-        "description": "sklearn.metrics.pairwise",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics.pairwise",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "TruncatedSVD",
-        "importPath": "sklearn.decomposition",
-        "description": "sklearn.decomposition",
-        "isExtraImport": true,
-        "detail": "sklearn.decomposition",
-        "documentation": {}
-    },
-    {
-        "label": "TruncatedSVD",
-        "importPath": "sklearn.decomposition",
-        "description": "sklearn.decomposition",
-        "isExtraImport": true,
-        "detail": "sklearn.decomposition",
-        "documentation": {}
-    },
-    {
-        "label": "TruncatedSVD",
-        "importPath": "sklearn.decomposition",
-        "description": "sklearn.decomposition",
-        "isExtraImport": true,
-        "detail": "sklearn.decomposition",
-        "documentation": {}
-    },
-    {
-        "label": "TruncatedSVD",
-        "importPath": "sklearn.decomposition",
-        "description": "sklearn.decomposition",
-        "isExtraImport": true,
-        "detail": "sklearn.decomposition",
-        "documentation": {}
-    },
-    {
-        "label": "mean_squared_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "mean_squared_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "mean_squared_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "KMeans",
-        "importPath": "sklearn.cluster",
-        "description": "sklearn.cluster",
-        "isExtraImport": true,
-        "detail": "sklearn.cluster",
-        "documentation": {}
-    },
-    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -470,11 +41,141 @@
         "documentation": {}
     },
     {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "LabelEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "LabelEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
         "documentation": {}
     },
     {
@@ -486,660 +187,19 @@
         "documentation": {}
     },
     {
-        "label": "clean_text",
-        "kind": 2,
-        "importPath": "new-model.main-fungsi",
-        "description": "new-model.main-fungsi",
-        "peekOfCode": "def clean_text(text):\n    try:\n        if detect(text) != 'en':\n            return \"\"\n    except:\n        return \"\"\n    text = text.lower()\n    text = re.sub(r\"[^a-zA-Z0-9\\s]\", \"\", text)  # Remove symbols\n    text = re.sub(r\"\\s+\", \" \", text).strip()  # Remove extra spaces\n    return text",
-        "detail": "new-model.main-fungsi",
-        "documentation": {}
-    },
-    {
-        "label": "preprocess_courses",
-        "kind": 2,
-        "importPath": "new-model.main-fungsi",
-        "description": "new-model.main-fungsi",
-        "peekOfCode": "def preprocess_courses(courses_df):\n    \"\"\"Preprocess dataset courses: hapus kolom tidak perlu & encode course_id.\"\"\"\n    courses_df = courses_df.drop(columns=['institution', 'course_url'], errors='ignore')\n    # Encoding course_id\n    label_encoder = LabelEncoder()\n    courses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\n    # Mapping course_id ke course_id_unq\n    course_id_mapping = pd.DataFrame({\n        'course_id': courses_df['course_id'],\n        'course_id_unq': courses_df['course_id_unq']",
-        "detail": "new-model.main-fungsi",
-        "documentation": {}
-    },
-    {
-        "label": "preprocess_reviews",
-        "kind": 2,
-        "importPath": "new-model.main-fungsi",
-        "description": "new-model.main-fungsi",
-        "peekOfCode": "def preprocess_reviews(reviews_df, course_id_mapping):\n    \"\"\"Preprocess dataset reviews: hapus kolom tidak perlu, sesuaikan course_id, dan buat user_id unik.\"\"\"\n    reviews_df = reviews_df.drop(columns=['date_reviews'], errors='ignore')\n    # Sesuaikan course_id di reviews agar sesuai dengan course_id_unq\n    reviews_df = reviews_df.merge(course_id_mapping, on='course_id', how='inner')\n    # Menentukan user yang memberikan review minimal 2 kursus\n    user_counts = reviews_df['reviewers'].value_counts()\n    multiple_ratings = user_counts[user_counts >= 2].index\n    # Filter dataset berdasarkan reviewer yang memenuhi syarat\n    reviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]",
-        "detail": "new-model.main-fungsi",
-        "documentation": {}
-    },
-    {
-        "label": "courses_df",
-        "kind": 5,
-        "importPath": "new-model.main-fungsi",
-        "description": "new-model.main-fungsi",
-        "peekOfCode": "courses_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_courses.csv\")\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\n# Jalankan preprocessing\ncourses_df, course_id_mapping = preprocess_courses(courses_df)\nreviews_filtered1 = preprocess_reviews(reviews_df, course_id_mapping)",
-        "detail": "new-model.main-fungsi",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df",
-        "kind": 5,
-        "importPath": "new-model.main-fungsi",
-        "description": "new-model.main-fungsi",
-        "peekOfCode": "reviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\n# Jalankan preprocessing\ncourses_df, course_id_mapping = preprocess_courses(courses_df)\nreviews_filtered1 = preprocess_reviews(reviews_df, course_id_mapping)",
-        "detail": "new-model.main-fungsi",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1",
-        "kind": 5,
-        "importPath": "new-model.main-fungsi",
-        "description": "new-model.main-fungsi",
-        "peekOfCode": "reviews_filtered1 = preprocess_reviews(reviews_df, course_id_mapping)",
-        "detail": "new-model.main-fungsi",
-        "documentation": {}
-    },
-    {
-        "label": "clean_text",
-        "kind": 2,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "def clean_text(text):\n    try:\n        if not text or detect(text) != 'en':  # Hapus jika tidak ada review atau bukan bahasa Inggris\n            return \"\"\n    except:\n        return \"\"\n    sentences = re.split(r'(?<=[.!?])\\s+', text)  # Membagi teks berdasarkan akhir kalimat\n    selected_sentences = \" \".join(sentences[:3])  # Ambil maksimal 3 kalimat pertama\n    # Hapus simbol, kecuali titik, tanda tanya, dan seru untuk tetap mempertahankan kalimat\n    selected_sentences = re.sub(r\"[^a-zA-Z0-9\\s.!?]\", \"\", selected_sentences)",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "courses_df",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "courses_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_courses.csv\")  # Course\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")  # Reviews\ndef clean_text(text):\n    try:\n        if not text or detect(text) != 'en':  # Hapus jika tidak ada review atau bukan bahasa Inggris\n            return \"\"\n    except:\n        return \"\"\n    sentences = re.split(r'(?<=[.!?])\\s+', text)  # Membagi teks berdasarkan akhir kalimat\n    selected_sentences = \" \".join(sentences[:3])  # Ambil maksimal 3 kalimat pertama",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")  # Reviews\ndef clean_text(text):\n    try:\n        if not text or detect(text) != 'en':  # Hapus jika tidak ada review atau bukan bahasa Inggris\n            return \"\"\n    except:\n        return \"\"\n    sentences = re.split(r'(?<=[.!?])\\s+', text)  # Membagi teks berdasarkan akhir kalimat\n    selected_sentences = \" \".join(sentences[:3])  # Ambil maksimal 3 kalimat pertama\n    # Hapus simbol, kecuali titik, tanda tanya, dan seru untuk tetap mempertahankan kalimat",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df['reviews']",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_df['reviews'] = reviews_df['reviews'].astype(str).apply(clean_text) \n# ================================================ PREPROCESSING COURSE ====================================================\n# Menghapus kolom yang tidak diperlukan\ncourses_df.drop(columns=['institution', 'course_url'], inplace=True)\n# Encoding course_id\nlabel_encoder = LabelEncoder()\ncourses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\n# Membuat mapping course_id ke course_id_unq\ncourse_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "label_encoder",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "label_encoder = LabelEncoder()\ncourses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\n# Membuat mapping course_id ke course_id_unq\ncourse_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# Menghapus kolom asli course_id setelah encoding\n# courses_df.drop(columns=['course_id'], inplace=True)\n# Simpan hasil preprocessing courses ke CSV",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "courses_df['course_id_unq']",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "courses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\n# Membuat mapping course_id ke course_id_unq\ncourse_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# Menghapus kolom asli course_id setelah encoding\n# courses_df.drop(columns=['course_id'], inplace=True)\n# Simpan hasil preprocessing courses ke CSV\ncourses_df.to_csv(\"fix_courses.csv\", index=False)",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "course_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "course_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# Menghapus kolom asli course_id setelah encoding\n# courses_df.drop(columns=['course_id'], inplace=True)\n# Simpan hasil preprocessing courses ke CSV\ncourses_df.to_csv(\"fix_courses.csv\", index=False)\n# ================================================ PREPROCESSING REVIEWER ====================================================\n# Menghapus kolom yang tidak diperlukan",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_df = reviews_df.merge(course_id_mapping, on='course_id', how='left')\n# reviews_df.rename(columns={'course_id_unq': 'course_id_unq'}, inplace=True)\n# Menentukan user yang telah memberikan review untuk setidaknya 2 kursus berbeda\nuser_counts = reviews_df['reviewers'].value_counts()\nmultiple_ratings = user_counts[user_counts >= 2].index\n# Membuat mapping user_id baru untuk user yang memenuhi syarat\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\n# Filter dataset ulasan berdasarkan reviewer yang memenuhi syarat\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\n# Menghapus duplikasi data berdasarkan pasangan (reviewers, course_id)",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "user_counts",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "user_counts = reviews_df['reviewers'].value_counts()\nmultiple_ratings = user_counts[user_counts >= 2].index\n# Membuat mapping user_id baru untuk user yang memenuhi syarat\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\n# Filter dataset ulasan berdasarkan reviewer yang memenuhi syarat\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\n# Menghapus duplikasi data berdasarkan pasangan (reviewers, course_id)\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\n# Membuat mapping user_id unik berdasarkan nama reviewer\nuser_id_mapping = {}",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "multiple_ratings",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "multiple_ratings = user_counts[user_counts >= 2].index\n# Membuat mapping user_id baru untuk user yang memenuhi syarat\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\n# Filter dataset ulasan berdasarkan reviewer yang memenuhi syarat\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\n# Menghapus duplikasi data berdasarkan pasangan (reviewers, course_id)\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\n# Membuat mapping user_id unik berdasarkan nama reviewer\nuser_id_mapping = {}\ncurrent_id = 1  # Mulai user_id dari 1",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "user_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "user_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\n# Filter dataset ulasan berdasarkan reviewer yang memenuhi syarat\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\n# Menghapus duplikasi data berdasarkan pasangan (reviewers, course_id)\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\n# Membuat mapping user_id unik berdasarkan nama reviewer\nuser_id_mapping = {}\ncurrent_id = 1  # Mulai user_id dari 1\n# Iterasi melalui reviewer untuk memastikan user_id tetap konsisten jika nama sama\nfor reviewer in reviews_df['reviewers']:",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\n# Menghapus duplikasi data berdasarkan pasangan (reviewers, course_id)\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\n# Membuat mapping user_id unik berdasarkan nama reviewer\nuser_id_mapping = {}\ncurrent_id = 1  # Mulai user_id dari 1\n# Iterasi melalui reviewer untuk memastikan user_id tetap konsisten jika nama sama\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\n# Membuat mapping user_id unik berdasarkan nama reviewer\nuser_id_mapping = {}\ncurrent_id = 1  # Mulai user_id dari 1\n# Iterasi melalui reviewer untuk memastikan user_id tetap konsisten jika nama sama\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\n# Menyalin data untuk menghindari SettingWithCopyWarning",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "user_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "user_id_mapping = {}\ncurrent_id = 1  # Mulai user_id dari 1\n# Iterasi melalui reviewer untuk memastikan user_id tetap konsisten jika nama sama\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\n# Menyalin data untuk menghindari SettingWithCopyWarning\nreviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "current_id",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "current_id = 1  # Mulai user_id dari 1\n# Iterasi melalui reviewer untuk memastikan user_id tetap konsisten jika nama sama\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\n# Menyalin data untuk menghindari SettingWithCopyWarning\nreviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# Simpan hasil preprocessing reviews ke CSV",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# Simpan hasil preprocessing reviews ke CSV\n# Apply text cleaning to reviews\nreviews_filtered1.to_csv(\"fix_reviews.csv\", index=False)\nprint(\"Reviews berhasil dibersihkan\")\n# ================================================ REVIEWS SAMPLE ====================================================\n# reviews_sampled = reviews_filtered1.sample(n=100000, random_state=42)",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1['user_id']",
-        "kind": 5,
-        "importPath": "new-model.main",
-        "description": "new-model.main",
-        "peekOfCode": "reviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# Simpan hasil preprocessing reviews ke CSV\n# Apply text cleaning to reviews\nreviews_filtered1.to_csv(\"fix_reviews.csv\", index=False)\nprint(\"Reviews berhasil dibersihkan\")\n# ================================================ REVIEWS SAMPLE ====================================================\n# reviews_sampled = reviews_filtered1.sample(n=100000, random_state=42)",
-        "detail": "new-model.main",
-        "documentation": {}
-    },
-    {
-        "label": "clean_text",
-        "kind": 2,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "def clean_text(text):\n    try:\n        if not text or detect(text) != 'en':\n            return \"\"\n    except:\n        return \"\"\n    sentences = re.split(r'(?<=[.!?])\\s+', text)\n    selected_sentences = \" \".join(sentences[:3])\n    selected_sentences = re.sub(r\"[^a-zA-Z0-9\\s.!?]\", \"\", selected_sentences)\n    selected_sentences = re.sub(r\"\\s+\", \" \", selected_sentences).strip()",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "recommend_courses_content",
-        "kind": 2,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "def recommend_courses_content(course_id, top_n=5):\n    idx = courses_df[courses_df[\"course_id\"] == course_id].index[0]\n    sim_scores = list(enumerate(cosine_sim[idx]))\n    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)[1:top_n+1]\n    course_indices = [i[0] for i in sim_scores]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")\n# ============================================= COLLABORATIVE FILTERING (SVD) =============================================\nuser_course_matrix = train_data.pivot(index=\"user_id\", columns=\"course_id_unq\", values=\"ratings\").fillna(0)\nscaler = MinMaxScaler()\nuser_course_matrix_scaled = scaler.fit_transform(user_course_matrix)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "recommend_courses_collab",
-        "kind": 2,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "def recommend_courses_collab(user_id, top_n=5):\n    if user_id not in train_data[\"user_id\"].values:\n        return \"User tidak memiliki cukup data untuk rekomendasi.\"\n    user_idx = train_data[train_data[\"user_id\"] == user_id].index[0]\n    user_vector = user_course_svd[user_idx].reshape(1, -1)\n    similarities = cosine_similarity(user_vector, user_course_svd).flatten()\n    course_indices = np.argsort(similarities)[::-1][:top_n]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")\n# ============================================= EVALUASI MODEL (RMSE) =============================================\ntest_user_course_matrix = test_data.pivot(index=\"user_id\", columns=\"course_id_unq\", values=\"ratings\").fillna(0)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "recommend_content",
-        "kind": 2,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "def recommend_content():\n    course_id = request.args.get('course_id')\n    if not course_id:\n        return jsonify({\"error\": \"Parameter course_id diperlukan\"}), 400\n    recommendations = recommend_courses_content(course_id)\n    return jsonify(recommendations)\n@app.route('/recommend/collab', methods=['GET'])\ndef recommend_collab():\n    user_id = request.args.get('user_id', type=int)\n    if not user_id:",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "recommend_collab",
-        "kind": 2,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "def recommend_collab():\n    user_id = request.args.get('user_id', type=int)\n    if not user_id:\n        return jsonify({\"error\": \"Parameter user_id diperlukan\"}), 400\n    recommendations = recommend_courses_collab(user_id)\n    return jsonify(recommendations)\nif __name__ == '__main__':\n    app.run(debug=True)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "app = Flask(__name__)\nCORS(app)\n# ============================================= LOAD DATASET =============================================\ncourses_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_courses.csv\")\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\n# Clean Text Function\ndef clean_text(text):\n    try:\n        if not text or detect(text) != 'en':\n            return \"\"",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "courses_df",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "courses_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_courses.csv\")\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\n# Clean Text Function\ndef clean_text(text):\n    try:\n        if not text or detect(text) != 'en':\n            return \"\"\n    except:\n        return \"\"\n    sentences = re.split(r'(?<=[.!?])\\s+', text)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\n# Clean Text Function\ndef clean_text(text):\n    try:\n        if not text or detect(text) != 'en':\n            return \"\"\n    except:\n        return \"\"\n    sentences = re.split(r'(?<=[.!?])\\s+', text)\n    selected_sentences = \" \".join(sentences[:3])",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df['reviews']",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_df['reviews'] = reviews_df['reviews'].astype(str).apply(clean_text)\n# ============================================= PREPROCESSING COURSE =============================================\ncourses_df.drop(columns=['institution', 'course_url'], inplace=True)\nlabel_encoder = LabelEncoder()\ncourses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\ncourse_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# ============================================= PREPROCESSING REVIEWS =============================================",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "label_encoder",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "label_encoder = LabelEncoder()\ncourses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\ncourse_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# ============================================= PREPROCESSING REVIEWS =============================================\nreviews_df.drop(columns=['date_reviews'], inplace=True)\nreviews_df = reviews_df.merge(course_id_mapping, on='course_id', how='left')\nuser_counts = reviews_df['reviewers'].value_counts()",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "courses_df['course_id_unq']",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "courses_df['course_id_unq'] = label_encoder.fit_transform(courses_df['course_id'])\ncourse_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# ============================================= PREPROCESSING REVIEWS =============================================\nreviews_df.drop(columns=['date_reviews'], inplace=True)\nreviews_df = reviews_df.merge(course_id_mapping, on='course_id', how='left')\nuser_counts = reviews_df['reviewers'].value_counts()\nmultiple_ratings = user_counts[user_counts >= 2].index",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "course_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "course_id_mapping = pd.DataFrame({\n    'course_id': courses_df['course_id'],\n    'course_id_unq': courses_df['course_id_unq']\n})\n# ============================================= PREPROCESSING REVIEWS =============================================\nreviews_df.drop(columns=['date_reviews'], inplace=True)\nreviews_df = reviews_df.merge(course_id_mapping, on='course_id', how='left')\nuser_counts = reviews_df['reviewers'].value_counts()\nmultiple_ratings = user_counts[user_counts >= 2].index\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_df",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_df = reviews_df.merge(course_id_mapping, on='course_id', how='left')\nuser_counts = reviews_df['reviewers'].value_counts()\nmultiple_ratings = user_counts[user_counts >= 2].index\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\nuser_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "user_counts",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "user_counts = reviews_df['reviewers'].value_counts()\nmultiple_ratings = user_counts[user_counts >= 2].index\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\nuser_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "multiple_ratings",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "multiple_ratings = user_counts[user_counts >= 2].index\nuser_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\nuser_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "user_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "user_id_mapping = {reviewer: idx + 1 for idx, reviewer in enumerate(multiple_ratings)}\nreviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\nuser_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\nreviews_filtered1 = reviews_filtered1.copy()",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_filtered = reviews_df[reviews_df['reviewers'].isin(multiple_ratings)]\nreviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\nuser_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\nreviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_filtered1 = reviews_filtered.drop_duplicates(subset=['reviewers', 'course_id'])\nuser_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\nreviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# ============================================= TRAIN-TEST SPLIT =============================================",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "user_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "user_id_mapping = {}\ncurrent_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\nreviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# ============================================= TRAIN-TEST SPLIT =============================================\ntrain_data, test_data = train_test_split(reviews_filtered1, test_size=0.3, random_state=42)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "current_id",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "current_id = 1\nfor reviewer in reviews_df['reviewers']:\n    if reviewer not in user_id_mapping:\n        user_id_mapping[reviewer] = current_id\n        current_id += 1\nreviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# ============================================= TRAIN-TEST SPLIT =============================================\ntrain_data, test_data = train_test_split(reviews_filtered1, test_size=0.3, random_state=42)\ntrain_data.to_csv(\"train_reviews.csv\", index=False)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_filtered1 = reviews_filtered1.copy()\nreviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# ============================================= TRAIN-TEST SPLIT =============================================\ntrain_data, test_data = train_test_split(reviews_filtered1, test_size=0.3, random_state=42)\ntrain_data.to_csv(\"train_reviews.csv\", index=False)\ntest_data.to_csv(\"test_reviews.csv\", index=False)\n# ============================================= CONTENT-BASED FILTERING =============================================\ntfidf_vectorizer = TfidfVectorizer(stop_words=\"english\")\ntfidf_matrix = tfidf_vectorizer.fit_transform(courses_df[\"description\"])\ncosine_sim = cosine_similarity(tfidf_matrix)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "reviews_filtered1['user_id']",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "reviews_filtered1['user_id'] = reviews_filtered1['reviewers'].map(user_id_mapping)\n# ============================================= TRAIN-TEST SPLIT =============================================\ntrain_data, test_data = train_test_split(reviews_filtered1, test_size=0.3, random_state=42)\ntrain_data.to_csv(\"train_reviews.csv\", index=False)\ntest_data.to_csv(\"test_reviews.csv\", index=False)\n# ============================================= CONTENT-BASED FILTERING =============================================\ntfidf_vectorizer = TfidfVectorizer(stop_words=\"english\")\ntfidf_matrix = tfidf_vectorizer.fit_transform(courses_df[\"description\"])\ncosine_sim = cosine_similarity(tfidf_matrix)\ndef recommend_courses_content(course_id, top_n=5):",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "tfidf_vectorizer",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "tfidf_vectorizer = TfidfVectorizer(stop_words=\"english\")\ntfidf_matrix = tfidf_vectorizer.fit_transform(courses_df[\"description\"])\ncosine_sim = cosine_similarity(tfidf_matrix)\ndef recommend_courses_content(course_id, top_n=5):\n    idx = courses_df[courses_df[\"course_id\"] == course_id].index[0]\n    sim_scores = list(enumerate(cosine_sim[idx]))\n    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)[1:top_n+1]\n    course_indices = [i[0] for i in sim_scores]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")\n# ============================================= COLLABORATIVE FILTERING (SVD) =============================================",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "tfidf_matrix",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "tfidf_matrix = tfidf_vectorizer.fit_transform(courses_df[\"description\"])\ncosine_sim = cosine_similarity(tfidf_matrix)\ndef recommend_courses_content(course_id, top_n=5):\n    idx = courses_df[courses_df[\"course_id\"] == course_id].index[0]\n    sim_scores = list(enumerate(cosine_sim[idx]))\n    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)[1:top_n+1]\n    course_indices = [i[0] for i in sim_scores]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")\n# ============================================= COLLABORATIVE FILTERING (SVD) =============================================\nuser_course_matrix = train_data.pivot(index=\"user_id\", columns=\"course_id_unq\", values=\"ratings\").fillna(0)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "cosine_sim",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "cosine_sim = cosine_similarity(tfidf_matrix)\ndef recommend_courses_content(course_id, top_n=5):\n    idx = courses_df[courses_df[\"course_id\"] == course_id].index[0]\n    sim_scores = list(enumerate(cosine_sim[idx]))\n    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)[1:top_n+1]\n    course_indices = [i[0] for i in sim_scores]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")\n# ============================================= COLLABORATIVE FILTERING (SVD) =============================================\nuser_course_matrix = train_data.pivot(index=\"user_id\", columns=\"course_id_unq\", values=\"ratings\").fillna(0)\nscaler = MinMaxScaler()",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "user_course_matrix",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "user_course_matrix = train_data.pivot(index=\"user_id\", columns=\"course_id_unq\", values=\"ratings\").fillna(0)\nscaler = MinMaxScaler()\nuser_course_matrix_scaled = scaler.fit_transform(user_course_matrix)\nsvd = TruncatedSVD(n_components=50, random_state=42)\nuser_course_svd = svd.fit_transform(user_course_matrix_scaled)\ndef recommend_courses_collab(user_id, top_n=5):\n    if user_id not in train_data[\"user_id\"].values:\n        return \"User tidak memiliki cukup data untuk rekomendasi.\"\n    user_idx = train_data[train_data[\"user_id\"] == user_id].index[0]\n    user_vector = user_course_svd[user_idx].reshape(1, -1)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "scaler",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "scaler = MinMaxScaler()\nuser_course_matrix_scaled = scaler.fit_transform(user_course_matrix)\nsvd = TruncatedSVD(n_components=50, random_state=42)\nuser_course_svd = svd.fit_transform(user_course_matrix_scaled)\ndef recommend_courses_collab(user_id, top_n=5):\n    if user_id not in train_data[\"user_id\"].values:\n        return \"User tidak memiliki cukup data untuk rekomendasi.\"\n    user_idx = train_data[train_data[\"user_id\"] == user_id].index[0]\n    user_vector = user_course_svd[user_idx].reshape(1, -1)\n    similarities = cosine_similarity(user_vector, user_course_svd).flatten()",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "user_course_matrix_scaled",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "user_course_matrix_scaled = scaler.fit_transform(user_course_matrix)\nsvd = TruncatedSVD(n_components=50, random_state=42)\nuser_course_svd = svd.fit_transform(user_course_matrix_scaled)\ndef recommend_courses_collab(user_id, top_n=5):\n    if user_id not in train_data[\"user_id\"].values:\n        return \"User tidak memiliki cukup data untuk rekomendasi.\"\n    user_idx = train_data[train_data[\"user_id\"] == user_id].index[0]\n    user_vector = user_course_svd[user_idx].reshape(1, -1)\n    similarities = cosine_similarity(user_vector, user_course_svd).flatten()\n    course_indices = np.argsort(similarities)[::-1][:top_n]",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "svd",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "svd = TruncatedSVD(n_components=50, random_state=42)\nuser_course_svd = svd.fit_transform(user_course_matrix_scaled)\ndef recommend_courses_collab(user_id, top_n=5):\n    if user_id not in train_data[\"user_id\"].values:\n        return \"User tidak memiliki cukup data untuk rekomendasi.\"\n    user_idx = train_data[train_data[\"user_id\"] == user_id].index[0]\n    user_vector = user_course_svd[user_idx].reshape(1, -1)\n    similarities = cosine_similarity(user_vector, user_course_svd).flatten()\n    course_indices = np.argsort(similarities)[::-1][:top_n]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "user_course_svd",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "user_course_svd = svd.fit_transform(user_course_matrix_scaled)\ndef recommend_courses_collab(user_id, top_n=5):\n    if user_id not in train_data[\"user_id\"].values:\n        return \"User tidak memiliki cukup data untuk rekomendasi.\"\n    user_idx = train_data[train_data[\"user_id\"] == user_id].index[0]\n    user_vector = user_course_svd[user_idx].reshape(1, -1)\n    similarities = cosine_similarity(user_vector, user_course_svd).flatten()\n    course_indices = np.argsort(similarities)[::-1][:top_n]\n    return courses_df.iloc[course_indices][[\"course_id\", \"title\"]].to_dict(orient=\"records\")\n# ============================================= EVALUASI MODEL (RMSE) =============================================",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "test_user_course_matrix",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "test_user_course_matrix = test_data.pivot(index=\"user_id\", columns=\"course_id_unq\", values=\"ratings\").fillna(0)\ntest_user_course_matrix_scaled = scaler.transform(test_user_course_matrix)\npredicted_ratings = svd.transform(test_user_course_matrix_scaled)\nrmse = np.sqrt(mean_squared_error(test_user_course_matrix_scaled, predicted_ratings))\nprint(f\"RMSE: {rmse}\")\n# ============================================= FLASK API =============================================\n@app.route('/recommend/content', methods=['GET'])\ndef recommend_content():\n    course_id = request.args.get('course_id')\n    if not course_id:",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "test_user_course_matrix_scaled",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "test_user_course_matrix_scaled = scaler.transform(test_user_course_matrix)\npredicted_ratings = svd.transform(test_user_course_matrix_scaled)\nrmse = np.sqrt(mean_squared_error(test_user_course_matrix_scaled, predicted_ratings))\nprint(f\"RMSE: {rmse}\")\n# ============================================= FLASK API =============================================\n@app.route('/recommend/content', methods=['GET'])\ndef recommend_content():\n    course_id = request.args.get('course_id')\n    if not course_id:\n        return jsonify({\"error\": \"Parameter course_id diperlukan\"}), 400",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "predicted_ratings",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "predicted_ratings = svd.transform(test_user_course_matrix_scaled)\nrmse = np.sqrt(mean_squared_error(test_user_course_matrix_scaled, predicted_ratings))\nprint(f\"RMSE: {rmse}\")\n# ============================================= FLASK API =============================================\n@app.route('/recommend/content', methods=['GET'])\ndef recommend_content():\n    course_id = request.args.get('course_id')\n    if not course_id:\n        return jsonify({\"error\": \"Parameter course_id diperlukan\"}), 400\n    recommendations = recommend_courses_content(course_id)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "rmse",
-        "kind": 5,
-        "importPath": "new-model.new-main",
-        "description": "new-model.new-main",
-        "peekOfCode": "rmse = np.sqrt(mean_squared_error(test_user_course_matrix_scaled, predicted_ratings))\nprint(f\"RMSE: {rmse}\")\n# ============================================= FLASK API =============================================\n@app.route('/recommend/content', methods=['GET'])\ndef recommend_content():\n    course_id = request.args.get('course_id')\n    if not course_id:\n        return jsonify({\"error\": \"Parameter course_id diperlukan\"}), 400\n    recommendations = recommend_courses_content(course_id)\n    return jsonify(recommendations)",
-        "detail": "new-model.new-main",
-        "documentation": {}
-    },
-    {
-        "label": "hybrid_recommend",
-        "kind": 2,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "def hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:\n        # Collaborative Filtering\n        user_vector = latent_matrix[ratings_matrix.index.get_loc(user_id)].reshape(1, -1)\n        similarities = cosine_similarity(user_vector, latent_matrix)\n        similar_users = np.argsort(similarities.flatten())[::-1][1:top_n+1]\n        recommended_courses = ratings_matrix.iloc[similar_users].mean().sort_values(ascending=False).index[:top_n]\n    else:\n        # Content-Based Filtering (Learning Path)\n        random_learning_path = np.random.choice(courses['learning_path'].unique())",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "courses",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "courses = pd.read_csv(\"Coursera_courses.csv\")\nreviews = pd.read_csv(\"Coursera_reviews.csv\")\ncourses.drop(columns=\"course_url\")\nreviews.drop(columns=\"date_reviews\")\n# Step 1: Generate Unique Course ID\ncourse_id_mapping = {course: idx for idx, course in enumerate(courses['course_id'].unique())}\ncourses['course_id_unq'] = courses['course_id'].map(course_id_mapping)\nreviews['course_id_unq'] = reviews['course_id'].map(course_id_mapping)\n# Step 2: Tokenize Course Names for Learning Path\nvectorizer = TfidfVectorizer(stop_words='english')",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "reviews",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "reviews = pd.read_csv(\"Coursera_reviews.csv\")\ncourses.drop(columns=\"course_url\")\nreviews.drop(columns=\"date_reviews\")\n# Step 1: Generate Unique Course ID\ncourse_id_mapping = {course: idx for idx, course in enumerate(courses['course_id'].unique())}\ncourses['course_id_unq'] = courses['course_id'].map(course_id_mapping)\nreviews['course_id_unq'] = reviews['course_id'].map(course_id_mapping)\n# Step 2: Tokenize Course Names for Learning Path\nvectorizer = TfidfVectorizer(stop_words='english')\ntfidf_matrix = vectorizer.fit_transform(courses['name'])",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "course_id_mapping",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "course_id_mapping = {course: idx for idx, course in enumerate(courses['course_id'].unique())}\ncourses['course_id_unq'] = courses['course_id'].map(course_id_mapping)\nreviews['course_id_unq'] = reviews['course_id'].map(course_id_mapping)\n# Step 2: Tokenize Course Names for Learning Path\nvectorizer = TfidfVectorizer(stop_words='english')\ntfidf_matrix = vectorizer.fit_transform(courses['name'])\n# Step 3: Clustering Courses into Learning Paths\nnum_clusters = 5  # You can change this based on data\nkmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "courses['course_id_unq']",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "courses['course_id_unq'] = courses['course_id'].map(course_id_mapping)\nreviews['course_id_unq'] = reviews['course_id'].map(course_id_mapping)\n# Step 2: Tokenize Course Names for Learning Path\nvectorizer = TfidfVectorizer(stop_words='english')\ntfidf_matrix = vectorizer.fit_transform(courses['name'])\n# Step 3: Clustering Courses into Learning Paths\nnum_clusters = 5  # You can change this based on data\nkmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "reviews['course_id_unq']",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "reviews['course_id_unq'] = reviews['course_id'].map(course_id_mapping)\n# Step 2: Tokenize Course Names for Learning Path\nvectorizer = TfidfVectorizer(stop_words='english')\ntfidf_matrix = vectorizer.fit_transform(courses['name'])\n# Step 3: Clustering Courses into Learning Paths\nnum_clusters = 5  # You can change this based on data\nkmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD\nratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "vectorizer",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "vectorizer = TfidfVectorizer(stop_words='english')\ntfidf_matrix = vectorizer.fit_transform(courses['name'])\n# Step 3: Clustering Courses into Learning Paths\nnum_clusters = 5  # You can change this based on data\nkmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD\nratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)\nsvd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "tfidf_matrix",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "tfidf_matrix = vectorizer.fit_transform(courses['name'])\n# Step 3: Clustering Courses into Learning Paths\nnum_clusters = 5  # You can change this based on data\nkmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD\nratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)\nsvd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "num_clusters",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "num_clusters = 5  # You can change this based on data\nkmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD\nratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)\nsvd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System\ndef hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "kmeans",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "kmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init=10)\ncourses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD\nratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)\nsvd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System\ndef hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:\n        # Collaborative Filtering",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "courses['learning_path']",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "courses['learning_path'] = kmeans.fit_predict(tfidf_matrix)\n# Step 4: Collaborative Filtering using SVD\nratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)\nsvd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System\ndef hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:\n        # Collaborative Filtering\n        user_vector = latent_matrix[ratings_matrix.index.get_loc(user_id)].reshape(1, -1)",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "ratings_matrix",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "ratings_matrix = reviews.pivot(index='reviewers', columns='course_id_unq', values='rating').fillna(0)\nsvd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System\ndef hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:\n        # Collaborative Filtering\n        user_vector = latent_matrix[ratings_matrix.index.get_loc(user_id)].reshape(1, -1)\n        similarities = cosine_similarity(user_vector, latent_matrix)\n        similar_users = np.argsort(similarities.flatten())[::-1][1:top_n+1]",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "svd",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "svd = TruncatedSVD(n_components=10, random_state=42)\nlatent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System\ndef hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:\n        # Collaborative Filtering\n        user_vector = latent_matrix[ratings_matrix.index.get_loc(user_id)].reshape(1, -1)\n        similarities = cosine_similarity(user_vector, latent_matrix)\n        similar_users = np.argsort(similarities.flatten())[::-1][1:top_n+1]\n        recommended_courses = ratings_matrix.iloc[similar_users].mean().sort_values(ascending=False).index[:top_n]",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "latent_matrix",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "latent_matrix = svd.fit_transform(ratings_matrix)\n# Step 5: Hybrid Recommendation System\ndef hybrid_recommend(user_id, top_n=5):\n    if user_id in ratings_matrix.index:\n        # Collaborative Filtering\n        user_vector = latent_matrix[ratings_matrix.index.get_loc(user_id)].reshape(1, -1)\n        similarities = cosine_similarity(user_vector, latent_matrix)\n        similar_users = np.argsort(similarities.flatten())[::-1][1:top_n+1]\n        recommended_courses = ratings_matrix.iloc[similar_users].mean().sort_values(ascending=False).index[:top_n]\n    else:",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "sample_user_id",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "sample_user_id = reviews['reviewers'].iloc[0]\nrecommendations = hybrid_recommend(sample_user_id)\nprint(recommendations)",
-        "detail": "new-model.new-model",
-        "documentation": {}
-    },
-    {
-        "label": "recommendations",
-        "kind": 5,
-        "importPath": "new-model.new-model",
-        "description": "new-model.new-model",
-        "peekOfCode": "recommendations = hybrid_recommend(sample_user_id)\nprint(recommendations)",
-        "detail": "new-model.new-model",
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
         "documentation": {}
     },
     {
@@ -1311,6 +371,258 @@
         "description": "node_modules.flatted.python.test",
         "peekOfCode": "oo = parse('[{\"a\":\"1\",\"b\":\"0\",\"c\":\"2\"},{\"aa\":\"3\"},{\"ca\":\"4\",\"cb\":\"5\",\"cc\":\"6\",\"cd\":\"7\",\"ce\":\"8\",\"cf\":\"9\"},{\"aaa\":\"10\"},{\"caa\":\"4\"},{\"cba\":\"5\"},{\"cca\":\"2\"},{\"cda\":\"4\"},\"value2\",\"value3\",\"value1\"]');\nassert oo['a']['aa']['aaa'] == 'value1' and oo == oo['b'] and oo['c']['ca']['caa'] == oo['c']['ca']\nprint('OK')",
         "detail": "node_modules.flatted.python.test",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"http://localhost:3000\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\n# ==========================\n# CONTENT BASED FILTERING",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "course_df",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "course_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_courses.csv\")\ncourse_df.drop(columns=['institution', 'course_url'], inplace=True, errors='ignore')\ncourse_df = course_df.dropna(subset=[\"name\"])\ncourse_df[\"name\"] = course_df[\"name\"].astype(str).apply(lambda x: x.replace('\"', '').replace(\"'\", \"\").strip().lower())\n# Transform `course_id` menjadi unique integer tetapi tetap menggunakan nama `course_id`\nlabel_encoder = LabelEncoder()\ncourse_df[\"course_id\"] = label_encoder.fit_transform(course_df[\"course_id\"])\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "course_df",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "course_df = course_df.dropna(subset=[\"name\"])\ncourse_df[\"name\"] = course_df[\"name\"].astype(str).apply(lambda x: x.replace('\"', '').replace(\"'\", \"\").strip().lower())\n# Transform `course_id` menjadi unique integer tetapi tetap menggunakan nama `course_id`\nlabel_encoder = LabelEncoder()\ncourse_df[\"course_id\"] = label_encoder.fit_transform(course_df[\"course_id\"])\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "course_df[\"name\"]",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "course_df[\"name\"] = course_df[\"name\"].astype(str).apply(lambda x: x.replace('\"', '').replace(\"'\", \"\").strip().lower())\n# Transform `course_id` menjadi unique integer tetapi tetap menggunakan nama `course_id`\nlabel_encoder = LabelEncoder()\ncourse_df[\"course_id\"] = label_encoder.fit_transform(course_df[\"course_id\"])\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")\n# ==========================",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "label_encoder",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "label_encoder = LabelEncoder()\ncourse_df[\"course_id\"] = label_encoder.fit_transform(course_df[\"course_id\"])\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")\n# ==========================\n# 2️⃣ API Endpoint untuk Rekomendasi\n# ==========================",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "course_df[\"course_id\"]",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "course_df[\"course_id\"] = label_encoder.fit_transform(course_df[\"course_id\"])\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")\n# ==========================\n# 2️⃣ API Endpoint untuk Rekomendasi\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "vectorizer",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "vectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")\n# ==========================\n# 2️⃣ API Endpoint untuk Rekomendasi\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)\nasync def recommend_courses(course_name: str = Query(..., title=\"Nama Kursus\")):",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "tfidf_matrix",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "tfidf_matrix = vectorizer.fit_transform(course_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")\n# ==========================\n# 2️⃣ API Endpoint untuk Rekomendasi\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)\nasync def recommend_courses(course_name: str = Query(..., title=\"Nama Kursus\")):\n    course_name = course_name.lower().strip()",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_sim_matrix",
+        "kind": 5,
+        "importPath": "CBF",
+        "description": "CBF",
+        "peekOfCode": "cosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\ncourse_df.to_csv(\"final_courses.csv\", index=False)\nprint(\"final_courses.csv has been saved!\")\n# ==========================\n# 2️⃣ API Endpoint untuk Rekomendasi\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)\nasync def recommend_courses(course_name: str = Query(..., title=\"Nama Kursus\")):\n    course_name = course_name.lower().strip()\n    matched_courses = course_df[course_df[\"name\"].str.contains(course_name, case=False, na=False)]",
+        "detail": "CBF",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"http://localhost:3000\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\n# ==========================\n# 1️⃣ Load Dataset",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "courses_df",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "courses_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_courses.csv\")\ncourses_df.drop(columns=['institution', 'course_url'], inplace=True, errors='ignore')\ncourses_df = courses_df.dropna(subset=[\"name\"])\ncourses_df[\"name\"] = courses_df[\"name\"].astype(str).apply(lambda x: x.replace('\"', '').replace(\"'\", \"\").strip().lower())\n# Dataset user review (collaborative filtering)\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\nreviews_df.drop(columns='date_reviews', inplace=True, errors='ignore')\n# Batasi jumlah review menjadi maksimal 10.000 sampel\nif len(reviews_df) > 10000:\n    reviews_df = reviews_df.sample(n=10000, random_state=42)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "courses_df",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "courses_df = courses_df.dropna(subset=[\"name\"])\ncourses_df[\"name\"] = courses_df[\"name\"].astype(str).apply(lambda x: x.replace('\"', '').replace(\"'\", \"\").strip().lower())\n# Dataset user review (collaborative filtering)\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\nreviews_df.drop(columns='date_reviews', inplace=True, errors='ignore')\n# Batasi jumlah review menjadi maksimal 10.000 sampel\nif len(reviews_df) > 10000:\n    reviews_df = reviews_df.sample(n=10000, random_state=42)\n# Pastikan `course_id` awalnya string\ncourses_df[\"course_id\"] = courses_df[\"course_id\"].astype(str)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "courses_df[\"name\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "courses_df[\"name\"] = courses_df[\"name\"].astype(str).apply(lambda x: x.replace('\"', '').replace(\"'\", \"\").strip().lower())\n# Dataset user review (collaborative filtering)\nreviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\nreviews_df.drop(columns='date_reviews', inplace=True, errors='ignore')\n# Batasi jumlah review menjadi maksimal 10.000 sampel\nif len(reviews_df) > 10000:\n    reviews_df = reviews_df.sample(n=10000, random_state=42)\n# Pastikan `course_id` awalnya string\ncourses_df[\"course_id\"] = courses_df[\"course_id\"].astype(str)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(str)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "reviews_df",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "reviews_df = pd.read_csv(\"dataset-fix-SinityCourse/Coursera_reviews.csv\")\nreviews_df.drop(columns='date_reviews', inplace=True, errors='ignore')\n# Batasi jumlah review menjadi maksimal 10.000 sampel\nif len(reviews_df) > 10000:\n    reviews_df = reviews_df.sample(n=10000, random_state=42)\n# Pastikan `course_id` awalnya string\ncourses_df[\"course_id\"] = courses_df[\"course_id\"].astype(str)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(str)\n# ==========================\n# 2️⃣ Label Encoding `course_id`",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "courses_df[\"course_id\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "courses_df[\"course_id\"] = courses_df[\"course_id\"].astype(str)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(str)\n# ==========================\n# 2️⃣ Label Encoding `course_id`\n# ==========================\nlabel_encoder = LabelEncoder()\ncourses_df[\"course_id\"] = label_encoder.fit_transform(courses_df[\"course_id\"])\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].map(lambda x: label_encoder.transform([x])[0] if x in label_encoder.classes_ else None)\n# Hapus baris dengan `course_id` yang tidak valid\nreviews_df.dropna(subset=[\"course_id\"], inplace=True)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "reviews_df[\"course_id\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "reviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(str)\n# ==========================\n# 2️⃣ Label Encoding `course_id`\n# ==========================\nlabel_encoder = LabelEncoder()\ncourses_df[\"course_id\"] = label_encoder.fit_transform(courses_df[\"course_id\"])\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].map(lambda x: label_encoder.transform([x])[0] if x in label_encoder.classes_ else None)\n# Hapus baris dengan `course_id` yang tidak valid\nreviews_df.dropna(subset=[\"course_id\"], inplace=True)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(int)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "label_encoder",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "label_encoder = LabelEncoder()\ncourses_df[\"course_id\"] = label_encoder.fit_transform(courses_df[\"course_id\"])\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].map(lambda x: label_encoder.transform([x])[0] if x in label_encoder.classes_ else None)\n# Hapus baris dengan `course_id` yang tidak valid\nreviews_df.dropna(subset=[\"course_id\"], inplace=True)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(int)\n# ==========================\n# 3️⃣ Content-Based Filtering\n# ==========================\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "courses_df[\"course_id\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "courses_df[\"course_id\"] = label_encoder.fit_transform(courses_df[\"course_id\"])\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].map(lambda x: label_encoder.transform([x])[0] if x in label_encoder.classes_ else None)\n# Hapus baris dengan `course_id` yang tidak valid\nreviews_df.dropna(subset=[\"course_id\"], inplace=True)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(int)\n# ==========================\n# 3️⃣ Content-Based Filtering\n# ==========================\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(courses_df[\"name\"])",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "reviews_df[\"course_id\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "reviews_df[\"course_id\"] = reviews_df[\"course_id\"].map(lambda x: label_encoder.transform([x])[0] if x in label_encoder.classes_ else None)\n# Hapus baris dengan `course_id` yang tidak valid\nreviews_df.dropna(subset=[\"course_id\"], inplace=True)\nreviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(int)\n# ==========================\n# 3️⃣ Content-Based Filtering\n# ==========================\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(courses_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "reviews_df[\"course_id\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "reviews_df[\"course_id\"] = reviews_df[\"course_id\"].astype(int)\n# ==========================\n# 3️⃣ Content-Based Filtering\n# ==========================\nvectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(courses_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\n# ==========================\n# 4️⃣ Collaborative Filtering\n# ==========================",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "vectorizer",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "vectorizer = TfidfVectorizer(stop_words=\"english\", ngram_range=(2, 2))\ntfidf_matrix = vectorizer.fit_transform(courses_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\n# ==========================\n# 4️⃣ Collaborative Filtering\n# ==========================\n# Buat `user_id` unik berdasarkan reviewers\nlabel_encoder_user = LabelEncoder()\nreviews_df[\"user_id\"] = label_encoder_user.fit_transform(reviews_df[\"reviewers\"]).astype(str)\n# Buat matriks rating pengguna terhadap kursus",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "tfidf_matrix",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "tfidf_matrix = vectorizer.fit_transform(courses_df[\"name\"])\ncosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\n# ==========================\n# 4️⃣ Collaborative Filtering\n# ==========================\n# Buat `user_id` unik berdasarkan reviewers\nlabel_encoder_user = LabelEncoder()\nreviews_df[\"user_id\"] = label_encoder_user.fit_transform(reviews_df[\"reviewers\"]).astype(str)\n# Buat matriks rating pengguna terhadap kursus\nuser_course_matrix = reviews_df.pivot_table(index=\"user_id\", columns=\"course_id\", values=\"rating\").fillna(0)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_sim_matrix",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "cosine_sim_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)\n# ==========================\n# 4️⃣ Collaborative Filtering\n# ==========================\n# Buat `user_id` unik berdasarkan reviewers\nlabel_encoder_user = LabelEncoder()\nreviews_df[\"user_id\"] = label_encoder_user.fit_transform(reviews_df[\"reviewers\"]).astype(str)\n# Buat matriks rating pengguna terhadap kursus\nuser_course_matrix = reviews_df.pivot_table(index=\"user_id\", columns=\"course_id\", values=\"rating\").fillna(0)\n# Hitung similaritas antar pengguna menggunakan cosine similarity",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "label_encoder_user",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "label_encoder_user = LabelEncoder()\nreviews_df[\"user_id\"] = label_encoder_user.fit_transform(reviews_df[\"reviewers\"]).astype(str)\n# Buat matriks rating pengguna terhadap kursus\nuser_course_matrix = reviews_df.pivot_table(index=\"user_id\", columns=\"course_id\", values=\"rating\").fillna(0)\n# Hitung similaritas antar pengguna menggunakan cosine similarity\nuser_similarity = cosine_similarity(user_course_matrix)\nuser_similarity_df = pd.DataFrame(user_similarity, index=user_course_matrix.index, columns=user_course_matrix.index)\n# ==========================\n# 5️⃣ Hybrid Recommendation API\n# ==========================",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "reviews_df[\"user_id\"]",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "reviews_df[\"user_id\"] = label_encoder_user.fit_transform(reviews_df[\"reviewers\"]).astype(str)\n# Buat matriks rating pengguna terhadap kursus\nuser_course_matrix = reviews_df.pivot_table(index=\"user_id\", columns=\"course_id\", values=\"rating\").fillna(0)\n# Hitung similaritas antar pengguna menggunakan cosine similarity\nuser_similarity = cosine_similarity(user_course_matrix)\nuser_similarity_df = pd.DataFrame(user_similarity, index=user_course_matrix.index, columns=user_course_matrix.index)\n# ==========================\n# 5️⃣ Hybrid Recommendation API\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "user_course_matrix",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "user_course_matrix = reviews_df.pivot_table(index=\"user_id\", columns=\"course_id\", values=\"rating\").fillna(0)\n# Hitung similaritas antar pengguna menggunakan cosine similarity\nuser_similarity = cosine_similarity(user_course_matrix)\nuser_similarity_df = pd.DataFrame(user_similarity, index=user_course_matrix.index, columns=user_course_matrix.index)\n# ==========================\n# 5️⃣ Hybrid Recommendation API\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)\nasync def hybrid_recommendation(user_id: str = Query(..., title=\"User ID\"), course_name: str = Query(None, title=\"Nama Kursus\")):\n    recommendations = []",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "user_similarity",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "user_similarity = cosine_similarity(user_course_matrix)\nuser_similarity_df = pd.DataFrame(user_similarity, index=user_course_matrix.index, columns=user_course_matrix.index)\n# ==========================\n# 5️⃣ Hybrid Recommendation API\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)\nasync def hybrid_recommendation(user_id: str = Query(..., title=\"User ID\"), course_name: str = Query(None, title=\"Nama Kursus\")):\n    recommendations = []\n    # **1️⃣ Content-Based Filtering**\n    if course_name:",
+        "detail": "NEW-HYBRID",
+        "documentation": {}
+    },
+    {
+        "label": "user_similarity_df",
+        "kind": 5,
+        "importPath": "NEW-HYBRID",
+        "description": "NEW-HYBRID",
+        "peekOfCode": "user_similarity_df = pd.DataFrame(user_similarity, index=user_course_matrix.index, columns=user_course_matrix.index)\n# ==========================\n# 5️⃣ Hybrid Recommendation API\n# ==========================\n@app.get(\"/dashboard\", response_model=dict)\nasync def hybrid_recommendation(user_id: str = Query(..., title=\"User ID\"), course_name: str = Query(None, title=\"Nama Kursus\")):\n    recommendations = []\n    # **1️⃣ Content-Based Filtering**\n    if course_name:\n        course_name = course_name.lower().strip()",
+        "detail": "NEW-HYBRID",
         "documentation": {}
     },
     {
