@@ -1,12 +1,13 @@
 "use client";
 
-import CourseRecommendation from "@/components/CourseRecommendation";
+import { CourseRecommendationType } from "@/app/hooks/useCourseSearch";
+import CourseRecommendation from "@/components/CourseComponent/CoursesRecommendation/CourseRecommendation";
 
 export default function RecommendedCoursesList({
   recommendations,
   userInput,
 }: {
-  recommendations: { course_id: string; name: string; similarity: number }[];
+  recommendations: CourseRecommendationType[];
   userInput: string;
 }) {
   return (
@@ -17,7 +18,7 @@ export default function RecommendedCoursesList({
       {recommendations.length > 0 ? (
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 capitalize ">
           {recommendations.map((course) => (
-            <CourseRecommendation key={course.course_id} course={course} />
+            <CourseRecommendation key={course.course_id_int} course={course} />
           ))}
         </div>
       ) : (

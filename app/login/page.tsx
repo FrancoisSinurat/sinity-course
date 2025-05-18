@@ -1,5 +1,5 @@
 "use client"
-import Login from "@/components/LoginCard";
+import Login from "@/components/HeroComponents/LoginCard";
 
 export default function LoginPage() {
   return (

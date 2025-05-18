@@ -11,7 +11,7 @@ const RatingStars = ({ rating }: { rating: number }) => {
                 const isHalf = index === Math.floor(rating) && rating % 1 >= 0.5;
 
                 return (
-                    <div key={index} className="relative w-4 h-4">
+                    <div key={index} className=" w-4 h-4">
                         <Star className="absolute w-4 h-4 text-yellow-400" />
                         {isFilled && <Star className="absolute w-4 h-4 text-yellow-500 fill-yellow-500" />}
                         {isHalf && (

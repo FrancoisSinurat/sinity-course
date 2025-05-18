@@ -1,5 +1,7 @@
+
 import UserProfilePreference from "@/components/users/UserPreference/UserPref";
 // import { ProfileCard } from "@/components/users/UserProfile";
+
 
 export default function Profile(){
   return(
@@ -7,6 +9,7 @@ export default function Profile(){
     <div className="w-full flex items-center justify-center py-20">
       {/* <ProfileCard/> */}
       <UserProfilePreference/>
+      
     </div>
     </section>
   );

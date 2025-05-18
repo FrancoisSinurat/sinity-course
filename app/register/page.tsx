@@ -1,4 +1,4 @@
-import RegisCard from "@/components/RegisCard";
+import RegisCard from "@/components/HeroComponents/RegisCard";
 export default function regisPage() {
   return (
   

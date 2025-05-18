@@ -9,6 +9,13 @@ import { Button } from "@/components/ui/button";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
+interface Errors {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export default function RegisCard() {
   const router = useRouter();
   const [name, setName] = useState("");
@@ -16,7 +23,7 @@ export default function RegisCard() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<Errors>({
     name: "",
     email: "",
     password: "",
@@ -29,9 +36,9 @@ export default function RegisCard() {
   const [isLoading, setIsLoading] = useState(false);
   const ModelURL = process.env.NEXT_PUBLIC_API_URL;
 
-  const validateForm = () => {
+  const validateForm = (): boolean => {
     let valid = true;
-    let newErrors = { name: "", email: "", password: "", confirmPassword: "" };
+    const newErrors = { name: "", email: "", password: "", confirmPassword: "" };
 
     if (!name.trim()) {
       newErrors.name = "Name is required.";
@@ -89,19 +96,18 @@ export default function RegisCard() {
       setTimeout(() => {
         router.push("/login");
       }, 2000);
-    } catch (err: any) {
-      setSuccessMessage(null);
-      setErrors((prev) => ({
-        ...prev,
-        email: err.message || "Something went wrong",
-      }));
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setSuccessMessage(null);
+        setErrors((prev) => ({
+          ...prev,
+          email: err.message || "Something went wrong",
+        }));
+      }
     } finally {
       setIsLoading(false);
     }
   };
-  
-  
-  
 
   return (
     <div className="font-graphik flex justify-center items-center w-full mt-16 h-full">
@@ -110,16 +116,17 @@ export default function RegisCard() {
           <CardTitle className="text-xl font-semibold">Register</CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             {/* Name */}
             <div className="mb-4">
               <Label htmlFor="name">
-                Name <span className="text-red-500">*</span>
+                Nama <span className="text-red-500">*</span>
               </Label>
               <Input
                 id="name"
+                autoComplete="name"
                 type="text"
-                placeholder="Your Name"
+                placeholder="Nama Lengkap"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -133,6 +140,7 @@ export default function RegisCard() {
               </Label>
               <Input
                 id="email"
+                autoComplete="email"
                 type="email"
                 placeholder="name@gmail.com"
                 value={email}
@@ -149,6 +157,7 @@ export default function RegisCard() {
               <div className="relative">
                 <Input
                   id="password"
+                  autoComplete="new-password"
                   type={showPassword ? "text" : "password"}
                   placeholder="********"
                   value={password}
@@ -157,6 +166,7 @@ export default function RegisCard() {
                 {password.length > 0 && (
                   <button
                     type="button"
+                    aria-label="Toggle password visibility"
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600"
                     onClick={() => setShowPassword((prev) => !prev)}
                   >
@@ -175,6 +185,7 @@ export default function RegisCard() {
               <div className="relative">
                 <Input
                   id="confirmPassword"
+                  autoComplete="new-password"
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="********"
                   value={confirmPassword}
@@ -183,6 +194,7 @@ export default function RegisCard() {
                 {confirmPassword.length > 0 && (
                   <button
                     type="button"
+                    aria-label="Toggle confirm password visibility"
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600"
                     onClick={() => setShowConfirmPassword((prev) => !prev)}
                   >
@@ -198,14 +210,13 @@ export default function RegisCard() {
 
             {/* Submit Button */}
             <Button className="w-full bg-blue-500 hover:bg-blue-600" type="submit" disabled={isLoading}>
-            {isLoading ? "Registering..." : "Submit"}
+              {isLoading ? "Registering..." : "Submit"}
             </Button>
-
           </form>
 
           {/* Redirect to Sign In */}
           <p className="mt-4 text-center text-sm text-gray-600">
-            Sudah mempunyai akun? {" "}
+            Sudah mempunyai akun?{" "}
             <Link href="/login" className="text-blue-500 hover:text-blue-400 font-medium">
               Login
             </Link>

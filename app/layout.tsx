@@ -1,9 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Geist} from 'next/font/google';
-import { Inter } from 'next/font/google';
-import  Navbar  from '@/components/Navbar';
-import { FooterWrapper } from '@/components/FooterWrapper';
+import  Navbar  from '@/components/HeroComponents/Navbar';
+// import Sidebar from '@/components/Sidebar';
+import { FooterWrapper } from '@/components/HeroComponents/FooterWrapper';
 
 // const geistSans = Geist({
 //   variable: '--font-geist-sans',
@@ -33,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" bg-[#E2CEB1] mt-4 text-gray-900">
+      <body className=" bg-[#E2CEB1] text-gray-900">
       <Navbar/>
         {children}
       {/* <Footer/> */}
