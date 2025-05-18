@@ -8,35 +8,39 @@ import { Button } from "@/components/ui/button";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import { Separator } from "@radix-ui/react-separator";
 import Link from "next/link";
+import { useAuthStore } from '@/app/store/AuthStore';
+import { login,fetchMe } from "@/lib/api/auth"; // 🔥 ganti ke sini
 
 export default function Login() {
   const router = useRouter();
-  const [name, setName] = useState('');
+  const { setAuth } = useAuthStore();
+
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [isTypingPassword, setIsTypingPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [errors, setErrors] = useState({
-    name: "",
-    password: "",
-  });
-  const ModelUrl = process.env.NEXT_PUBLIC_API_URL;
+  const [errors, setErrors] = useState({ email: "", password: "" });
+
   const togglePasswordVisibility = () => setPasswordShown((prev) => !prev);
 
   const validateForm = () => {
     let valid = true;
-    let newErrors = { name: "", password: "" };
+    const newErrors = { email: "", password: "" };
 
-    if (!name.trim()) {
-      newErrors.name = "Username is required.";
+    if (!email.trim()) {
+      newErrors.email = "Email wajib diisi.";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Format email tidak valid.";
       valid = false;
     }
 
     if (!password) {
-      newErrors.password = "Password is required.";
+      newErrors.password = "Password wajib diisi.";
       valid = false;
     } else if (password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters.";
+      newErrors.password = "Password minimal 6 karakter.";
       valid = false;
     }
 
@@ -45,43 +49,34 @@ export default function Login() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!validateForm()) return;
+  e.preventDefault();
+  if (!validateForm()) return;
 
-    try {
-      const body = new URLSearchParams();
-      body.append("username", name); // form_data.username
-      body.append("password", password); // form_data.password
+  try {
+    const data = await login({ email: email, password });
+    const token = data.access_token ;
 
-      const res = await fetch(`${ModelUrl}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    name,         // HARUS "name"
-    password,     // HARUS "password"
-  }),
-      });
+    // Ambil user setelah token valid
+    const user = await fetchMe(token);
 
-      const data = await res.json();
+    // Simpan token + user di store sekaligus
+    setAuth(token, user);
 
-      if (!res.ok) {
-        throw new Error(data.detail || "Login failed");
-      }
+    setSuccessMessage("Login berhasil! Redirecting...");
 
-      localStorage.setItem("token", data.token);
-      setSuccessMessage("Login successful! Redirecting to Dashboard...");
-
-      setTimeout(() => {
-        router.push("dashboard");
-      }, 2000);
-    } catch (err: any) {
-      setSuccessMessage(null);
-      setErrors((prev) => ({
-        ...prev,
-        password: err.message || "Something went wrong",
-      }));
+    setTimeout(() => {
+      router.push("/");
+    }, 2000);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error("Login error:", error.message);
+      setErrors((prev) => ({ ...prev, password: error.message }));
+    } else {
+      console.error("Unexpected error:", error);
+      setErrors((prev) => ({ ...prev, password: "Unexpected error occurred." }));
     }
-  };
+  }
+};
 
   return (
     <div className="font-graphik flex justify-center w-full items-center">
@@ -92,17 +87,17 @@ export default function Login() {
         <CardContent>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm mb-2 font-bold text-gray-700">
-                Username <span className="text-red-500">*</span>
+              <label htmlFor="email" className="block text-sm mb-2 font-bold text-gray-700">
+                Email <span className="text-red-500">*</span>
               </label>
               <Input
-                id="name"
-                type="text"
-                placeholder="Your username"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+              {errors.email && <p className="text-red-500    text-sm mt-1">{errors.email}</p>}
             </div>
 
             <div className="mb-4">
@@ -142,12 +137,6 @@ export default function Login() {
 
           {successMessage && <p className="text-green-500 text-sm mt-4">{successMessage}</p>}
           <Separator className="my-6" />
-
-          <div className="mt-4 text-right">
-            <Link href="/forgot-pass" className="text-blue-500 hover:text-blue-400 text-sm">
-              Forgot password?
-            </Link>
-          </div>
 
           <p className="mt-4 text-center text-sm text-gray-600 border-t pt-2">
             Akun belum terdaftar?{" "}
