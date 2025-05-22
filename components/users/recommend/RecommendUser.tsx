@@ -44,7 +44,7 @@ export default function RecommendUser() {
       }
 
       try {
-        const res = await fetch(`${ModelUrl}/recommend_for_user`, {
+        const res = await fetch(`${ModelUrl}/recommend_hybrid`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

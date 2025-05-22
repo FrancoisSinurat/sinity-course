@@ -21,9 +21,9 @@ export default function CategoryRecommendationCard({ category }: { category: Cat
             {category.average_rating.toFixed(1)} / 5
           </div>
         </div>
-        <div className="text-center text-sm text-gray-600">
+        {/* <div className="text-center text-sm text-gray-600">
           Similarity Score: <span className="font-semibold">{category.similarity}</span>
-        </div>
+        </div> */}
       </CardContent>
 
       <CardFooter className="mt-auto flex justify-center pb-4">

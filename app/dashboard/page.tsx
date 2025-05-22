@@ -1,17 +1,17 @@
 'use client';
 
-import { useEffect, useMemo, useCallback } from "react";
+import { useEffect, useMemo, useCallback, useState } from "react";
 import { debounce } from "lodash";
 
 import UserPreference from "@/components/users/UserPreference/UserPref";
 import RecommendedCoursesList from "@/components/CourseComponent/CoursesRecommendation/RecommendedCoursesList";
 import CategoryRecommendationCard from "@/components/CategoryComponent/CategoryRecommendationCard";
+import AllCoursesList from "@/components/CourseComponent/FetchAllCourse/CourseList";
 
 import { useAuthStore } from '@/app/store/AuthStore';
 import { useCourseSearch } from "@/app/hooks/useCourseSearch";
 import { useCategoryRecommendation } from "@/app/hooks/useCategoryRecommendation";
 import { fetchMe } from "@/lib/api/auth";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
@@ -22,6 +22,8 @@ export default function DashboardPage() {
   const hasHydrated = useAuthStore((state) => state.hasHydrated);
   const setAuth = useAuthStore((state) => state.setAuth);
   const logout = useAuthStore((state) => state.logout);
+
+  const [loadingUser, setLoadingUser] = useState(true);
 
   const {
     query,
@@ -44,7 +46,6 @@ export default function DashboardPage() {
     [fetchRecommendations]
   );
 
-  // ✅ Fungsi refetch user
   const refetchUser = useCallback(async () => {
     if (token) {
       try {
@@ -55,25 +56,25 @@ export default function DashboardPage() {
         logout();
       }
     }
+    setLoadingUser(false);
   }, [token, setAuth, logout]);
 
-  // Ambil ulang user kalau token ada tapi user belum dimuat
   useEffect(() => {
     if (!hasHydrated) return;
 
     if (token && !user) {
       refetchUser();
+    } else {
+      setLoadingUser(false);
     }
   }, [hasHydrated, token, user, refetchUser]);
 
-  // Fetch kategori rekomendasi setelah user punya preference
   useEffect(() => {
     if (user?.category_preference) {
       fetchCategoryRecommendation();
     }
   }, [user?.category_preference, fetchCategoryRecommendation]);
 
-  // Fetch kursus berdasarkan query
   useEffect(() => {
     if (query) {
       debouncedFetchRecommendations();
@@ -81,32 +82,18 @@ export default function DashboardPage() {
     return () => debouncedFetchRecommendations.cancel();
   }, [query, debouncedFetchRecommendations]);
 
-  // ❌ render sebelum hydration
-  if (!hasHydrated) return null;
+  if (!hasHydrated || loadingUser) return null;
 
-  // 🚫 Kalau user belum login
-  if (!user) {
+  if(!user){
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r px-6 py-12">
-        <div className="max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Selamat Datang di <span className="">SinityCourse</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-8">
-            Temukan kursus terbaik sesuai minat dan kemampuanmu dengan sistem rekomendasi cerdas kami.
-          </p>
-          <Link
-            href="/register"
-            className="inline-block px-8 py-3  bg-[#6e6557] text-white font-semibold rounded-lg shadow-md hover:bg-[#ae9c80] transition duration-300"
-          >
-            Explore Kursus
-          </Link>
-        </div>
+      <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
+        <AllCoursesList />
       </div>
     );
   }
+  
+  
 
-  // ❓ Kalau belum ada preferensi, tampilkan form preferensi
   if (user?.category_preference == null) {
     return (
       <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
@@ -117,7 +104,6 @@ export default function DashboardPage() {
 
   return (
     <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
-      {/* Input pencarian kursus */}
       <div className="p-4 border rounded-lg shadow-md bg-white mt-6 mb-6">
         <input
           type="text"
@@ -135,7 +121,6 @@ export default function DashboardPage() {
         )}
       </div>
 
-      {/* Info preferensi kategori */}
       {user?.category_preference && (
         <div
           onClick={() => router.push("/user-pref")}
@@ -148,7 +133,6 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Rekomendasi berdasarkan kategori */}
       {loadingCategory ? (
         <p className="text-gray-500">Memuat rekomendasi berdasarkan kategori...</p>
       ) : errorCategory ? (
