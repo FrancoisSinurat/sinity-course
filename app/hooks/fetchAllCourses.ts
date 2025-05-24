@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 export interface Course {
   course_id_int: number;
   name: string;
+  category:string;
   total_reviewers: number;
   average_rating: number;
 }

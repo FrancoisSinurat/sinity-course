@@ -6,6 +6,7 @@ import UserCourses from "@/components/users/UserProfile/UserData";
 import RecommendedUser from "@/components/users/recommend/RecommendUser";
 import { fetchMe, updateProfile } from "@/lib/api/auth";
 import { useEffect, useState } from "react";
+import EnrolledCourseList from "@/components/users/UserProfile/FetchEnroll";
 
 interface User {
   user_id: number;
@@ -60,6 +61,8 @@ export default function UserProfile() {
       alert("Gagal memperbarui profil.");
     }
   };
+  
+
 
   if (loading) return <div className="text-center">Memuat data pengguna...</div>;
   if (error) return <div className="text-center text-red-500">{error}</div>;
@@ -68,10 +71,12 @@ export default function UserProfile() {
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6">
+        
         <div className="lg:col-span-2">
           <ProfileHeader user={user} onSave={handleUpdateUser} />
         </div>
         <div className="lg:col-span-2 flex flex-col space-y-6">
+          <EnrolledCourseList />
           <UserCourses />
           <RecommendedUser />
         </div>

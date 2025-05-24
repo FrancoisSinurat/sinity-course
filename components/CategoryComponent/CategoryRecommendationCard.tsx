@@ -9,6 +9,7 @@ import { formatTotalReviews } from '../ui/formatrevies';
 
 export default function CategoryRecommendationCard({ category }: { category: CategoryRecommendation }) {
   return (
+    
     <Card className="flex flex-col justify-between h-full hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-amber-200 rounded-xl bg-gradient-to-br bg-white via-slate-50 to-slate-100">
       <CardHeader className="text-center space-y-2">
         <CardTitle className="text-md capitalize">{category.name}</CardTitle>

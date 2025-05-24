@@ -6,6 +6,7 @@ type User = {
   name: string;
   email: string;
   category_preference: string | null;
+  enrolledCourses?: number[]; // misal array course_id yang sudah di-enroll user
 };
 
 type AuthState = {

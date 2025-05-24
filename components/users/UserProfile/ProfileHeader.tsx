@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Save, X, Pencil, UserCircle2 } from "lucide-react";
+import { Save, X, Pencil } from "lucide-react";
 
 interface User {
   user_id: number;
@@ -41,7 +41,7 @@ export default function ProfileHeader({ user, onSave }: UserProps) {
   return (
     <Card className="relative mb-10 mt-10 mx-auto max-w-xl shadow-2xl rounded-2xl p-6 pb-16">
       <CardHeader className="flex flex-col items-center gap-4">
-        <UserCircle2 className="w-20 h-20 text-primary" />
+        {/* <UserCircle2 className="w-20 h-20 text-primary" /> */}
         <CardTitle className="text-2xl font-bold text-center text-primary">
           {isEditing ? (
             <Input
@@ -75,7 +75,7 @@ export default function ProfileHeader({ user, onSave }: UserProps) {
           ) : (
             <>
               <p>{formData.email}</p>
-              <p>Kategori: {formData.category_preference}</p>
+              <p>Learning Path: {formData.category_preference}</p>
             </>
           )}
         </div>
@@ -83,9 +83,9 @@ export default function ProfileHeader({ user, onSave }: UserProps) {
 
       <CardContent className="mt-6 space-y-4 text-sm text-gray-700">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <p><span className="font-semibold">Username:</span> {user.name}</p>
+          <p><span className="font-semibold">Nama:</span> {user.name}</p>
           <p><span className="font-semibold">Email:</span> {user.email}</p>
-          <p><span className="font-semibold">Kategori:</span> {user.category_preference ?? "-"}</p>
+          <p><span className="font-semibold">Learning Path:</span> {user.category_preference ?? "-"}</p>
         </div>
       </CardContent>
 

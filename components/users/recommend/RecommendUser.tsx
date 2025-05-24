@@ -72,12 +72,12 @@ export default function RecommendUser() {
 
   return (
     <div className="p-4 border rounded-2xl shadow-md mt-6 bg-gradient-to-br from-white via-slate-50 to-slate-100">
-      <h2 className="text-lg font-bold mb-2">Rekomendasi Kursus</h2>
+      <h2 className="text-lg font-bold mb-2">Rekomendasi untuk Anda...</h2>
       {error ? (
         <p className="text-red-500">{error}</p>
       ) : (
         <>
-          <p className="text-sm text-muted-foreground mb-3">{data?.message}</p>
+          {/* <p className="text-sm text-muted-foreground mb-3">{data?.message}</p> */}
           {uniqueRecommendations.length ? (
             <div className="grid gap-2 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-4">
               {uniqueRecommendations.map((course) => (

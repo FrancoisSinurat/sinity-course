@@ -100,6 +100,7 @@ export default function UserPreferenceForm({
     }
   };
 
+  
   return (
     <div className="max-w-xl mx-auto p-6 w-full rounded-lg shadow-lg border">
       <div className="text-center font-bold text-2xl pt-2">

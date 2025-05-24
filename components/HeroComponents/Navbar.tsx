@@ -72,13 +72,13 @@ export default function Navbar() {
   if (loadingUser) return <div>Loading...</div>;
 
   return (
-    <nav className={`font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${
-      isScrolled ? "bg-neutral-200 shadow-sm text-zinc-700" : "bg-[#E2CEB1] text-black"
+    <nav className={` font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${
+      isScrolled ? "bg-white shadow-sm text-zinc-700" : " text-black"
     }`}>
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center space-x-2">
           <GraduationCap size={45} className="text-black" />
-          <span className="text-xl font-bold font-graphik">SinityCourse</span>
+          <span className="text-xl font-bold font-graphik text-stone-400">Sinity<span className="text-stone-700">Course</span> </span>
         </Link>
 
         <div className="hidden md:flex flex-1 justify-center space-x-6">
@@ -103,8 +103,8 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           {!user ? (
             <>
-              <Link href="/login" className="px-4 py-2 rounded-lg hover:bg-stone-400 transition">Login</Link>
-              <Link href="/register" className="px-4 py-2 bg-stone-700 text-white rounded-lg hover:bg-stone-600">Register</Link>
+              <Link href="/login" className="px-4 py-2 rounded-lg hover:bg-gray-50 transition">Login</Link>
+              <Link href="/register" className="px-4 py-2 bg-stone-500 text-white rounded-lg hover:bg-stone-600">Register</Link>
             </>
           ) : (
             <button
@@ -131,7 +131,7 @@ export default function Navbar() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="md:hidden"
           >
-            <ul className="flex flex-col space-y-4 px-6 py-4">
+            <ul className="flex flex-col space-y-4 px-6 py-4 bg-slate-200 shadow-lg rounded-lg">
               {menuItems.map((item) => {
                 const path = `/${item.toLowerCase()}`;
                 const isActive = pathname === path;
@@ -151,18 +151,18 @@ export default function Navbar() {
               })}
 
               {!user ? (
-                <>
+                <div className="flex flex-col space-y-4 ">
                   <li>
                     <Link href="/login" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-center rounded-lg hover:bg-gray-50 transition">
                       Login
                     </Link>
                   </li>
                   <li>
-                    <Link href="/register" onClick={() => setIsOpen(false)} className="block px-4 py-2 bg-stone-700 text-white text-center rounded-lg hover:bg-stone-600 transition">
+                    <Link href="/register" onClick={() => setIsOpen(false)} className="block px-4 py-2 bg-stone-500 text-white text-center rounded-lg hover:bg-stone-600 transition">
                       Register
                     </Link>
                   </li>
-                </>
+                </div>
               ) : (
                 <li>
                   <button
