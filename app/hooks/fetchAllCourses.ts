@@ -16,10 +16,15 @@ export function usePaginatedCourses(apiUrl: string) {
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchCoursesByPage = useCallback(
-    async (page: number, limit = 20) => {
+    async (page: number, limit = 20, categoryPreference?: string) => {
       setLoading(true);
       try {
-        const response = await fetch(`${apiUrl}/courses?page=${page}&limit=${limit}`);
+        const url = new URL(`${apiUrl}/courses`);
+        url.searchParams.append("page", page.toString());
+        url.searchParams.append("limit", limit.toString());
+        if (categoryPreference) url.searchParams.append("category", categoryPreference);
+
+        const response = await fetch(url.toString());
         if (!response.ok) throw new Error("Response not OK");
         const data = await response.json();
 

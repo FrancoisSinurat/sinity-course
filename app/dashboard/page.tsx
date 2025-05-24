@@ -148,8 +148,9 @@ export default function DashboardPage() {
         </p>  
         </div>
       )}
+      <AllCoursesList categoryPreference={user?.category_preference} />
 
-      <AllCoursesList />
+
     </div>
     
   );

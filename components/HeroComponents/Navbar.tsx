@@ -78,7 +78,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center space-x-2">
           <GraduationCap size={45} className="text-black" />
-          <span className="text-xl font-bold font-graphik text-stone-400">Sinity<span className="text-stone-700">Course</span> </span>
+          <span className="text-xl font-bold font-graphik text-stone-700">Sinity<span className="text-stone-400">Course</span> </span>
         </Link>
 
         <div className="hidden md:flex flex-1 justify-center space-x-6">
@@ -91,7 +91,7 @@ export default function Navbar() {
                 href={path}
                 className={cn(
                   "text-lg transition-all duration-300 px-4 py-2 rounded-lg ",
-                  isActive ? "text-black shadow-md" : "hover:bg-[#efd8b5]"
+                  isActive ? "text-black shadow-md" : "hover:bg-slate-100 text-zinc-600"
                 )}
               >
                 {item}

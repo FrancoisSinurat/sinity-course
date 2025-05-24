@@ -15,16 +15,17 @@ import {
 import { formatTotalReviews } from "@/components/ui/formatrevies";
 import { Badge } from "@/components/ui/badge";
 
-export default function AllCoursesList() {
+export default function AllCoursesList({ categoryPreference }: { categoryPreference?: string }) {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL!;
   const router = useRouter();
 
   const { courses, loading, error, totalPages, fetchCoursesByPage } = usePaginatedCourses(apiUrl);
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    fetchCoursesByPage(currentPage);
-  }, [currentPage, fetchCoursesByPage]);
+useEffect(() => {
+  fetchCoursesByPage(currentPage, 20, categoryPreference);
+}, [currentPage, categoryPreference, fetchCoursesByPage]);
+
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages && page !== currentPage) {
@@ -98,9 +99,14 @@ export default function AllCoursesList() {
         <p className="mb-4">Tidak ada kursus tersedia.</p>
       )}
 
-      {!loading && !error && courses.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
-          {courses.map((course) => (
+{!loading && !error && courses.length > 0 && (
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
+    {courses
+      .filter((course) =>
+        categoryPreference ? course.category === categoryPreference : true
+      )
+      .map((course) => (
+
             <Card
               key={course.course_id_int}
               onClick={() => router.push(`course/${course.course_id_int}`)}
