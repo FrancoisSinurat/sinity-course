@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "lint": "next lint",
     "format": "prettier --write ."
   },
@@ -39,6 +39,8 @@
     "react-icons": "^5.4.0",
     "shadcn": "^2.3.0",
     "shadcn-ui": "^0.9.4",
+    "sweetalert2": "^11.22.0",
+    "sweetalert2-react-content": "^5.1.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
     "text": "^0.1.0",

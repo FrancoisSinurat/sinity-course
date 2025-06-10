@@ -46,6 +46,7 @@ export type User = {
   name: string;
   email: string;
   enrolled_courses: number[];
+  completed_courses?: number[];
 };
 
 export function useUser() {

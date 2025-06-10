@@ -12,7 +12,6 @@ import { fetchMe, logout as logoutApi } from "@/lib/api/auth";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [loadingUser, setLoadingUser] = useState(true);
   const hasHydrated = useAuthStore((state) => state.hasHydrated);
   const router = useRouter();
   const pathname = usePathname();
@@ -26,33 +25,28 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-  const loadUser = async () => {
-    if (!hasHydrated) return; // tunggu state persist selesai dulu
+    const loadUser = async () => {
+      if (!hasHydrated) return;
 
-    if (!token) {
-      logout();
-      setLoadingUser(false);
-      return;
-    }
-
-    if (!user) {
-      try {
-        const data = await fetchMe(token);
-        setAuth(token, data);
-      } catch (err) {
-        console.error("Fetch user error:", err);
+      if (!token) {
         logout();
-        router.push("/login");
-      } finally {
-        setLoadingUser(false);
+        return;
       }
-    } else {
-      setLoadingUser(false);
-    }
-  };
 
-  loadUser();
-}, [hasHydrated, token, user, setAuth, logout, router]);
+      if (!user) {
+        try {
+          const data = await fetchMe(token);
+          setAuth(token, data);
+        } catch (err) {
+          console.error("Fetch user error:", err);
+          logout();
+          router.push("/login");
+        }
+      }
+    };
+
+    loadUser();
+  }, [hasHydrated, token, user, setAuth, logout, router]);
 
   const handleLogout = async () => {
     try {
@@ -63,13 +57,11 @@ export default function Navbar() {
       console.error("Logout error:", err);
     } finally {
       logout();
-      router.push("/login");
+      router.push("/");
     }
   };
 
   const menuItems = user ? ["Profile"] : [];
-
-  if (loadingUser) return <div>Loading...</div>;
 
   return (
     <nav className={` font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${

@@ -1,5 +1,6 @@
 "use client"
 import Login from "@/components/HeroComponents/LoginCard";
+export const dynamic = "force-dynamic";
 
 export default function LoginPage() {
   return (
