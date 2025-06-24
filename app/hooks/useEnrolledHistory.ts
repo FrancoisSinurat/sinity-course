@@ -7,7 +7,6 @@ import { useAuthStore } from "@/app/store/AuthStore";
 interface EnrolledCourse {
   course_id_int: number;
   name: string;
-  category: string;
   total_reviewers: number;
   average_rating: number;
 }

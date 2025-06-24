@@ -88,10 +88,10 @@ export default function RegisCard() {
       const data = await res.json();
   
       if (!res.ok) {
-        throw new Error(data.detail || "Registration failed");
+        throw new Error(data.detail || "Pendaftaran akun gagal");
       }
   
-      setSuccessMessage("Registration successful! Redirecting to login page...");
+      setSuccessMessage("Registrasi berhasil! Mengarahkan ke halaman login...");
   
       setTimeout(() => {
         router.push("/login");
@@ -180,7 +180,7 @@ export default function RegisCard() {
             {/* Confirm Password */}
             <div className="mb-4">
               <Label htmlFor="confirmPassword">
-                Confirm Password <span className="text-red-500">*</span>
+                Konfirmasi Password <span className="text-red-500">*</span>
               </Label>
               <div className="relative">
                 <Input

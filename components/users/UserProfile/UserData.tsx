@@ -63,7 +63,7 @@ export default function UserData() {
           {uniqueReviews.map((course) => (
             <Card
               key={course.course_id_int}
-              className="shadow-lg rounded-lg border h-full flex flex-col justify-between"
+              className="shadow-lg rounded-lg border h-full flex flex-col justify-between "
             >
               <CardHeader className="p-4 text-center">
                 <CardTitle className="text-lg capitalize">{course.name}</CardTitle>

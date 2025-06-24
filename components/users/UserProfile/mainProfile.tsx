@@ -12,7 +12,6 @@ interface User {
   user_id: number;
   name: string;
   email: string;
-  category_preference: string | null;
 }
 
 export default function UserProfile() {
@@ -30,7 +29,6 @@ export default function UserProfile() {
           user_id: data.user_id,
           name: data.name,
           email: data.email,
-          category_preference: data.category_preference ?? null,
         });
         setError("");
       })
@@ -55,7 +53,6 @@ export default function UserProfile() {
         user_id: refreshed.user_id,
         name: refreshed.name,
         email: refreshed.email,
-        category_preference: refreshed.category_preference ?? null,
       });
     } catch {
       alert("Gagal memperbarui profil.");

@@ -5,7 +5,6 @@ import { useAuthStore } from "@/app/store/AuthStore";
 export type Course = {
   course_id_int: number;
   name: string;
-  category: string;
   total_reviewers: number;
   average_rating: number;
 };

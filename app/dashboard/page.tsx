@@ -7,15 +7,13 @@ import AllCoursesList from "@/components/CourseComponent/FetchAllCourse/CourseLi
 import { useAuthStore } from '@/app/store/AuthStore';
 import { useCourseSearch } from "@/app/hooks/useCourseSearch";
 import { fetchMe } from "@/lib/api/auth";
-import { useRouter } from "next/navigation";
-import { Briefcase } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// import EnrolledCourseList from "@/com  ponents/users/UserProfile/FetchEnroll";
+import { useEnrolledCourses } from "@/app/hooks/useEnrolledHistory";
+import { usePopularKeyword } from "@/app/hooks/usePopularKeywords";
+import EnrollRecommendationsList from '../../components/CourseComponent/FetchAllCourse/RecommendationEnrollList';
 
 export default function DashboardPage() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL!;
-  const router = useRouter();
   const user = useAuthStore((state) => state.user);
   const token = useAuthStore((state) => state.token);
   const hasHydrated = useAuthStore((state) => state.hasHydrated);
@@ -23,6 +21,7 @@ export default function DashboardPage() {
   const logout = useAuthStore((state) => state.logout);
 
   const [loadingUser, setLoadingUser] = useState(true);
+  const [keywordVisible, setKeywordVisible] = useState(false);
 
   const {
     query,
@@ -32,6 +31,9 @@ export default function DashboardPage() {
     loading,
     error
   } = useCourseSearch(apiUrl);
+
+  const { keywords } = usePopularKeyword();
+  const { courses, loading: loadingEnrolled } = useEnrolledCourses();
 
   const debouncedFetchRecommendations = useMemo(
     () => debounce(fetchRecommendations, 500),
@@ -68,74 +70,82 @@ export default function DashboardPage() {
     return () => debouncedFetchRecommendations.cancel();
   }, [query, debouncedFetchRecommendations]);
 
-  if (!hasHydrated || loadingUser) return null;
+  const handleKeywordClick = (keyword: string) => {
+    setQuery(keyword);
+    setKeywordVisible(false);
+  };
 
-  // ========== KASUS 1: Tidak ada user atau token ==========
+  const renderSearchSection = () => (
+    <div className="p-4 border rounded-lg shadow-md bg-white mt-6 mb-6">
+      <input
+        type="text"
+        placeholder="Mau belajar apa hari ini?"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onFocus={() => setKeywordVisible(true)}
+        className="w-full p-2 border rounded-md text-center "
+      />
+      {keywordVisible && keywords.length > 0 && (
+        <div className="mt-4 animate-fadeIn space-y-2">
+          <h4 className="text-sm font-medium text-gray-700">✨ Kata Kunci Populer</h4>
+          <div className="flex flex-wrap gap-2">
+            {keywords.map((kw) => (
+              <button
+                key={kw}
+                onClick={() => handleKeywordClick(kw)}
+                className="capitalize bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-900 text-sm px-4 py-1 rounded-full shadow-sm transition-all duration-200"
+              >
+                {kw}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+
+      {error && <div className="text-red-500 mt-2">{error}</div>}
+      {loading && <div className="text-gray-500 mt-2">Mencari rekomendasi...</div>}
+      {recommendations.length > 0 && !loading && (
+        <div className="mt-6">
+          <RecommendedCoursesList recommendations={recommendations} userInput={query} />
+        </div>
+      )}
+    </div>
+  );
+
+  if (!hasHydrated || loadingUser) {
+    return (
+      <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
+        {renderSearchSection()}
+        <AllCoursesList />
+      </div>
+    );
+  }
+
   if (!user) {
     return (
       <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
-        <div className="p-4 border rounded-lg shadow-md bg-white mt-6 mb-6">
-          <input
-            type="text"
-            placeholder="Mau belajar apa hari ini?"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="w-full p-2 border rounded-md text-center capitalize"
-          />
-          {error && <div className="text-red-500 mt-2">{error}</div>}
-          {loading && <div className="text-gray-500 mt-2">Mencari rekomendasi...</div>}
-          {recommendations.length > 0 && !loading && (
-            <div className="mt-6">
-              <RecommendedCoursesList recommendations={recommendations} userInput={query} />
-            </div>
-          )}
-        </div>
+        {renderSearchSection()}
         <AllCoursesList />
       </div>
     );
   }
 
-  // ========== KASUS 2: Ada user tapi belum isi preferensi ==========
-  if (user && user.category_preference == null) {
-    return (
-      <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
-        <div className="mb-4">
-          <Card className="w-full max-w-sm p-2 shadow-lg">
-            <CardHeader className="flex flex-row items-stretch gap-3">
-              <Briefcase className="w-6 h-8 text-red-600" />
-              <CardTitle className="text-center">User Preference</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">
-                Lengkapi profilmu berdasarkan minat atau keahlian agar dapat rekomendasi kursus yang lebih relevan.
-              </p>
-              <div className="mt-4">
-                <Button asChild className="w-full bg-blue-600 text-white hover:bg-blue-700">
-                  <Link href="/user-pref">Take Your Journey</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-        <AllCoursesList />
-      </div>
-    );
-  }
-
-  // ========== KASUS 3: Ada user dan sudah isi preferensi ==========
   return (
     <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
-      <div
-        onClick={() => router.push("/user-pref")}
-        className="p-4 bg-blue-50 border border-blue-200 rounded mb-4 cursor-pointer hover:bg-blue-100 transition"
-        title="Klik untuk ubah preferensi"
-      >
-        <p className="text-blue-800">
-          Kategori preferensi Anda: <strong>{user.category_preference}</strong>
-        </p>  
-      </div>
-      <AllCoursesList categoryPreference={user?.category_preference ?? undefined} />
-
+      {renderSearchSection()}
+      {loadingEnrolled ? (
+        <div className="text-sm text-gray-500">Memuat kursus terdaftar...</div>
+      ) : courses.length > 0 ? (
+        // komponen untuk menampilkan riwayat kursus
+        <section>
+        {/* <EnrolledCourseList /> */}
+        <EnrollRecommendationsList/>
+        </section>
+      ) : (
+        // menampilkan semua kursus 
+        <AllCoursesList />
+      )}
     </div>
   );
 }

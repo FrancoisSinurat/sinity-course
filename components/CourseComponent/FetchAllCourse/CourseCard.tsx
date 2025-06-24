@@ -4,7 +4,9 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users } from "lucide-react";
 import RatingStars from "@/components/ui/ratingstars";
-
+import { formatTotalReviews } from "@/components/ui/formatrevies";
+import {useUnsplashImage} from "@/app/hooks/unsplashImage";
+import Image from "next/image";
 type Course = {
   course_id_int: number;
   name: string;
@@ -20,9 +22,6 @@ type Props = {
   onClick?: () => void;
 };
 
-function formatReviewers(n: number): string {
-  return n > 1000 ? `${(n / 1000).toFixed(1)}k+` : `${n}`;
-}
 
 export default function CourseCard({
   course,
@@ -31,12 +30,22 @@ export default function CourseCard({
   enrollingId,
   onClick,
 }: Props) {
+  const imageUrl = useUnsplashImage(course.name);
   return (
     <Card
       key={course.course_id_int}
       onClick={onClick}
-      className="shadow-lg rounded-lg border hover:scale-105 transition-transform"
+      className="cursor-pointer shadow-lg rounded-lg border hover:scale-105 transition-transform"
     >
+           {imageUrl && (
+        <Image
+          src={imageUrl}
+          alt={course.name}
+          className="w-full h-40 object-cover" // biar gambar proporsional
+          width={400}
+          height={160}
+        />
+      )}
       <CardHeader>
         <CardTitle className="text-lg capitalize">{course.name}</CardTitle>
       </CardHeader>
@@ -49,7 +58,9 @@ export default function CourseCard({
         <div className="text-xs text-muted-foreground flex items-center gap-2 mb-2">
           <Badge variant="secondary" className="flex items-center gap-1 text-xs">
             <Users className="h-4 w-4 text-gray-500" />
-            <span>{formatReviewers(course.total_reviewers)} reviewers</span>
+            <span className="text-sm text-black-500">
+                {formatTotalReviews(course.total_reviewers)} reviews
+            </span>
           </Badge>
         </div>
 

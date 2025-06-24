@@ -7,6 +7,9 @@ import CourseCard from "@/components/CourseComponent/FetchAllCourse/CourseCard";
 import { useCourseRecommendation, useUser } from "@/app/hooks/useCourseRecommendation";
 import { formatTotalReviews } from "@/components/ui/formatrevies";
 import { showSuccess, showError } from "@/lib/alert";
+import {useUnsplashImage} from "@/app/hooks/unsplashImage";
+import Image from "next/image";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 
 export default function RecommendByCoursePage() {
   const { course_id } = useParams();
@@ -23,35 +26,36 @@ export default function RecommendByCoursePage() {
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [courseToRate, setCourseToRate] = useState<number | null>(null);
+  const imageUrl = useUnsplashImage(basedOnCourse?.name || "online course");
 
 
 interface CompletedCourse {
   course_id_int: number;
 }
 
-useEffect(() => {
-  const fetchCompletedCourses = async () => {
-    if (!user) return;
+  useEffect(() => {
+    const fetchCompletedCourses = async () => {
+      if (!user) return;
 
-    try {
-      const res = await fetch(`${apiUrl}/complete-course`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      try {
+        const res = await fetch(`${apiUrl}/complete-course`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-      if (!res.ok) throw new Error("Gagal ambil data kursus selesai");
+        if (!res.ok) throw new Error("Gagal ambil data kursus selesai");
 
-      const data = await res.json();
-      const ids = data.completed_courses.map((c: CompletedCourse) => c.course_id_int);
-      setCompletedCourses(ids);
-    } catch (err) {
-      console.error("Error fetch completed courses:", err);
-    }
-  };
+        const data = await res.json();
+        const ids = data.completed_courses.map((c: CompletedCourse) => c.course_id_int);
+        setCompletedCourses(ids);
+      } catch (err) {
+        console.error("Error fetch completed courses:", err);
+      }
+    };
 
-  fetchCompletedCourses();
-}, [user, apiUrl, token]);
+    fetchCompletedCourses();
+  }, [user, apiUrl, token]);
 
   const handleEnroll = async (course_id: number) => {
     if (!user) {
@@ -60,11 +64,11 @@ useEffect(() => {
     }
 
     const confirm = await Swal.fire({
-      title: `Enroll kursus ${basedOnCourse?.name.toUpperCase()}?`,
+      title: `Ikuti kursus ${basedOnCourse?.name}?`,
       text: "Kamu yakin ingin mendaftar ke kursus ini?",
       icon: "question",
       showCancelButton: true,
-      confirmButtonText: "Ya, Daftar",
+      confirmButtonText: "Daftar",
       cancelButtonText: "Batal",
     });
 
@@ -185,56 +189,79 @@ const handleSubmitRating = async () => {
 
   return (
     <div className="px-8 pt-24 flex flex-col w-full min-h-screen space-y-8">
-      {basedOnCourse && (
-        <div className="bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-2xl shadow p-6">
-          <h2 className="text-2xl font-bold capitalize mb-2">{basedOnCourse.name}</h2>
-          <p className="text-sm text-gray-600 mb-4">{basedOnCourse.category}</p>
-          <div className="flex items-center gap-4 mb-4">
-            <span className="font-semibold text-yellow-600 flex items-center gap-1">
-              <span>⭐</span> {basedOnCourse.average_rating.toFixed(2)}
-            </span>
-            <span className="text-sm text-gray-500">
-              {formatTotalReviews(basedOnCourse.total_reviewers)} reviewers
-            </span>
-          </div>
-    <button
-      onClick={() => handleEnroll(basedOnCourse.course_id_int)}
-    disabled={
-      enrollingId === basedOnCourse.course_id_int ||
-      isEnrolled(basedOnCourse.course_id_int) ||
-      isCompleted(basedOnCourse.course_id_int)
-    }
-
-      className={`bg-blue-600 hover:bg-blue-700 text-white rounded px-6 py-2 font-semibold w-50 transition ${
-        enrollingId === basedOnCourse.course_id_int || isEnrolled(basedOnCourse.course_id_int) || isCompleted(basedOnCourse.course_id_int)
-          ? "opacity-50 cursor-not-allowed"
-          : ""
-      }`}
-    >
-      {isCompleted(basedOnCourse.course_id_int)
-        ? "Kursus Selesai"
-        : isEnrolled(basedOnCourse.course_id_int)
-        ? "Sudah Terdaftar"
-        : enrollingId === basedOnCourse.course_id_int
-        ? "Mendaftar..."
-        : "Enroll Kursus Ini"}
-    </button>
-
-    {isEnrolled(basedOnCourse.course_id_int) && (
-      <button
-        onClick={() => handleCompleteCourse(basedOnCourse.course_id_int)}
-        disabled={isCompleted(basedOnCourse.course_id_int)}  // disable kalau sudah selesai
-        className={`mx-4 bg-green-600 hover:bg-green-700 text-white rounded px-6 py-2 font-semibold w-50 transition ${
-          isCompleted(basedOnCourse.course_id_int) ? "opacity-50 cursor-not-allowed" : ""
-        }`}
-      >
-        {isCompleted(basedOnCourse.course_id_int) ? "Selesai" : "Tandai Selesai"}
-      </button>
+{basedOnCourse && (
+  <Card className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border shadow">
+    
+    {/* Kiri: Gambar */}
+    {imageUrl && (
+      <div className="w-full md:w-80 flex-shrink-0">
+        <Image
+          src={imageUrl}
+          alt={basedOnCourse.name}
+          className="w-full h-48 md:h-60 object-cover rounded-xl"
+          width={320}
+          height={240}
+        />
+      </div>
     )}
 
+    {/* Kanan: Content */}
+    <div className="flex flex-col flex-1 justify-between space-y-4">
+      <CardHeader>
+        <CardTitle className="text-2xl capitalize">{basedOnCourse.name}</CardTitle>
+      </CardHeader>
 
+      <CardContent>
+        <div className="flex items-center gap-4 mb-4">
+          <span className="font-semibold text-yellow-600 flex items-center gap-1 text-lg">
+            ⭐ {basedOnCourse.average_rating.toFixed(2)}
+          </span>
+          <span className="text-sm text-gray-500">
+            {formatTotalReviews(basedOnCourse.total_reviewers)} reviews
+          </span>
         </div>
-      )}
+      </CardContent>
+
+      <CardFooter className="flex flex-wrap gap-3">
+        <button
+          onClick={() => handleEnroll(basedOnCourse.course_id_int)}
+          disabled={
+            enrollingId === basedOnCourse.course_id_int ||
+            isEnrolled(basedOnCourse.course_id_int) ||
+            isCompleted(basedOnCourse.course_id_int)
+          }
+          className={`bg-blue-600 hover:bg-blue-700 text-white rounded px-6 py-2 font-semibold transition ${
+            enrollingId === basedOnCourse.course_id_int || isEnrolled(basedOnCourse.course_id_int) || isCompleted(basedOnCourse.course_id_int)
+              ? "opacity-50 cursor-not-allowed"
+              : ""
+          }`}
+        >
+          {isCompleted(basedOnCourse.course_id_int)
+            ? "Kursus Selesai"
+            : isEnrolled(basedOnCourse.course_id_int)
+            ? "Sudah Terdaftar"
+            : enrollingId === basedOnCourse.course_id_int
+            ? "Mendaftar..."
+            : "Enroll"}
+        </button>
+
+        {isEnrolled(basedOnCourse.course_id_int) && (
+          <button
+            onClick={() => handleCompleteCourse(basedOnCourse.course_id_int)}
+            disabled={isCompleted(basedOnCourse.course_id_int)}
+            className={`bg-green-600 hover:bg-green-700 text-white rounded px-6 py-2 font-semibold transition ${
+              isCompleted(basedOnCourse.course_id_int) ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+          >
+            {isCompleted(basedOnCourse.course_id_int) ? "Selesai" : "Tandai Selesai"}
+          </button>
+        )}
+      </CardFooter>
+    </div>
+  </Card>
+)}
+
+
 
       <h1 className="text-xl font-bold">
         Kursus Serupa -{" "}
@@ -245,6 +272,7 @@ const handleSubmitRating = async () => {
 
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-24 bg-gray-300 animate-pulse rounded" />
           ))}
@@ -255,7 +283,7 @@ const handleSubmitRating = async () => {
         <p className="text-gray-600">Tidak ada rekomendasi ditemukan.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recommendedCourses.map((course) => (
+          {recommendedCourses.sort((a, b) => b.total_reviewers - a.total_reviewers).map((course) => (
             <CourseCard
               key={course.course_id_int}
               course={course}
@@ -282,12 +310,7 @@ const handleSubmitRating = async () => {
                   </span>
                 ))}
               </div>
-              <textarea
-                className="w-full border border-gray-300 rounded p-2"
-                placeholder="Tulis ulasanmu (opsional)..."
-                value={reviewText}
-                onChange={(e) => setReviewText(e.target.value)}
-              />
+              
               <div className="flex justify-end gap-2">
                 <button
                   className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400"

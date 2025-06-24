@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,8 @@ import { login,fetchMe } from "@/lib/api/auth"; // 🔥 ganti ke sini
 export default function Login() {
   const router = useRouter();
   const { setAuth } = useAuthStore();
-
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect") || "/dashboard"; // fallback ke dashboard
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
@@ -62,10 +63,10 @@ export default function Login() {
     // Simpan token + user di store sekaligus
     setAuth(token, user);
 
-    setSuccessMessage("Login berhasil! Redirecting...");
+    setSuccessMessage("Login berhasil! Mengarahkan ke dashboard...");
 
     setTimeout(() => {
-      router.push("/");
+      router.push(redirectTo);
     }, 2000);
   } catch (error) {
     if (error instanceof Error) {
@@ -79,7 +80,7 @@ export default function Login() {
 };
 
   return (
-    <div className="font-graphik flex justify-center w-full items-center">
+    <div className="font-graphik flex justify-center w-full ">
       <Card className="w-full max-w-sm shadow-md p-2">
         <CardHeader>
           <CardTitle className="text-xl font-semibold">Login</CardTitle>
