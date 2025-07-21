@@ -132,7 +132,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="px-8 pt-20 flex flex-col w-full min-h-screen">
+    <div className="px-8 pt-20 flex flex-col w-full min-h-screen ">
       {renderSearchSection()}
       {loadingEnrolled ? (
         <div className="text-sm text-gray-500">Memuat kursus terdaftar...</div>
@@ -141,6 +141,7 @@ export default function DashboardPage() {
         <section>
         {/* <EnrolledCourseList /> */}
         <EnrollRecommendationsList/>
+        <AllCoursesList />
         </section>
       ) : (
         // menampilkan semua kursus 

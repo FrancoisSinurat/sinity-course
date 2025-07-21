@@ -5,8 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Users } from "lucide-react";
 import RatingStars from "@/components/ui/ratingstars";
 import { formatTotalReviews } from "@/components/ui/formatrevies";
-import {useUnsplashImage} from "@/app/hooks/unsplashImage";
-import Image from "next/image";
+
 type Course = {
   course_id_int: number;
   name: string;
@@ -22,7 +21,6 @@ type Props = {
   onClick?: () => void;
 };
 
-
 export default function CourseCard({
   course,
   onEnroll,
@@ -30,57 +28,51 @@ export default function CourseCard({
   enrollingId,
   onClick,
 }: Props) {
-  const imageUrl = useUnsplashImage(course.name);
+  const isLoading = enrollingId === course.course_id_int;
+  const enrolled = isEnrolled(course.course_id_int);
+
   return (
     <Card
       key={course.course_id_int}
       onClick={onClick}
-      className="cursor-pointer shadow-lg rounded-lg border hover:scale-105 transition-transform"
+      className="group cursor-pointer shadow-md rounded-xl border hover:shadow-lg hover:scale-[1.02] transition-transform duration-200 bg-white flex flex-col justify-between h-full"
     >
-           {imageUrl && (
-        <Image
-          src={imageUrl}
-          alt={course.name}
-          className="w-full h-40 object-cover" // biar gambar proporsional
-          width={400}
-          height={160}
-        />
-      )}
-      <CardHeader>
-        <CardTitle className="text-lg capitalize">{course.name}</CardTitle>
-      </CardHeader>
-
-      <CardContent className="flex flex-col items-center gap-2 text-sm text-gray-700">
-        <div className="text-gray-600 text-sm flex items-center gap-1">
-          <RatingStars rating={course.average_rating} />
-          <span className="font-semibold text-yellow-600">{course.average_rating.toFixed(1)}</span>
-        </div>
-        <div className="text-xs text-muted-foreground flex items-center gap-2 mb-2">
-          <Badge variant="secondary" className="flex items-center gap-1 text-xs">
-            <Users className="h-4 w-4 text-gray-500" />
-            <span className="text-sm text-black-500">
-                {formatTotalReviews(course.total_reviewers)} reviews
+      <CardHeader className="pb-2">
+        <div className="flex justify-between items-start">
+          <div className="flex flex-row">
+            <RatingStars rating={course.average_rating} />
+            <span className="text-sm font-semibold text-yellow-600 ml-1">
+              {course.average_rating.toFixed(1)}
             </span>
+          </div>
+
+          <Badge variant="outline" className="flex items-center gap-1 text-xs">
+            <Users className="h-4 w-4 text-gray-500" />
+            <span className="text-gray-700">{formatTotalReviews(course.total_reviewers)}</span>
           </Badge>
         </div>
 
+        <CardTitle className="text-lg font-semibold text-gray-800 mt-3 capitalize">
+          {course.name}
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent className="mt-auto">
         <button
           onClick={(e) => {
             e.stopPropagation();
             onEnroll(course.course_id_int);
           }}
-          disabled={enrollingId === course.course_id_int || isEnrolled(course.course_id_int)}
-          className={`bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-2 mt-2 w-full text-center ${
-            enrollingId === course.course_id_int || isEnrolled(course.course_id_int)
-              ? "opacity-50 cursor-not-allowed"
-              : ""
+          disabled={isLoading || enrolled}
+          className={`w-full py-2 rounded-md text-sm font-semibold transition ${
+            enrolled
+              ? "bg-gray-200 text-gray-600 cursor-not-allowed"
+              : isLoading
+              ? "bg-blue-400 text-white cursor-wait"
+              : "bg-blue-600 hover:bg-blue-700 text-white"
           }`}
         >
-          {isEnrolled(course.course_id_int)
-            ? "Sudah Terdaftar"
-            : enrollingId === course.course_id_int
-            ? "Mendaftar..."
-            : "Enroll"}
+          {enrolled ? "Sudah Terdaftar" : isLoading ? "Mendaftar..." : "Enroll"}
         </button>
       </CardContent>
     </Card>
