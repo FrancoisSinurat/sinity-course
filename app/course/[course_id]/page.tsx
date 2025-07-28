@@ -7,7 +7,6 @@ import CourseCard from "@/components/CourseComponent/FetchAllCourse/CourseCard";
 import { useCourseRecommendation, useUser } from "@/app/hooks/useCourseRecommendation";
 import { formatTotalReviews } from "@/components/ui/formatrevies";
 import { showSuccess, showError } from "@/lib/alert";
-import RatingStars from '@/components/ui/ratingstars';
 
 export default function RecommendByCoursePage() {
   const { course_id } = useParams();
@@ -30,31 +29,33 @@ interface CompletedCourse {
   course_id_int: number;
 }
 
-useEffect(() => {
-  const fetchCompletedCourses = async () => {
-    if (!user) return;
+  useEffect(() => {
+    const fetchCompletedCourses = async () => {
+      if (!user) return;
 
-    try {
-      const res = await fetch(`${apiUrl}/complete-course`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      try {
+        const res = await fetch(`${apiUrl}/complete-course`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-      if (!res.ok) throw new Error("Gagal ambil data kursus selesai");
+        if (!res.ok) throw new Error("Gagal ambil data kursus selesai");
 
-      const data = await res.json();
-      const ids = data.completed_courses.map((c: CompletedCourse) => c.course_id_int);
-      setCompletedCourses(ids);
-    } catch (err) {
-      console.error("Error fetch completed courses:", err);
-    }
-  };
+        const data = await res.json();
+        const ids = data.completed_courses.map((c: CompletedCourse) => c.course_id_int);
+        setCompletedCourses(ids);
+      } catch (err) {
+        console.error("Error fetch completed courses:", err);
+      }
+    };
 
-  fetchCompletedCourses();
-}, [user, apiUrl, token]);
+    fetchCompletedCourses();
+  }, [user, apiUrl, token]);
+
 
   const handleEnroll = async (course_id: number) => {
+
     if (!user) {
       router.push(`/login?redirect=/course/${course_id}`);
       return;
@@ -89,11 +90,11 @@ useEffect(() => {
 
       const data = await res.json();
       showSuccess(data.message);
-
+      
       setUser((prev) =>
         prev ? { ...prev, enrolled_courses: [...prev.enrolled_courses, course_id] } : prev
       );
-
+      
       router.push(`/course/${course_id}`);
     } catch (err) {
       showError((err as Error).message || "Terjadi kesalahan saat mendaftar kursus.");
@@ -102,54 +103,54 @@ useEffect(() => {
     }
   };
 
-// setelah berhasil tandai selesai, update state completedCourses dan user
-const handleCompleteCourse = async (course_id: number) => {
-  if (!user) {
-    router.push("/login");
-    return;
-  }
-
-  const confirm = await Swal.fire({
-    title: `Tandai kursus ${basedOnCourse?.name.toUpperCase()} sebagai selesai?`,
-    text: "Pastikan kamu telah menyelesaikan materi kursus ini.",
-    icon: "question",
-    showCancelButton: true,
-    confirmButtonText: "Ya, Selesai",
-    cancelButtonText: "Batal",
-  });
-
-  if (!confirm.isConfirmed) return;
-
-  try {
-    const res = await fetch(`${apiUrl}/complete-course`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ course_id_int: course_id }),
-    });
-
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.detail || "Gagal menyelesaikan kursus.");
+  // setelah berhasil tandai selesai, update state completedCourses dan user
+  const handleCompleteCourse = async (course_id: number) => {
+    if (!user) {
+      router.push("/login");
+      return;
     }
 
-    const data = await res.json();
-    showSuccess(data.message);
+    const confirm = await Swal.fire({
+      title: `Tandai kursus ${basedOnCourse?.name.toUpperCase()} sebagai selesai?`,
+      text: "Pastikan kamu telah menyelesaikan materi kursus ini.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Ya, Selesai",
+      cancelButtonText: "Batal",
+    });
 
-    setCompletedCourses(prev => [...prev, course_id]);
-    setUser(prev => prev ? {...prev, completed_courses: [...(prev.completed_courses ?? []), course_id]} : prev);
-  
-    // munculkan modal rating
-    setCourseToRate(course_id);
-    setShowRatingModal(true);
-  } catch (err) {
-    showError((err as Error).message || "Terjadi kesalahan saat menyelesaikan kursus.");
-  }
-};
+    if (!confirm.isConfirmed) return;
 
-const handleSubmitRating = async () => {
+    try {
+      const res = await fetch(`${apiUrl}/complete-course`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ course_id_int: course_id }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || "Gagal menyelesaikan kursus.");
+      }
+
+      const data = await res.json();
+      showSuccess(data.message);
+
+      setCompletedCourses(prev => [...prev, course_id]);
+      setUser(prev => prev ? {...prev, completed_courses: [...(prev.completed_courses ?? []), course_id]} : prev);
+    
+      // munculkan modal rating
+      setCourseToRate(course_id);
+      setShowRatingModal(true);
+    } catch (err) {
+      showError((err as Error).message || "Terjadi kesalahan saat menyelesaikan kursus.");
+    }
+  };
+
+  const handleSubmitRating = async () => {
   if (!user || !courseToRate) return;
 
   try {
@@ -186,52 +187,62 @@ const handleSubmitRating = async () => {
 
   return (
     <div className="px-8 pt-24 flex flex-col w-full min-h-screen space-y-8">
+
+      {/* Based on Course Section */}
       {basedOnCourse && (
         <div className="bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-2xl shadow p-6">
           <h2 className="text-2xl font-bold capitalize mb-2">{basedOnCourse.name}</h2>
           <div className="flex items-center gap-4 mb-4">
             <span className="font-semibold text-yellow-600 flex items-center gap-1">
-              <RatingStars rating={basedOnCourse.average_rating} />
-              {/* <span>⭐</span> {basedOnCourse.average_rating.toFixed(2)} */}
+              <span>⭐</span> {basedOnCourse.average_rating.toFixed(2)}
             </span>
             <span className="text-sm text-gray-500">
               {formatTotalReviews(basedOnCourse.total_reviewers)} reviewers
             </span>
+
           </div>
-    <button
-      onClick={() => handleEnroll(basedOnCourse.course_id_int)}
-    disabled={
-      enrollingId === basedOnCourse.course_id_int ||
-      isEnrolled(basedOnCourse.course_id_int) ||
-      isCompleted(basedOnCourse.course_id_int)
-    }
-
-      className={`bg-blue-600 hover:bg-blue-700 text-white rounded px-6 py-2 font-semibold w-50 transition ${
-        enrollingId === basedOnCourse.course_id_int || isEnrolled(basedOnCourse.course_id_int) || isCompleted(basedOnCourse.course_id_int)
-          ? "opacity-50 cursor-not-allowed"
-          : ""
-      }`}
-    >
-      {isCompleted(basedOnCourse.course_id_int)
-        ? "Kursus Selesai"
-        : isEnrolled(basedOnCourse.course_id_int)
-        ? "Sudah Terdaftar"
-        : enrollingId === basedOnCourse.course_id_int
-        ? "Mendaftar..."
-        : "Enroll Kursus Ini"}
-    </button>
-
-    {isEnrolled(basedOnCourse.course_id_int) && (
-      <button
-        onClick={() => handleCompleteCourse(basedOnCourse.course_id_int)}
-        disabled={isCompleted(basedOnCourse.course_id_int)}  // disable kalau sudah selesai
-        className={`mx-4 bg-green-600 hover:bg-green-700 text-white rounded px-6 py-2 font-semibold w-50 transition ${
-          isCompleted(basedOnCourse.course_id_int) ? "opacity-50 cursor-not-allowed" : ""
-        }`}
-      >
-        {isCompleted(basedOnCourse.course_id_int) ? "Selesai" : "Tandai Selesai"}
-      </button>
-    )}
+          {/* Handle Enroll */}
+          <button
+            onClick={() => {
+              if (basedOnCourse.course_url) {
+              window.open(basedOnCourse.course_url, "_blank"); // buka tab baru
+              }
+              handleEnroll(basedOnCourse.course_id_int); // langsung jalankan enroll
+            }}
+            disabled={
+              enrollingId === basedOnCourse.course_id_int ||
+              isEnrolled(basedOnCourse.course_id_int) ||
+              isCompleted(basedOnCourse.course_id_int)
+            }
+            className={`bg-blue-600 hover:bg-blue-700 text-white rounded px-6 py-2 font-semibold w-50 transition ${
+              enrollingId === basedOnCourse.course_id_int ||
+              isEnrolled(basedOnCourse.course_id_int) ||
+              isCompleted(basedOnCourse.course_id_int)
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }`}
+          >
+            {isCompleted(basedOnCourse.course_id_int)
+              ? "Kursus Selesai"
+              : isEnrolled(basedOnCourse.course_id_int)
+              ? "Sudah Terdaftar"
+              : enrollingId === basedOnCourse.course_id_int
+              ? "Mendaftar..."
+              : "Enroll Kursus Ini"}
+          </button>
+              
+          {/* Handle Complete */}
+          {isEnrolled(basedOnCourse.course_id_int) && (
+            <button
+              onClick={() => handleCompleteCourse(basedOnCourse.course_id_int)}
+              disabled={isCompleted(basedOnCourse.course_id_int)}  // disable kalau sudah selesai
+              className={`mx-4 bg-green-600 hover:bg-green-700 text-white rounded px-6 py-2 font-semibold w-50 transition ${
+                isCompleted(basedOnCourse.course_id_int) ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+            >
+              {isCompleted(basedOnCourse.course_id_int) ? "Selesai" : "Tandai Selesai"}
+            </button>
+          )}
 
 
         </div>
@@ -263,7 +274,7 @@ const handleSubmitRating = async () => {
               onEnroll={handleEnroll}
               isEnrolled={isEnrolled}
               enrollingId={enrollingId}
-              onClick={() => router.push(`/course/${course.course_id_int}`)}
+              onClick={() =>  router.push(`/course/${course.course_id_int}`)}
             />
           ))}
         </div>
@@ -283,12 +294,7 @@ const handleSubmitRating = async () => {
                   </span>
                 ))}
               </div>
-              <textarea
-                className="w-full border border-gray-300 rounded p-2"
-                placeholder="Tulis ulasanmu (opsional)..."
-                value={reviewText}
-                onChange={(e) => setReviewText(e.target.value)}
-              />
+              
               <div className="flex justify-end gap-2">
                 <button
                   className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400"

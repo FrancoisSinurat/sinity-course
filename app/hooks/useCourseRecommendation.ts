@@ -7,6 +7,7 @@ export type Course = {
   name: string;
   total_reviewers: number;
   average_rating: number;
+  course_url?: string;
 };
 
 export function useCourseRecommendation(course_id: string | string[] | undefined) {

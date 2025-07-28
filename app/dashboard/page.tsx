@@ -7,7 +7,6 @@ import AllCoursesList from "@/components/CourseComponent/FetchAllCourse/CourseLi
 import { useAuthStore } from '@/app/store/AuthStore';
 import { useCourseSearch } from "@/app/hooks/useCourseSearch";
 import { fetchMe } from "@/lib/api/auth";
-// import EnrolledCourseList from "@/com  ponents/users/UserProfile/FetchEnroll";
 import { useEnrolledCourses } from "@/app/hooks/useEnrolledHistory";
 import { usePopularKeyword } from "@/app/hooks/usePopularKeywords";
 import EnrollRecommendationsList from '../../components/CourseComponent/FetchAllCourse/RecommendationEnrollList';
@@ -139,7 +138,6 @@ export default function DashboardPage() {
       ) : courses.length > 0 ? (
         // komponen untuk menampilkan riwayat kursus
         <section>
-        {/* <EnrolledCourseList /> */}
         <EnrollRecommendationsList/>
         <AllCoursesList />
         </section>
