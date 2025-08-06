@@ -8,7 +8,7 @@ export function showSuccess(message: string) {
     icon: 'success',
     title: 'Berhasil',
     text: message,
-    timer: 2000,
+    timer: 500,
     showConfirmButton: false,
   });
 }
