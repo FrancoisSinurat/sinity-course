@@ -61,7 +61,9 @@ export default function Navbar() {
     }
   };
 
-  const menuItems = user ? ["Profile"] : [];
+  // Profile dulu, lalu About
+const menuItems = user ? ["Profile", "About"] : ["About"];
+
 
   return (
     <nav className={` font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${

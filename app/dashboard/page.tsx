@@ -11,6 +11,7 @@ import { useEnrolledCourses } from "@/app/hooks/useEnrolledHistory";
 import { usePopularKeyword } from "@/app/hooks/usePopularKeywords";
 import EnrollRecommendationsList from '../../components/CourseComponent/FetchAllCourse/RecommendationEnrollList';
 
+
 export default function DashboardPage() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL!;
   const user = useAuthStore((state) => state.user);
@@ -139,12 +140,14 @@ export default function DashboardPage() {
         // komponen untuk menampilkan riwayat kursus
         <section>
         <EnrollRecommendationsList/>
-        <AllCoursesList />
+        {/* <AllCoursesList />   */}
         </section>
       ) : (
         // menampilkan semua kursus 
         <AllCoursesList />
+
       )}
+
     </div>
   );
 }
