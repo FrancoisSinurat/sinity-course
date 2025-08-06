@@ -3,8 +3,9 @@ import DashboardPage from './dashboard/page';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col mb-12">
       <DashboardPage/>
+      
     </div>
   );
 }

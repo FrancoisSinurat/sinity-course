@@ -41,31 +41,31 @@ export default function RegisCard() {
     const newErrors = { name: "", email: "", password: "", confirmPassword: "" };
 
     if (!name.trim()) {
-      newErrors.name = "Name is required.";
+      newErrors.name = "Nama wajib diisi.";
       valid = false;
     }
 
     if (!email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = "Email wajib diisi.";
       valid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = "Format email tidak valid.";
       valid = false;
     }
 
     if (!password) {
-      newErrors.password = "Password is required.";
+      newErrors.password = "Password wajib diisi.";
       valid = false;
-    } else if (password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters.";
+    } else if (password.length < 8) {
+      newErrors.password = "Password minimal 8 karakter.";
       valid = false;
     }
 
     if (!confirmPassword) {
-      newErrors.confirmPassword = "Confirm password is required.";
+      newErrors.confirmPassword = "Confirm password wajib diisi.";
       valid = false;
     } else if (password !== confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match.";
+      newErrors.confirmPassword = "Password tidak sesuai.";
       valid = false;
     }
 
@@ -88,10 +88,10 @@ export default function RegisCard() {
       const data = await res.json();
   
       if (!res.ok) {
-        throw new Error(data.detail || "Registration failed");
+        throw new Error(data.detail || "Pendaftaran akun gagal");
       }
   
-      setSuccessMessage("Registration successful! Redirecting to login page...");
+      setSuccessMessage("Registrasi berhasil! Mengarahkan ke halaman login...");
   
       setTimeout(() => {
         router.push("/login");
@@ -116,7 +116,7 @@ export default function RegisCard() {
           <CardTitle className="text-xl font-semibold">Register</CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} noValidate>
+          <form onSubmit={handleSubmit} >
             {/* Name */}
             <div className="mb-4">
               <Label htmlFor="name">
@@ -180,7 +180,7 @@ export default function RegisCard() {
             {/* Confirm Password */}
             <div className="mb-4">
               <Label htmlFor="confirmPassword">
-                Confirm Password <span className="text-red-500">*</span>
+                Konfirmasi Password <span className="text-red-500">*</span>
               </Label>
               <div className="relative">
                 <Input

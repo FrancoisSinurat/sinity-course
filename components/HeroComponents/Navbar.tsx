@@ -12,7 +12,6 @@ import { fetchMe, logout as logoutApi } from "@/lib/api/auth";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [loadingUser, setLoadingUser] = useState(true);
   const hasHydrated = useAuthStore((state) => state.hasHydrated);
   const router = useRouter();
   const pathname = usePathname();
@@ -26,33 +25,28 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-  const loadUser = async () => {
-    if (!hasHydrated) return; // tunggu state persist selesai dulu
+    const loadUser = async () => {
+      if (!hasHydrated) return;
 
-    if (!token) {
-      logout();
-      setLoadingUser(false);
-      return;
-    }
-
-    if (!user) {
-      try {
-        const data = await fetchMe(token);
-        setAuth(token, data);
-      } catch (err) {
-        console.error("Fetch user error:", err);
+      if (!token) {
         logout();
-        router.push("/login");
-      } finally {
-        setLoadingUser(false);
+        return;
       }
-    } else {
-      setLoadingUser(false);
-    }
-  };
 
-  loadUser();
-}, [hasHydrated, token, user, setAuth, logout, router]);
+      if (!user) {
+        try {
+          const data = await fetchMe(token);
+          setAuth(token, data);
+        } catch (err) {
+          console.error("Fetch user error:", err);
+          logout();
+          router.push("/login");
+        }
+      }
+    };
+
+    loadUser();
+  }, [hasHydrated, token, user, setAuth, logout, router]);
 
   const handleLogout = async () => {
     try {
@@ -63,22 +57,22 @@ export default function Navbar() {
       console.error("Logout error:", err);
     } finally {
       logout();
-      router.push("/login");
+      router.push("/");
     }
   };
 
-  const menuItems = user ? ["Profile"] : [];
+  // Profile dulu, lalu About
+const menuItems = user ? ["Profile", "About"] : ["About"];
 
-  if (loadingUser) return <div>Loading...</div>;
 
   return (
-    <nav className={`font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${
-      isScrolled ? "bg-neutral-200 shadow-sm text-zinc-700" : "bg-[#E2CEB1] text-black"
+    <nav className={` font-serif fixed top-0 w-full z-50 transition-colors duration-300 ${
+      isScrolled ? "bg-white shadow-sm text-zinc-700" : " text-black"
     }`}>
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center space-x-2">
           <GraduationCap size={45} className="text-black" />
-          <span className="text-xl font-bold font-graphik">SinityCourse</span>
+          <span className="text-xl font-bold font-graphik text-stone-700">Sinity<span className="text-stone-400">Course</span> </span>
         </Link>
 
         <div className="hidden md:flex flex-1 justify-center space-x-6">
@@ -91,7 +85,7 @@ export default function Navbar() {
                 href={path}
                 className={cn(
                   "text-lg transition-all duration-300 px-4 py-2 rounded-lg ",
-                  isActive ? "text-black shadow-md" : "hover:bg-[#efd8b5]"
+                  isActive ? "text-black shadow-md" : "hover:bg-slate-100 text-zinc-600"
                 )}
               >
                 {item}
@@ -103,8 +97,8 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           {!user ? (
             <>
-              <Link href="/login" className="px-4 py-2 rounded-lg hover:bg-stone-400 transition">Login</Link>
-              <Link href="/register" className="px-4 py-2 bg-stone-700 text-white rounded-lg hover:bg-stone-600">Register</Link>
+              <Link href="/login" className="px-4 py-2 rounded-lg hover:bg-gray-50 transition">Login</Link>
+              <Link href="/register" className="px-4 py-2 bg-stone-500 text-white rounded-lg hover:bg-stone-600">Register</Link>
             </>
           ) : (
             <button
@@ -131,7 +125,7 @@ export default function Navbar() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="md:hidden"
           >
-            <ul className="flex flex-col space-y-4 px-6 py-4">
+            <ul className="flex flex-col space-y-4 px-6 py-4 bg-slate-200 shadow-lg rounded-lg">
               {menuItems.map((item) => {
                 const path = `/${item.toLowerCase()}`;
                 const isActive = pathname === path;
@@ -151,18 +145,18 @@ export default function Navbar() {
               })}
 
               {!user ? (
-                <>
+                <div className="flex flex-col space-y-4 ">
                   <li>
                     <Link href="/login" onClick={() => setIsOpen(false)} className="block px-4 py-2 text-center rounded-lg hover:bg-gray-50 transition">
                       Login
                     </Link>
                   </li>
                   <li>
-                    <Link href="/register" onClick={() => setIsOpen(false)} className="block px-4 py-2 bg-stone-700 text-white text-center rounded-lg hover:bg-stone-600 transition">
+                    <Link href="/register" onClick={() => setIsOpen(false)} className="block px-4 py-2 bg-stone-500 text-white text-center rounded-lg hover:bg-stone-600 transition">
                       Register
                     </Link>
                   </li>
-                </>
+                </div>
               ) : (
                 <li>
                   <button

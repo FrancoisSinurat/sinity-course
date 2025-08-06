@@ -76,6 +76,9 @@ html, body {
 }
 
 
+* {
+  font-family: 'Inter', sans-serif;
+}
 
 .flex-1 {
   flex-grow: 1;

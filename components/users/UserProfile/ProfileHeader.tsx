@@ -4,13 +4,13 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Save, X, Pencil, UserCircle2 } from "lucide-react";
+import { Save, X, Pencil } from "lucide-react";
+import { showSuccess, showError } from "@/lib/alert";
 
 interface User {
   user_id: number;
   name: string;
   email: string;
-  category_preference: string | null;
 }
 
 interface UserProps {
@@ -23,7 +23,6 @@ export default function ProfileHeader({ user, onSave }: UserProps) {
   const [formData, setFormData] = useState({
     name: user.name,
     email: user.email,
-    category_preference: user.category_preference ?? "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,69 +30,73 @@ export default function ProfileHeader({ user, onSave }: UserProps) {
   };
 
   const handleSave = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(formData.email)) {
+      showError("Format email tidak valid. Harap gunakan format email yang benar.");
+      return;
+    }
+
     onSave({
       name: formData.name,
       email: formData.email,
     });
     setIsEditing(false);
+    showSuccess("Data diri berhasil diperbarui!");
   };
 
   return (
-    <Card className="relative mb-10 mt-10 mx-auto max-w-xl shadow-2xl rounded-2xl p-6 pb-16">
-      <CardHeader className="flex flex-col items-center gap-4">
-        <UserCircle2 className="w-20 h-20 text-primary" />
-        <CardTitle className="text-2xl font-bold text-center text-primary">
+    <Card className="relative mt-10 mx-auto max-w-2xl bg-white border border-gray-200 shadow-lg rounded-3xl p-12">
+      <CardHeader className="flex flex-col items-center space-y-4">
+        <div className="w-24 h-24 rounded-full bg-muted text-primary flex items-center justify-center text-4xl font-bold uppercase shadow">
+          {user.name[0]}
+        </div>
+
+        {isEditing ? (
+          <Input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Nama"
+            className="text-center text-xl font-semibold ring-1 ring-gray-300 focus:ring-primary transition"
+          />
+        ) : (
+          <CardTitle className="text-2xl font-semibold text-center text-gray-800">
+            {formData.name}
+          </CardTitle>
+        )}
+
+        <div className="text-center text-sm text-gray-500 w-full">
           {isEditing ? (
             <Input
-              name="name"
-              value={formData.name}
+              name="email"
+              value={formData.email}
               onChange={handleChange}
-              placeholder="Nama"
-              className="text-center"
+              placeholder="Email"
+              className="text-center ring-1 ring-gray-300 focus:ring-primary transition"
             />
           ) : (
-            formData.name
-          )}
-        </CardTitle>
-        <div className="text-center space-y-1 text-muted-foreground text-sm w-full ">
-          {isEditing ? (
-            <>
-              <Input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-              />
-              <Input
-                name="category_preference"
-                value={formData.category_preference}
-                placeholder="Kategori yang disukai"
-                disabled
-                className="bg-slate-200"
-              />
-            </>
-          ) : (
-            <>
-              <p>{formData.email}</p>
-              <p>Kategori: {formData.category_preference}</p>
-            </>
+            <p>{formData.email}</p>
           )}
         </div>
       </CardHeader>
 
-      <CardContent className="mt-6 space-y-4 text-sm text-gray-700">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <p><span className="font-semibold">Username:</span> {user.name}</p>
-          <p><span className="font-semibold">Email:</span> {user.email}</p>
-          <p><span className="font-semibold">Kategori:</span> {user.category_preference ?? "-"}</p>
+      <CardContent className="mt-6 space-y-2 text-gray-700">
+        <div className="flex justify-between text-sm">
+          <span className="font-medium text-gray-500">Nama</span>
+          <span className="font-semibold">{user.name}</span>
+        </div>
+        <div className="flex justify-between text-sm">
+          <span className="font-medium text-gray-500">Email</span>
+          <span className="font-semibold">{user.email}</span>
         </div>
       </CardContent>
 
-      <div className="absolute bottom-4 right-4 flex gap-2">
+      <div className="absolute bottom-4 right-4 flex gap-2 ">
         {!isEditing ? (
           <Button
             onClick={() => setIsEditing(true)}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 shadow-md transition-all"
+            className="bg-primary text-white rounded-xl px-4 shadow hover:bg-primary/90"
           >
             <Pencil className="w-4 h-4 mr-2" /> Edit
           </Button>
@@ -101,14 +104,17 @@ export default function ProfileHeader({ user, onSave }: UserProps) {
           <>
             <Button
               onClick={handleSave}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 transition-all"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 rounded-xl"
             >
               <Save className="w-4 h-4 mr-2" /> Simpan
             </Button>
             <Button
               variant="outline"
-              onClick={() => setIsEditing(false)}
-              className="hover:bg-gray-100 px-4 transition-all"
+              onClick={() => {
+                setFormData({ name: user.name, email: user.email });
+                setIsEditing(false);
+              }}
+              className="hover:bg-gray-100 px-4 rounded-xl"
             >
               <X className="w-4 h-4 mr-2" /> Batal
             </Button>

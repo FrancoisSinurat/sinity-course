@@ -13,7 +13,7 @@ export function useCourseSearch(apiUrl: string) {
   const [recommendations, setRecommendations] = useState<CourseRecommendationType[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  
   const fetchRecommendations = useCallback(async () => {
     const trimmed = query.trim();
     if (trimmed.split(/\s+/).length === 0) {
@@ -28,7 +28,6 @@ export function useCourseSearch(apiUrl: string) {
     try {
       const res = await fetch(`${apiUrl}/search_course?course_name=${encodeURIComponent(trimmed)}`);
       const data = await res.json();
-  
       // Proses data untuk mengambil 2 rekomendasi terbaik berdasarkan rating
       const topTwoIds = [...data.recommendations]
         .sort((a, b) => b.total_reviewers - a.total_reviewers)

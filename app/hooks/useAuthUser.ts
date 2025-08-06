@@ -7,6 +7,7 @@ type UserFromApi = {
   name: string;
   email: string;
   category_preference?: string | null;
+
 };
 
 export function useAuthUser() {

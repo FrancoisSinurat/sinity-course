@@ -7,6 +7,7 @@ import RatingStars from '@/components/ui/ratingstars'
 import { Users } from 'lucide-react'
 import { useAuthStore } from '@/app/store/AuthStore'
 import { formatTotalReviews } from '@/components/ui/formatrevies'
+import { useRouter } from 'next/navigation';
 
 interface RecommendationCourse {
   course_id_int: number
@@ -35,7 +36,7 @@ export default function RecommendUser() {
   const token = useAuthStore((state) => state.token)
   const [data, setData] = useState<RecommendationResponse | null>(null)
   const [error, setError] = useState<string | null>(null)
-
+  const router = useRouter()
   useEffect(() => {
     const fetchData = async () => {
       if (!token) {
@@ -72,18 +73,19 @@ export default function RecommendUser() {
 
   return (
     <div className="p-4 border rounded-2xl shadow-md mt-6 bg-gradient-to-br from-white via-slate-50 to-slate-100">
-      <h2 className="text-lg font-bold mb-2">Rekomendasi Kursus</h2>
+      <h2 className="text-lg font-bold mb-2">Rekomendasi untuk Anda...</h2>
       {error ? (
         <p className="text-red-500">{error}</p>
       ) : (
         <>
-          <p className="text-sm text-muted-foreground mb-3">{data?.message}</p>
+          {/* <p className="text-sm text-muted-foreground mb-3">{data?.message}</p> */}
           {uniqueRecommendations.length ? (
             <div className="grid gap-2 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-4">
               {uniqueRecommendations.map((course) => (
                 <Card
                   key={course.course_id_int}
-                  className="flex flex-col justify-between h-full hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-200 rounded-xl"
+                  className="flex flex-col justify-between h-full hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-200 rounded-xl cursor-pointer"
+                  onClick={() => router.push(`/course/${course.course_id_int}`)}
                 >
                   <CardHeader className="text-center space-y-2">
                     <CardTitle className="text-md capitalize">{course.name}</CardTitle>
