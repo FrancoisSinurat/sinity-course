@@ -7,7 +7,7 @@ import CourseCard from "@/components/CourseComponent/FetchAllCourse/CourseCard";
 import { useCourseRecommendation, useUser } from "@/app/hooks/useCourseRecommendation";
 import { formatTotalReviews } from "@/components/ui/formatrevies";
 import { showSuccess, showError } from "@/lib/alert";
-import RecommendModal, { RecommendationCourse } from "@/components/users/recommend/RecommendModal";
+import { useEnrollRecommendation } from "@/app/hooks/useRecommendEnroll";
 
 export default function RecommendByCoursePage() {
   const { course_id } = useParams();
@@ -18,18 +18,14 @@ export default function RecommendByCoursePage() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const [completedCourses, setCompletedCourses] = useState<number[]>([]);
-  const [showRatingModal, setShowRatingModal] = useState(false);
-  const [rating, setRating] = useState(0);
-  const [reviewText, setReviewText] = useState("");
-  const [courseToRate, setCourseToRate] = useState<number | null>(null);
-
-  // state untuk modal rekomendasi
-  const [showRecommendModal, setShowRecommendModal] = useState(false);
-  const [recommendations, setRecommendations] = useState<RecommendationCourse[]>([]);
-
   const isEnrolled = (id: number) => user?.enrolled_courses.includes(id) ?? false;
   const isCompleted = (id: number) => completedCourses.includes(id);
+  
+  const { recommendedCourses: enrollCourses, loading: loadingEnroll, error: errorEnroll } = useEnrollRecommendation();
 
+  const isUsingEnrollRecommendation = completedCourses.length > 0;
+
+  
   interface CompletedCourse {
     course_id_int: number;
   }
@@ -55,8 +51,6 @@ export default function RecommendByCoursePage() {
 
     fetchCompletedCourses();
   }, [user, apiUrl, token]);
-
-
 
   const handleEnroll = async (course_id: number) => {
     if (!user) {
@@ -148,56 +142,14 @@ export default function RecommendByCoursePage() {
           : prev
       );
 
-      setCourseToRate(course_id);
-      setShowRatingModal(true);
+      // Tidak lagi memunculkan rating modal
     } catch (err) {
       showError((err as Error).message || "Terjadi kesalahan saat menyelesaikan kursus.");
     }
   };
 
-  const handleSubmitRating = async () => {
-    if (!user || !courseToRate || rating === 0) return;
-
-    try {
-      const res = await fetch(`${apiUrl}/rating`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          course_id_int: courseToRate,
-          rating,
-          review: reviewText,
-        }),
-      });
-
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.detail || "Gagal mengirim rating.");
-      }
-
-      showSuccess("Rating berhasil dikirim!");
-
-      // 🔹 Ambil rekomendasi langsung setelah rating
-      const recRes = await fetch(`${apiUrl}/recommend_for_user`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const recJson = await recRes.json();
-      setRecommendations(recJson?.data?.recommendations || []);
-      setShowRecommendModal(true);
-    } catch (err) {
-      showError((err as Error).message);
-    } finally {
-      setShowRatingModal(false);
-      setRating(0);
-      setReviewText("");
-      setCourseToRate(null);
-    }
-  };
-
   return (
-    <div className="px-8 pt-24 flex flex-col w-full min-h-screen space-y-8">
+    <div className="px-8 pt-24 flex flex-col w-full min-h-screen space-y-8 mb-12">
       <button
         onClick={() => router.push("/")}
         className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
@@ -205,7 +157,6 @@ export default function RecommendByCoursePage() {
         ⬅ Kembali ke Beranda
       </button>
 
-      {/* Section utama course */}
       {basedOnCourse && (
         <div className="bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-2xl shadow p-6">
           <h2 className="text-2xl font-bold capitalize mb-2">{basedOnCourse.name}</h2>
@@ -218,16 +169,13 @@ export default function RecommendByCoursePage() {
             </span>
           </div>
 
-          {/* Button Enroll */}
           <button
-              onClick={() => {
-                if (basedOnCourse.course_url) {
-                  window.open(basedOnCourse.course_url, "_blank");
-                }
-
-                handleEnroll(basedOnCourse.course_id_int);
-              }}
-
+            onClick={() => {
+              if (basedOnCourse.course_url) {
+                window.open(basedOnCourse.course_url, "_blank");
+              }
+              handleEnroll(basedOnCourse.course_id_int);
+            }}
             disabled={
               enrollingId === basedOnCourse.course_id_int ||
               isEnrolled(basedOnCourse.course_id_int) ||
@@ -267,76 +215,58 @@ export default function RecommendByCoursePage() {
       <h1 className="text-xl font-bold">
         Kursus Serupa - <span className="text-blue-500 capitalize">{basedOnCourse?.name}</span>
       </h1>
+{isUsingEnrollRecommendation ? (
+  loadingEnroll ? (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div key={i} className="h-24 bg-gray-300 animate-pulse rounded" />
+      ))}
+    </div>
+  ) : errorEnroll ? (
+    <p className="text-red-600">{errorEnroll}</p>
+  ) : enrollCourses.length === 0 ? (
+    <p className="text-gray-600">Tidak ada rekomendasi ditemukan.</p>
+  ) : (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {enrollCourses.map((course) => (
+        <CourseCard
+          key={course.course_id_int}
+          course={course}
+          onEnroll={handleEnroll}
+          isEnrolled={isEnrolled}
+          enrollingId={enrollingId}
+          onClick={() => router.push(`/course/${course.course_id_int}`)}
+        />
+      ))}
+    </div>
+  )
+) : (
+  loading ? (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div key={i} className="h-24 bg-gray-300 animate-pulse rounded" />
+      ))}
+    </div>
+  ) : error ? (
+    <p className="text-red-600">{error}</p>
+  ) : recommendedCourses.length === 0 ? (
+    <p className="text-gray-600">Tidak ada rekomendasi ditemukan.</p>
+  ) : (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {recommendedCourses.map((course) => (
+        <CourseCard
+          key={course.course_id_int}
+          course={course}
+          onEnroll={handleEnroll}
+          isEnrolled={isEnrolled}
+          enrollingId={enrollingId}
+          onClick={() => router.push(`/course/${course.course_id_int}`)}
+        />
+      ))}
+    </div>
+  )
+)}
 
-      {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="h-24 bg-gray-300 animate-pulse rounded" />
-          ))}
-        </div>
-      ) : error ? (
-        <p className="text-red-600">{error}</p>
-      ) : recommendedCourses.length === 0 ? (
-        <p className="text-gray-600">Tidak ada rekomendasi ditemukan.</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recommendedCourses.map((course) => (
-            <CourseCard
-              key={course.course_id_int}
-              course={course}
-              onEnroll={handleEnroll}
-              isEnrolled={isEnrolled}
-              enrollingId={enrollingId}
-              onClick={() => router.push(`/course/${course.course_id_int}`)}
-            />
-          ))}
-        </div>
-      )}
-
-      {showRatingModal && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-2xl w-[500px] max-w-[90%] shadow-2xl space-y-6 transition-all">
-            <h2 className="text-2xl font-semibold text-gray-800">Beri Rating Kursus</h2>
-
-            <div className="flex justify-center gap-2">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  key={star}
-                  className={`text-3xl cursor-pointer transition ${
-                    star <= rating ? "text-yellow-500 scale-110" : "text-gray-300"
-                  }`}
-                  onClick={() => setRating(star)}
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-end gap-3">
-              <button
-                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition"
-                onClick={() => setShowRatingModal(false)}
-              >
-                Batal
-              </button>
-              <button
-                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition disabled:opacity-50"
-                onClick={handleSubmitRating}
-                disabled={rating === 0}
-              >
-                Kirim
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* 🔹 Modal Rekomendasi */}
-      <RecommendModal
-        open={showRecommendModal}
-        onClose={() => setShowRecommendModal(false)}
-        recommendations={recommendations}
-      />
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function EnrolledCourseList() {
   };
 
   return (
-    <section className="mt-6 p-4">
+    <section className="mt-6 p-4 ">
       <h2 className="text-2xl font-bold text-neutral-800 mb-2">Riwayat Kursus</h2>
       <p className="text-sm text-gray-600 mb-4">
         Total kursus terdaftar:{" "}
