@@ -2,7 +2,6 @@
 
 import {
   Search,
-  Star,
   BookOpen,
   History,
 } from "lucide-react"
@@ -34,15 +33,7 @@ export const FeatureSection = () => {
             </div>
           </li>
 
-          <li className="bg-background p-6 rounded-xl shadow border flex items-start gap-4">
-            <Star className="w-6 h-6 mt-1 text-primary" />
-            <div>
-              <h3 className="font-semibold">Penilaian Kursus</h3>
-              <p className="text-sm text-muted-foreground">
-                Pengguna dapat memberikan rating untuk kursus yang diikuti.
-              </p>
-            </div>
-          </li>
+          
 
           <li className="bg-background p-6 rounded-xl shadow border flex items-start gap-4">
             <History className="w-6 h-6 mt-1 text-primary" />
